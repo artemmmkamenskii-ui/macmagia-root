@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>МакМагия — арт-терапия, МАК-карты, AI-практики</title>
-    <meta name="description" content="МакМагия — пространство для практикующих психологов и всех, кто интересуется арт-терапией, МАК-картами и AI-инструментами.">
+    <title>МакМагия — психология, метафорические карты и AI для психологов</title>
+    <meta name="description" content="МакМагия — пространство, где психология, метафорические карты и AI объединяются для работы с клиентами и собой.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,16 +15,35 @@
 <header class="header">
     <div class="container header__inner">
         <a href="/" class="logo">
-            <span class="logo__mark">✦</span>
+            <span class="logo__mark">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="20" cy="20" r="6" fill="currentColor"/>
+                    <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M20 6 L20 14"/>
+                        <path d="M20 26 L20 34"/>
+                        <path d="M6 20 L14 20"/>
+                        <path d="M26 20 L34 20"/>
+                        <path d="M10 10 L15.5 15.5"/>
+                        <path d="M24.5 24.5 L30 30"/>
+                        <path d="M30 10 L24.5 15.5"/>
+                        <path d="M15.5 24.5 L10 30"/>
+                    </g>
+                </svg>
+            </span>
             <span class="logo__text">МакМагия</span>
         </a>
         <nav class="nav">
-            <a href="#services">Практики</a>
-            <a href="#learn">Обучение</a>
-            <a href="#features">Преимущества</a>
-            <a href="#about">О проекте</a>
+            <a href="#products">Продукты</a>
+            <a href="#courses">Обучение</a>
+            <a href="#creator">Обо мне</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#features">О проекте</a>
+            <a href="#footer">Контакты</a>
         </nav>
-        <a href="#services" class="btn btn--primary btn--sm">Начать путешествие</a>
+        <div class="header__cta">
+            <a href="https://provizorai.ru/" class="btn btn--ghost btn--sm">Войти</a>
+            <a href="#products" class="btn btn--primary btn--sm">Начать бесплатно</a>
+        </div>
         <button class="burger" aria-label="Меню">
             <span></span><span></span><span></span>
         </button>
@@ -34,103 +53,175 @@
 <main>
 
     <section class="hero">
+        <div class="hero__bg-orbs">
+            <span class="orb orb--1"></span>
+            <span class="orb orb--2"></span>
+            <span class="orb orb--3"></span>
+            <span class="orb orb--4"></span>
+        </div>
         <div class="container hero__inner">
             <div class="hero__content">
-                <div class="badge">✨ Пространство женских практик</div>
+                <div class="badge"><span class="badge__plus">+</span> Пространство психологии и смысла</div>
                 <h1 class="hero__title">
                     Добро пожаловать <br>в <span class="accent">МакМагию</span>
                 </h1>
                 <p class="hero__text">
-                    Авторские практики, обучение и инструменты для психологов, тарологов и всех, кто хочет лучше понимать себя и других. Арт-терапия, МАК-карты и AI в одном месте.
+                    Психология, метафорические карты и искусственный интеллект в одном пространстве. Глубже понимайте себя и клиентов, работайте эффективнее и получайте поддержку на каждом этапе.
                 </p>
                 <div class="hero__cta">
-                    <a href="#services" class="btn btn--primary">Выбрать практику</a>
-                    <a href="#about" class="btn btn--ghost">Узнать больше</a>
+                    <a href="#products" class="btn btn--primary">Исследовать продукты</a>
+                    <a href="https://provizorai.ru/" class="btn btn--ghost">Попробовать AI</a>
                 </div>
-                <div class="hero__rating">
-                    <div class="hero__rating-stars">★★★★★</div>
-                    <div>
-                        <div class="hero__rating-value">4.9 <span>из 5</span></div>
-                        <div class="hero__rating-label">средняя оценка клиентов</div>
+                <div class="hero__proof">
+                    <div class="avatar-stack">
+                        <span class="avatar-stack__item" style="background: linear-gradient(135deg, #c4b5fd, #ec4899);">А</span>
+                        <span class="avatar-stack__item" style="background: linear-gradient(135deg, #fbcfe8, #a78bfa);">М</span>
+                        <span class="avatar-stack__item" style="background: linear-gradient(135deg, #a5f3fc, #8b5cf6);">Е</span>
+                    </div>
+                    <div class="hero__proof-text">
+                        <div class="hero__proof-main">Более 2000 психологов</div>
+                        <div class="hero__proof-sub">уже с нами</div>
+                    </div>
+                    <div class="hero__divider"></div>
+                    <div class="hero__proof-text">
+                        <div class="hero__proof-main hero__proof-main--rating">4.9 <span class="rating-stars">★★★★★</span></div>
+                        <div class="hero__proof-sub">на основе 240+ отзывов</div>
                     </div>
                 </div>
             </div>
 
             <div class="hero__visual">
-                <div class="hero__photo-wrap">
-                    <div class="hero__photo-blob"></div>
+                <div class="hero__photo-frame">
                     <div class="hero__photo"></div>
                 </div>
 
-                <div class="float-card float-card--tl">
-                    <div class="float-card__icon">🎨</div>
-                    <div>
-                        <div class="float-card__title">Арт-терапия</div>
-                        <div class="float-card__sub">новая сессия</div>
+                <div class="dash-card dash-card--1">
+                    <div class="dash-card__head">
+                        <div class="dash-card__icon">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+                        </div>
+                        <span class="dash-card__title">AI-рекомендация</span>
                     </div>
+                    <div class="dash-card__text">Попробуйте технику «Ресурсное место»</div>
+                    <a href="https://provizorai.ru/" class="dash-card__link">Подробнее →</a>
                 </div>
 
-                <div class="float-card float-card--br">
-                    <div class="float-card__icon">🔮</div>
-                    <div>
-                        <div class="float-card__title">МАК-карты</div>
-                        <div class="float-card__sub">колоды и курсы</div>
+                <div class="dash-card dash-card--2">
+                    <div class="dash-card__head">
+                        <div class="dash-card__icon">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 6-6"/></svg>
+                        </div>
+                        <span class="dash-card__title">Прогресс клиентов</span>
                     </div>
+                    <div class="dash-card__row">
+                        <div class="dash-card__big">87%</div>
+                        <div class="dash-card__delta">+15% за месяц</div>
+                    </div>
+                    <svg class="dash-card__chart" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true">
+                        <path d="M0,30 L20,28 L40,26 L60,20 L80,16 L100,10 L120,6" stroke="#8b5cf6" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <path d="M0,30 L20,28 L40,26 L60,20 L80,16 L100,10 L120,6 L120,40 L0,40 Z" fill="url(#g1)"/>
+                        <defs>
+                            <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                                <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
                 </div>
 
-                <div class="float-stat">
-                    <div class="float-stat__value">1000+</div>
-                    <div class="float-stat__label">клиентов<br>и учеников</div>
+                <div class="dash-card dash-card--3">
+                    <div class="dash-card__head">
+                        <div class="dash-card__icon">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <span class="dash-card__title">Сегодняшние сессии</span>
+                    </div>
+                    <div class="dash-card__row">
+                        <div class="dash-card__big">5</div>
+                        <div class="dash-card__chart-bars" aria-hidden="true">
+                            <span style="height: 30%"></span>
+                            <span style="height: 55%"></span>
+                            <span style="height: 40%"></span>
+                            <span style="height: 70%"></span>
+                            <span style="height: 90%"></span>
+                        </div>
+                    </div>
+                    <div class="dash-card__sub">запланировано</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="services">
+    <section class="section section--products" id="products">
         <div class="container">
             <div class="section__head">
-                <div class="eyebrow">✨ Практики</div>
-                <h2 class="section__title">Всё для ваших практик в одном месте</h2>
-                <p class="section__sub">Выберите направление — и начните работать с собой уже сегодня</p>
+                <div class="eyebrow"><span class="badge__plus">+</span> Наши продукты</div>
+                <h2 class="section__title">Всё для вашей практики в одном месте</h2>
             </div>
-            <div class="grid grid--3">
+            <div class="grid grid--4">
 
-                <a href="https://macmagia.ru/artterapy" class="card">
-                    <div class="card__illo card__illo--violet">
-                        <div class="card__illo-bg"></div>
-                        <div class="card__illo-emoji">🌸</div>
+                <a href="https://provizorai.ru/" class="pcard" target="_blank" rel="noopener">
+                    <div class="pcard__illo pcard__illo--brain">
+                        <svg viewBox="0 0 120 120" width="100%" height="100%" aria-hidden="true">
+                            <defs>
+                                <radialGradient id="brain-g" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#c4b5fd"/>
+                                    <stop offset="100%" stop-color="#6d28d9"/>
+                                </radialGradient>
+                            </defs>
+                            <circle cx="60" cy="60" r="46" fill="url(#brain-g)" opacity=".85"/>
+                            <text x="60" y="78" font-size="54" text-anchor="middle">🧠</text>
+                        </svg>
                     </div>
-                    <div class="card__body">
-                        <div class="card__tag">Арт-терапия</div>
-                        <h3 class="card__title">Арт-терапия для женщин</h3>
-                        <p class="card__text">Глубинная работа через образы и творчество — для проработки эмоций и поиска ресурса.</p>
-                        <span class="card__link">Перейти →</span>
+                    <div class="pcard__body">
+                        <h3 class="pcard__title">AI платформа <br>для психологов</h3>
+                        <p class="pcard__text">Интеллектуальный помощник анализирует сессии, помогает находить паттерны и предлагает рекомендации.</p>
+                        <span class="pcard__link">Открыть платформу →</span>
                     </div>
                 </a>
 
-                <a href="https://macmagia.ru/cards" class="card">
-                    <div class="card__illo card__illo--pink">
-                        <div class="card__illo-bg"></div>
-                        <div class="card__illo-emoji">🃏</div>
+                <a href="https://macmagia.ru/cards" class="pcard">
+                    <div class="pcard__illo pcard__illo--cards">
+                        <div class="deck-card deck-card--1">🔮</div>
+                        <div class="deck-card deck-card--2">✨</div>
+                        <div class="deck-card deck-card--3">🌙</div>
                     </div>
-                    <div class="card__body">
-                        <div class="card__tag">Магазин</div>
-                        <h3 class="card__title">Авторские колоды карт</h3>
-                        <p class="card__text">Купите колоды МАК и арт-терапевтические карты для личной и профессиональной практики.</p>
-                        <span class="card__link">В магазин →</span>
+                    <div class="pcard__body">
+                        <h3 class="pcard__title">Купить <br>электронные колоды</h3>
+                        <p class="pcard__text">Готовые цифровые колоды МАК для работы онлайн. Скачайте и используйте сразу.</p>
+                        <span class="pcard__link">Перейти в каталог →</span>
                     </div>
                 </a>
 
-                <a href="https://macmagia.ru/mac" class="card">
-                    <div class="card__illo card__illo--cyan">
-                        <div class="card__illo-bg"></div>
-                        <div class="card__illo-emoji">🎓</div>
+                <a href="https://www.wildberries.ru/seller/63444" class="pcard" target="_blank" rel="noopener">
+                    <div class="pcard__illo pcard__illo--box">
+                        <div class="wb-badge">WB</div>
+                        <div class="wb-box">📦</div>
                     </div>
-                    <div class="card__body">
-                        <div class="card__tag">МАК-курсы</div>
-                        <h3 class="card__title">Обучение МАК-картам</h3>
-                        <p class="card__text">Метафорические ассоциативные карты как инструмент самопознания и работы с клиентами.</p>
-                        <span class="card__link">Перейти →</span>
+                    <div class="pcard__body">
+                        <h3 class="pcard__title">Купить колоды <br>на Wildberries</h3>
+                        <p class="pcard__text">Печатные колоды МакМагия на Wildberries с быстрой доставкой по всей России.</p>
+                        <span class="pcard__link">Перейти на WB →</span>
+                    </div>
+                </a>
+
+                <a href="#courses" class="pcard">
+                    <div class="pcard__illo pcard__illo--cap">
+                        <svg viewBox="0 0 120 120" width="100%" height="100%" aria-hidden="true">
+                            <defs>
+                                <radialGradient id="cap-g" cx="50%" cy="45%" r="50%">
+                                    <stop offset="0%" stop-color="#c4b5fd"/>
+                                    <stop offset="100%" stop-color="#7c3aed"/>
+                                </radialGradient>
+                            </defs>
+                            <circle cx="60" cy="60" r="46" fill="url(#cap-g)" opacity=".4"/>
+                            <text x="60" y="80" font-size="56" text-anchor="middle">🎓</text>
+                        </svg>
+                    </div>
+                    <div class="pcard__body">
+                        <h3 class="pcard__title">Обучение <br>для психологов</h3>
+                        <p class="pcard__text">Курсы, вебинары и практики для вашего профессионального роста и развития.</p>
+                        <span class="pcard__link">Смотреть курсы →</span>
                     </div>
                 </a>
 
@@ -138,200 +229,312 @@
         </div>
     </section>
 
-    <section class="section section--muted" id="learn">
+    <section class="section section--muted" id="courses">
         <div class="container">
             <div class="section__head">
-                <div class="eyebrow">🎓 Обучение и инструменты</div>
+                <div class="eyebrow"><span class="badge__plus">+</span> Обучение</div>
                 <h2 class="section__title">Развивайтесь и углубляйте свои знания</h2>
-                <p class="section__sub">Курсы, AI-сервисы и удобные каналы покупки — всё для вашего роста</p>
             </div>
             <div class="grid grid--3">
 
-                <a href="https://macmagia.ru/ai" class="card">
-                    <div class="card__illo card__illo--grad-1">
-                        <div class="card__illo-bg"></div>
-                        <div class="card__illo-emoji">🤖</div>
+                <a href="https://macmagia.ru/ai" class="ccard">
+                    <div class="ccard__illo ccard__illo--1">
+                        <div class="ccard__illo-emoji">🖥️</div>
                     </div>
-                    <div class="card__body">
-                        <div class="card__tag">AI-обучение</div>
-                        <h3 class="card__title">AI в психологии и арт-практиках</h3>
-                        <p class="card__text">Современные AI-инструменты для специалистов помогающих профессий с реальными кейсами.</p>
-                        <span class="card__link">Подробнее →</span>
-                    </div>
-                </a>
-
-                <a href="https://provizorai.ru/" class="card" target="_blank" rel="noopener">
-                    <div class="card__illo card__illo--grad-2">
-                        <div class="card__illo-bg"></div>
-                        <div class="card__illo-emoji">✨</div>
-                    </div>
-                    <div class="card__body">
-                        <div class="card__tag">AI-сервис</div>
-                        <h3 class="card__title">ProvizorAI</h3>
-                        <p class="card__text">Умный AI-помощник для быстрых ответов, разборов и работы с запросами.</p>
-                        <span class="card__link">Открыть сервис →</span>
+                    <div class="ccard__body">
+                        <span class="ccard__tag">Онлайн-курс</span>
+                        <h3 class="ccard__title">1. Создание своей колоды <br>с помощью нейросетей</h3>
+                        <p class="ccard__text">Научитесь создавать уникальные МАК-карты с помощью нейросетей и авторского подхода.</p>
+                        <ul class="ccard__list">
+                            <li>Пошаговый процесс создания</li>
+                            <li>Работа с нейросетями</li>
+                            <li>Печать и оформление колоды</li>
+                        </ul>
+                        <span class="btn btn--ghost btn--sm">Подробнее о курсе →</span>
                     </div>
                 </a>
 
-                <a href="https://www.wildberries.ru/seller/63444" class="card" target="_blank" rel="noopener">
-                    <div class="card__illo card__illo--grad-3">
-                        <div class="card__illo-bg"></div>
-                        <div class="card__illo-emoji">🛍️</div>
+                <a href="https://macmagia.ru/artterapy" class="ccard">
+                    <div class="ccard__illo ccard__illo--2">
+                        <div class="ccard__illo-emoji">🎨</div>
                     </div>
-                    <div class="card__body">
-                        <div class="card__tag">Wildberries</div>
-                        <h3 class="card__title">Магазин на Wildberries</h3>
-                        <p class="card__text">Колоды карт и товары для практики с доставкой по всей России на маркетплейсе.</p>
-                        <span class="card__link">К продавцу →</span>
+                    <div class="ccard__body">
+                        <span class="ccard__tag">Практический курс</span>
+                        <h3 class="ccard__title">2. Арт терапия</h3>
+                        <p class="ccard__text">Творческие техники и упражнения для работы с состояниями, эмоциями и ресурсами.</p>
+                        <ul class="ccard__list">
+                            <li>Техники и упражнения</li>
+                            <li>Работа с запросами</li>
+                            <li>Практические кейсы</li>
+                        </ul>
+                        <span class="btn btn--ghost btn--sm">Подробнее о курсе →</span>
                     </div>
                 </a>
 
+                <a href="https://macmagia.ru/mac" class="ccard">
+                    <div class="ccard__illo ccard__illo--3">
+                        <div class="ccard__illo-emoji">🃏</div>
+                    </div>
+                    <div class="ccard__body">
+                        <span class="ccard__tag">Онлайн-курс</span>
+                        <h3 class="ccard__title">3. Курс по метафорическим картам</h3>
+                        <p class="ccard__text">Глубокое изучение МАК, диагностик, запросов и возможностей карт.</p>
+                        <ul class="ccard__list">
+                            <li>Теория и практика МАК</li>
+                            <li>Диагностики и расклады</li>
+                            <li>Работа с клиентами</li>
+                        </ul>
+                        <span class="btn btn--ghost btn--sm">Подробнее о курсе →</span>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="all-courses-wrap">
+                <a href="#products" class="btn btn--ghost">Смотреть все курсы</a>
             </div>
         </div>
     </section>
 
     <section class="section features" id="features">
         <div class="container">
+            <div class="section__head section__head--compact">
+                <div class="eyebrow"><span class="badge__plus">+</span> Почему выбирают МакМагию</div>
+            </div>
             <div class="features__grid">
                 <div class="feature">
-                    <div class="feature__icon feature__icon--violet">🧠</div>
-                    <div class="feature__title">Профессионализм</div>
-                    <div class="feature__text">10+ лет практики и тысячи проведённых сессий</div>
+                    <div class="feature__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
+                    <div class="feature__body">
+                        <div class="feature__title">Научный подход</div>
+                        <div class="feature__text">Основа — психология, доказательные методы и опыт практики.</div>
+                    </div>
                 </div>
                 <div class="feature">
-                    <div class="feature__icon feature__icon--pink">🎓</div>
-                    <div class="feature__title">Обучение</div>
-                    <div class="feature__text">Авторские программы с поддержкой и практикой</div>
+                    <div class="feature__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9 1.65 1.65 0 0 0 4.27 7.18l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09c0 .66.39 1.25 1 1.51.57.24 1.27.12 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.61.85 1 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </div>
+                    <div class="feature__body">
+                        <div class="feature__title">Глубокая работа</div>
+                        <div class="feature__text">Инструменты для работы с подсознанием и смыслами.</div>
+                    </div>
                 </div>
                 <div class="feature">
-                    <div class="feature__icon feature__icon--cyan">💎</div>
-                    <div class="feature__title">Индивидуальность</div>
-                    <div class="feature__text">Бережный подход под ваш запрос и темп</div>
+                    <div class="feature__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <div class="feature__body">
+                        <div class="feature__title">Технологии и AI</div>
+                        <div class="feature__text">Современные AI-решения экономят время и усиливают результат.</div>
+                    </div>
                 </div>
                 <div class="feature">
-                    <div class="feature__icon feature__icon--amber">🤝</div>
-                    <div class="feature__title">Поддержка</div>
-                    <div class="feature__text">Сопровождение на каждом этапе пути</div>
+                    <div class="feature__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <div class="feature__body">
+                        <div class="feature__title">Поддержка сообщества</div>
+                        <div class="feature__text">Профессиональное сообщество и постоянная поддержка.</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section--muted" id="about">
+    <section class="section section--muted" id="creator">
         <div class="container">
+            <div class="creator">
 
-            <div class="about">
-                <div class="about__photo-wrap">
-                    <div class="about__ring"></div>
-                    <div class="about__photo"></div>
+                <div class="creator__photo-wrap">
+                    <div class="creator__photo"></div>
+                    <button class="creator__play" aria-label="Смотреть видео">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <span>Смотреть видео</span>
+                    </button>
                 </div>
-                <div class="about__content">
-                    <div class="eyebrow">💜 О проекте</div>
+
+                <div class="creator__content">
+                    <div class="eyebrow"><span class="badge__plus">+</span> Создатель проекта</div>
                     <h2 class="section__title">Екатерина Каменская</h2>
-                    <p class="about__role">Психолог, арт-терапевт, автор проекта МакМагия</p>
-                    <p class="about__text">
-                        Уже много лет помогаю людям находить опору внутри себя через арт-терапию, МАК-карты и современные AI-инструменты. Создала МакМагию как пространство, где каждый может выбрать свой путь — от первой практики до профессионального обучения.
+                    <p class="creator__role">Психолог, выпускница МГУ</p>
+                    <p class="creator__text">
+                        Объединяю классическую психологию, метафорические карты и современные технологии. Создала МакМагию, чтобы каждый психолог мог работать глубже, эффективнее и с поддержкой AI.
                     </p>
-                    <div class="about__stats">
+                    <div class="creator__stats">
                         <div class="stat-box">
                             <div class="stat-box__value">10+</div>
                             <div class="stat-box__label">лет практики</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-box__value">1000+</div>
-                            <div class="stat-box__label">клиентов</div>
+                            <div class="stat-box__value">2000+</div>
+                            <div class="stat-box__label">психологов с нами</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-box__value">20+</div>
-                            <div class="stat-box__label">колод</div>
+                            <div class="stat-box__value">5000+</div>
+                            <div class="stat-box__label">сессий проведено</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-box__value">5+</div>
-                            <div class="stat-box__label">курсов</div>
+                            <div class="stat-box__value">МГУ</div>
+                            <div class="stat-box__label">психологический факультет</div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="reviews__head">
-                <div class="eyebrow">⭐ Отзывы клиентов</div>
-                <h3 class="reviews__title">Что говорят клиенты</h3>
-            </div>
+                <div class="creator__side">
+                    <div class="mandala mandala--lg" aria-hidden="true">
+                        <svg viewBox="0 0 120 120" width="80" height="80">
+                            <defs>
+                                <linearGradient id="mg" x1="0" x2="1" y1="0" y2="1">
+                                    <stop offset="0%" stop-color="#8b5cf6"/>
+                                    <stop offset="100%" stop-color="#ec4899"/>
+                                </linearGradient>
+                            </defs>
+                            <g fill="none" stroke="url(#mg)" stroke-width="2" stroke-linecap="round">
+                                <circle cx="60" cy="60" r="8"/>
+                                <circle cx="60" cy="60" r="22" stroke-dasharray="4 4"/>
+                                <g>
+                                    <path d="M60 22 L60 38"/>
+                                    <path d="M60 82 L60 98"/>
+                                    <path d="M22 60 L38 60"/>
+                                    <path d="M82 60 L98 60"/>
+                                    <path d="M33 33 L44 44"/>
+                                    <path d="M76 76 L87 87"/>
+                                    <path d="M87 33 L76 44"/>
+                                    <path d="M44 76 L33 87"/>
+                                </g>
+                                <g>
+                                    <circle cx="60" cy="22" r="3" fill="url(#mg)"/>
+                                    <circle cx="60" cy="98" r="3" fill="url(#mg)"/>
+                                    <circle cx="22" cy="60" r="3" fill="url(#mg)"/>
+                                    <circle cx="98" cy="60" r="3" fill="url(#mg)"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <p class="creator__side-text">
+                        МакМагия — это пространство, где рождаются смыслы и происходят изменения.
+                    </p>
+                    <div class="creator__heart">💜</div>
+                </div>
 
-            <div class="grid grid--3">
-                <div class="review">
-                    <div class="review__stars">★★★★★</div>
-                    <p class="review__text">«Прошла курс по МАК — структурированно, глубоко и очень бережно. Теперь применяю в своей практике каждый день.»</p>
-                    <div class="review__author">
-                        <div class="review__avatar" style="background: linear-gradient(135deg, #c4b5fd, #ec4899);">О</div>
-                        <div>
-                            <div class="review__name">Ольга</div>
-                            <div class="review__role">психолог</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="review">
-                    <div class="review__stars">★★★★★</div>
-                    <p class="review__text">«Арт-терапевтические сессии помогли пройти сложный период. Атмосфера — тёплая, поддерживающая, профессиональная.»</p>
-                    <div class="review__author">
-                        <div class="review__avatar" style="background: linear-gradient(135deg, #fbcfe8, #a78bfa);">М</div>
-                        <div>
-                            <div class="review__name">Марина</div>
-                            <div class="review__role">клиент</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="review">
-                    <div class="review__stars">★★★★★</div>
-                    <p class="review__text">«AI-обучение открыло новые возможности. Теперь использую инструменты в работе с клиентами — экономлю часы.»</p>
-                    <div class="review__author">
-                        <div class="review__avatar" style="background: linear-gradient(135deg, #a5f3fc, #8b5cf6);">А</div>
-                        <div>
-                            <div class="review__name">Анна</div>
-                            <div class="review__role">таролог</div>
-                        </div>
-                    </div>
-                </div>
             </div>
-
         </div>
     </section>
 
-    <section class="cta">
-        <div class="container cta__inner">
-            <div class="cta__decor cta__decor--1">✨</div>
-            <div class="cta__decor cta__decor--2">💜</div>
-            <h2 class="cta__title">Готовы начать своё путешествие <br>по новой практике?</h2>
-            <p class="cta__text">Выберите направление — и сделайте первый шаг сегодня</p>
-            <div class="cta__buttons">
-                <a href="#services" class="btn btn--white">Выбрать практику</a>
-                <a href="#learn" class="btn btn--outline-white">Посмотреть обучение</a>
+    <section class="section" id="reviews">
+        <div class="container">
+            <div class="section__head section__head--compact">
+                <h2 class="section__title">Отзывы психологов</h2>
+            </div>
+            <div class="grid grid--3">
+
+                <div class="review">
+                    <div class="review__head">
+                        <div class="review__avatar" style="background: linear-gradient(135deg, #c4b5fd, #ec4899);">А</div>
+                        <div>
+                            <div class="review__name">Анна Смирнова</div>
+                            <div class="review__role">Клинический психолог</div>
+                        </div>
+                    </div>
+                    <p class="review__text">«AI-помощник реально экономит время и даёт очень точные рекомендации. Моя практика стала намного эффективнее.»</p>
+                    <div class="review__stars">★★★★★</div>
+                </div>
+
+                <div class="review">
+                    <div class="review__head">
+                        <div class="review__avatar" style="background: linear-gradient(135deg, #fbcfe8, #a78bfa);">Д</div>
+                        <div>
+                            <div class="review__name">Дмитрий Ковалёв</div>
+                            <div class="review__role">Психотерапевт</div>
+                        </div>
+                    </div>
+                    <p class="review__text">«Отличная платформа! Всё продумано до мелочей. Клиенты видят прогресс, а это самое важное.»</p>
+                    <div class="review__stars">★★★★★</div>
+                </div>
+
+                <div class="review">
+                    <div class="review__head">
+                        <div class="review__avatar" style="background: linear-gradient(135deg, #a5f3fc, #8b5cf6);">Е</div>
+                        <div>
+                            <div class="review__name">Екатерина Волкова</div>
+                            <div class="review__role">Психолог-консультант</div>
+                        </div>
+                    </div>
+                    <p class="review__text">«Интуитивный интерфейс, мощная аналитика и потрясающий AI-помощник. Рекомендую каждому коллеге!»</p>
+                    <div class="review__stars">★★★★★</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-wrap">
+        <div class="container">
+            <div class="cta">
+                <div class="cta__text-block">
+                    <h2 class="cta__title">Готовы вывести свою практику <br>на новый уровень?</h2>
+                    <p class="cta__text">Присоединяйтесь к МакМагии и начните работать глубже уже сегодня.</p>
+                </div>
+                <div class="cta__buttons">
+                    <a href="#products" class="btn btn--white">Начать бесплатно</a>
+                    <a href="https://provizorai.ru/" class="btn btn--outline-white">Посмотреть демо</a>
+                </div>
+                <div class="cta__mandala" aria-hidden="true">
+                    <svg viewBox="0 0 160 160" width="160" height="160" opacity=".9">
+                        <g fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round">
+                            <circle cx="80" cy="80" r="10"/>
+                            <circle cx="80" cy="80" r="28" stroke-dasharray="4 4"/>
+                            <circle cx="80" cy="80" r="46" stroke-dasharray="2 6"/>
+                            <g stroke-width="2">
+                                <path d="M80 34 L80 54"/>
+                                <path d="M80 106 L80 126"/>
+                                <path d="M34 80 L54 80"/>
+                                <path d="M106 80 L126 80"/>
+                                <path d="M47 47 L61 61"/>
+                                <path d="M99 99 L113 113"/>
+                                <path d="M113 47 L99 61"/>
+                                <path d="M61 99 L47 113"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
             </div>
         </div>
     </section>
 
 </main>
 
-<footer class="footer">
+<footer class="footer" id="footer">
     <div class="container footer__inner">
         <div class="footer__col">
             <a href="/" class="logo logo--light">
-                <span class="logo__mark">✦</span>
+                <span class="logo__mark">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="20" cy="20" r="6" fill="currentColor"/>
+                        <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <path d="M20 6 L20 14"/><path d="M20 26 L20 34"/>
+                            <path d="M6 20 L14 20"/><path d="M26 20 L34 20"/>
+                            <path d="M10 10 L15.5 15.5"/><path d="M24.5 24.5 L30 30"/>
+                            <path d="M30 10 L24.5 15.5"/><path d="M15.5 24.5 L10 30"/>
+                        </g>
+                    </svg>
+                </span>
                 <span class="logo__text">МакМагия</span>
             </a>
-            <p class="footer__about">Пространство арт-терапии, МАК-карт и AI-практик.</p>
+            <p class="footer__about">Психология, метафорические карты и AI в одном пространстве.</p>
         </div>
         <div class="footer__col">
-            <div class="footer__title">Практики</div>
-            <a href="https://macmagia.ru/artterapy">Арт-терапия</a>
-            <a href="https://macmagia.ru/mac">МАК-карты</a>
-            <a href="https://macmagia.ru/cards">Магазин карт</a>
+            <div class="footer__title">Продукты</div>
+            <a href="https://provizorai.ru/" target="_blank" rel="noopener">AI платформа</a>
+            <a href="https://macmagia.ru/cards">Электронные колоды</a>
+            <a href="https://www.wildberries.ru/seller/63444" target="_blank" rel="noopener">Колоды на Wildberries</a>
         </div>
         <div class="footer__col">
             <div class="footer__title">Обучение</div>
-            <a href="https://macmagia.ru/ai">AI-обучение</a>
-            <a href="https://provizorai.ru/" target="_blank" rel="noopener">ProvizorAI</a>
-            <a href="https://www.wildberries.ru/seller/63444" target="_blank" rel="noopener">Wildberries</a>
+            <a href="https://macmagia.ru/ai">Создание колоды с AI</a>
+            <a href="https://macmagia.ru/artterapy">Арт-терапия</a>
+            <a href="https://macmagia.ru/mac">МАК-карты</a>
         </div>
         <div class="footer__col">
             <div class="footer__title">Контакты</div>

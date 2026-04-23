@@ -44,12 +44,15 @@ jobs:
       - name: Upload static landing to webroot
         run: |
           rsync -avz --delete \
-            --include "index.html" \
-            --include "styles.css" \
-            --include "script.js" \
-            --include "favicon.ico" \
-            --include "robots.txt" \
-            --exclude "*" \
+            --exclude ".git" \
+            --exclude ".github" \
+            --exclude ".gitignore" \
+            --exclude ".DS_Store" \
+            --exclude "deploy" \
+            --exclude "README.md" \
+            --exclude "*.psd" \
+            --exclude "*.fig" \
+            --exclude "ChatGPT*.png" \
             -e "ssh -p ${{ secrets.DEPLOY_PORT }} -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes" \
             ./ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/var/www/macmagia-root/"
 

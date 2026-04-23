@@ -1,10 +1,11 @@
 .DS_Store
 *.log
 
-# design reference, not production
-*.png
-*.jpg
-*.jpeg
+# design reference images (stay out of deploy)
+ChatGPT*.png
+reference*.png
+*.psd
+*.fig
 
 # if ever added locally
 node_modules/
