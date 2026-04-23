@@ -21,8 +21,8 @@
         <nav class="nav">
             <a href="#services">Практики</a>
             <a href="#learn">Обучение</a>
+            <a href="#features">Преимущества</a>
             <a href="#about">О проекте</a>
-            <a href="#reviews">Отзывы</a>
         </nav>
         <a href="#services" class="btn btn--primary btn--sm">Начать путешествие</a>
         <button class="burger" aria-label="Меню">
@@ -47,34 +47,41 @@
                     <a href="#services" class="btn btn--primary">Выбрать практику</a>
                     <a href="#about" class="btn btn--ghost">Узнать больше</a>
                 </div>
-                <div class="hero__stats">
-                    <div class="stat">
-                        <div class="stat__value">4.9<span>/5</span></div>
-                        <div class="stat__label">★★★★★ рейтинг клиентов</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat__value">1000+</div>
-                        <div class="stat__label">учеников и клиентов</div>
+                <div class="hero__rating">
+                    <div class="hero__rating-stars">★★★★★</div>
+                    <div>
+                        <div class="hero__rating-value">4.9 <span>из 5</span></div>
+                        <div class="hero__rating-label">средняя оценка клиентов</div>
                     </div>
                 </div>
             </div>
+
             <div class="hero__visual">
-                <div class="hero__card hero__card--float">
-                    <div class="hero__card-icon">🎨</div>
+                <div class="hero__photo-wrap">
+                    <div class="hero__photo-blob"></div>
+                    <div class="hero__photo"></div>
+                </div>
+
+                <div class="float-card float-card--tl">
+                    <div class="float-card__icon">🎨</div>
                     <div>
-                        <div class="hero__card-title">Арт-терапия</div>
-                        <div class="hero__card-sub">новая сессия</div>
+                        <div class="float-card__title">Арт-терапия</div>
+                        <div class="float-card__sub">новая сессия</div>
                     </div>
                 </div>
-                <div class="hero__card hero__card--float-2">
-                    <div class="hero__card-icon">🔮</div>
+
+                <div class="float-card float-card--br">
+                    <div class="float-card__icon">🔮</div>
                     <div>
-                        <div class="hero__card-title">МАК-карты</div>
-                        <div class="hero__card-sub">колоды и курсы</div>
+                        <div class="float-card__title">МАК-карты</div>
+                        <div class="float-card__sub">колоды и курсы</div>
                     </div>
                 </div>
-                <div class="hero__blob"></div>
-                <div class="hero__photo"></div>
+
+                <div class="float-stat">
+                    <div class="float-stat__value">1000+</div>
+                    <div class="float-stat__label">клиентов<br>и учеников</div>
+                </div>
             </div>
         </div>
     </section>
@@ -82,34 +89,49 @@
     <section class="section" id="services">
         <div class="container">
             <div class="section__head">
-                <div class="eyebrow">Практики</div>
+                <div class="eyebrow">✨ Практики</div>
                 <h2 class="section__title">Всё для ваших практик в одном месте</h2>
                 <p class="section__sub">Выберите направление — и начните работать с собой уже сегодня</p>
             </div>
             <div class="grid grid--3">
 
-                <a href="https://macmagia.ru/artterapy" class="card card--violet">
-                    <div class="card__visual">🎨</div>
-                    <div class="card__tag">Арт-терапия</div>
-                    <h3 class="card__title">Арт-терапия для женщин</h3>
-                    <p class="card__text">Глубинная работа через образы и творчество. Практики для проработки эмоций, страхов и поиска ресурса.</p>
-                    <span class="card__link">Перейти →</span>
+                <a href="https://macmagia.ru/artterapy" class="card">
+                    <div class="card__illo card__illo--violet">
+                        <div class="card__illo-bg"></div>
+                        <div class="card__illo-emoji">🌸</div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__tag">Арт-терапия</div>
+                        <h3 class="card__title">Арт-терапия для женщин</h3>
+                        <p class="card__text">Глубинная работа через образы и творчество — для проработки эмоций и поиска ресурса.</p>
+                        <span class="card__link">Перейти →</span>
+                    </div>
                 </a>
 
-                <a href="https://macmagia.ru/mac" class="card card--pink">
-                    <div class="card__visual">🔮</div>
-                    <div class="card__tag">МАК-карты</div>
-                    <h3 class="card__title">МАК-практики и курсы</h3>
-                    <p class="card__text">Метафорические ассоциативные карты как инструмент самопознания и профессиональной работы.</p>
-                    <span class="card__link">Перейти →</span>
+                <a href="https://macmagia.ru/cards" class="card">
+                    <div class="card__illo card__illo--pink">
+                        <div class="card__illo-bg"></div>
+                        <div class="card__illo-emoji">🃏</div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__tag">Магазин</div>
+                        <h3 class="card__title">Авторские колоды карт</h3>
+                        <p class="card__text">Купите колоды МАК и арт-терапевтические карты для личной и профессиональной практики.</p>
+                        <span class="card__link">В магазин →</span>
+                    </div>
                 </a>
 
-                <a href="https://macmagia.ru/cards" class="card card--cyan">
-                    <div class="card__visual">🃏</div>
-                    <div class="card__tag">Магазин</div>
-                    <h3 class="card__title">Авторские колоды карт</h3>
-                    <p class="card__text">Купите авторские колоды МАК и арт-терапевтические карты для личной и профессиональной практики.</p>
-                    <span class="card__link">В магазин →</span>
+                <a href="https://macmagia.ru/mac" class="card">
+                    <div class="card__illo card__illo--cyan">
+                        <div class="card__illo-bg"></div>
+                        <div class="card__illo-emoji">🎓</div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__tag">МАК-курсы</div>
+                        <h3 class="card__title">Обучение МАК-картам</h3>
+                        <p class="card__text">Метафорические ассоциативные карты как инструмент самопознания и работы с клиентами.</p>
+                        <span class="card__link">Перейти →</span>
+                    </div>
                 </a>
 
             </div>
@@ -119,102 +141,166 @@
     <section class="section section--muted" id="learn">
         <div class="container">
             <div class="section__head">
-                <div class="eyebrow">Обучение и инструменты</div>
+                <div class="eyebrow">🎓 Обучение и инструменты</div>
                 <h2 class="section__title">Развивайтесь и углубляйте свои знания</h2>
                 <p class="section__sub">Курсы, AI-сервисы и удобные каналы покупки — всё для вашего роста</p>
             </div>
             <div class="grid grid--3">
 
-                <a href="https://macmagia.ru/ai" class="card card--gradient-1">
-                    <div class="card__visual">🤖</div>
-                    <div class="card__tag">AI-обучение</div>
-                    <h3 class="card__title">AI в психологии и арт-практиках</h3>
-                    <p class="card__text">Обучение современным AI-инструментам для специалистов помогающих профессий. Практика и реальные кейсы.</p>
-                    <span class="card__link">Подробнее →</span>
+                <a href="https://macmagia.ru/ai" class="card">
+                    <div class="card__illo card__illo--grad-1">
+                        <div class="card__illo-bg"></div>
+                        <div class="card__illo-emoji">🤖</div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__tag">AI-обучение</div>
+                        <h3 class="card__title">AI в психологии и арт-практиках</h3>
+                        <p class="card__text">Современные AI-инструменты для специалистов помогающих профессий с реальными кейсами.</p>
+                        <span class="card__link">Подробнее →</span>
+                    </div>
                 </a>
 
-                <a href="https://provizorai.ru/" class="card card--gradient-2" target="_blank" rel="noopener">
-                    <div class="card__visual">✨</div>
-                    <div class="card__tag">AI-сервис</div>
-                    <h3 class="card__title">ProvizorAI</h3>
-                    <p class="card__text">Умный AI-помощник для быстрых ответов, разборов и работы с запросами. Отдельный проект команды.</p>
-                    <span class="card__link">Открыть сервис →</span>
+                <a href="https://provizorai.ru/" class="card" target="_blank" rel="noopener">
+                    <div class="card__illo card__illo--grad-2">
+                        <div class="card__illo-bg"></div>
+                        <div class="card__illo-emoji">✨</div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__tag">AI-сервис</div>
+                        <h3 class="card__title">ProvizorAI</h3>
+                        <p class="card__text">Умный AI-помощник для быстрых ответов, разборов и работы с запросами.</p>
+                        <span class="card__link">Открыть сервис →</span>
+                    </div>
                 </a>
 
-                <a href="https://www.wildberries.ru/seller/63444" class="card card--gradient-3" target="_blank" rel="noopener">
-                    <div class="card__visual">🛍️</div>
-                    <div class="card__tag">Wildberries</div>
-                    <h3 class="card__title">Магазин на Wildberries</h3>
-                    <p class="card__text">Колоды карт и товары для практики с доставкой по всей России — на маркетплейсе Wildberries.</p>
-                    <span class="card__link">Перейти к продавцу →</span>
+                <a href="https://www.wildberries.ru/seller/63444" class="card" target="_blank" rel="noopener">
+                    <div class="card__illo card__illo--grad-3">
+                        <div class="card__illo-bg"></div>
+                        <div class="card__illo-emoji">🛍️</div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__tag">Wildberries</div>
+                        <h3 class="card__title">Магазин на Wildberries</h3>
+                        <p class="card__text">Колоды карт и товары для практики с доставкой по всей России на маркетплейсе.</p>
+                        <span class="card__link">К продавцу →</span>
+                    </div>
                 </a>
 
             </div>
         </div>
     </section>
 
-    <section class="section" id="about">
-        <div class="container about">
-            <div class="about__photo">
-                <div class="about__ring"></div>
-            </div>
-            <div class="about__content">
-                <div class="eyebrow">О проекте</div>
-                <h2 class="section__title">Екатерина Каменская</h2>
-                <p class="about__role">Психолог, арт-терапевт, автор проекта МакМагия</p>
-                <p class="about__text">
-                    Уже много лет помогаю людям находить опору внутри себя через арт-терапию, МАК-карты и современные AI-инструменты. Создала МакМагию как пространство, где каждый может выбрать свой путь — от первой практики до профессионального обучения.
-                </p>
-                <div class="about__stats">
-                    <div class="stat-box">
-                        <div class="stat-box__value">10+</div>
-                        <div class="stat-box__label">лет практики</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-box__value">1000+</div>
-                        <div class="stat-box__label">клиентов</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-box__value">20+</div>
-                        <div class="stat-box__label">авторских колод</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-box__value">5+</div>
-                        <div class="stat-box__label">курсов</div>
-                    </div>
+    <section class="section features" id="features">
+        <div class="container">
+            <div class="features__grid">
+                <div class="feature">
+                    <div class="feature__icon feature__icon--violet">🧠</div>
+                    <div class="feature__title">Профессионализм</div>
+                    <div class="feature__text">10+ лет практики и тысячи проведённых сессий</div>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon feature__icon--pink">🎓</div>
+                    <div class="feature__title">Обучение</div>
+                    <div class="feature__text">Авторские программы с поддержкой и практикой</div>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon feature__icon--cyan">💎</div>
+                    <div class="feature__title">Индивидуальность</div>
+                    <div class="feature__text">Бережный подход под ваш запрос и темп</div>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon feature__icon--amber">🤝</div>
+                    <div class="feature__title">Поддержка</div>
+                    <div class="feature__text">Сопровождение на каждом этапе пути</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section--muted" id="reviews">
+    <section class="section section--muted" id="about">
         <div class="container">
-            <div class="section__head">
-                <div class="eyebrow">Отзывы</div>
-                <h2 class="section__title">Что говорят клиенты</h2>
+
+            <div class="about">
+                <div class="about__photo-wrap">
+                    <div class="about__ring"></div>
+                    <div class="about__photo"></div>
+                </div>
+                <div class="about__content">
+                    <div class="eyebrow">💜 О проекте</div>
+                    <h2 class="section__title">Екатерина Каменская</h2>
+                    <p class="about__role">Психолог, арт-терапевт, автор проекта МакМагия</p>
+                    <p class="about__text">
+                        Уже много лет помогаю людям находить опору внутри себя через арт-терапию, МАК-карты и современные AI-инструменты. Создала МакМагию как пространство, где каждый может выбрать свой путь — от первой практики до профессионального обучения.
+                    </p>
+                    <div class="about__stats">
+                        <div class="stat-box">
+                            <div class="stat-box__value">10+</div>
+                            <div class="stat-box__label">лет практики</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-box__value">1000+</div>
+                            <div class="stat-box__label">клиентов</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-box__value">20+</div>
+                            <div class="stat-box__label">колод</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-box__value">5+</div>
+                            <div class="stat-box__label">курсов</div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div class="reviews__head">
+                <div class="eyebrow">⭐ Отзывы клиентов</div>
+                <h3 class="reviews__title">Что говорят клиенты</h3>
+            </div>
+
             <div class="grid grid--3">
                 <div class="review">
                     <div class="review__stars">★★★★★</div>
                     <p class="review__text">«Прошла курс по МАК — структурированно, глубоко и очень бережно. Теперь применяю в своей практике каждый день.»</p>
-                    <div class="review__author">Ольга, психолог</div>
+                    <div class="review__author">
+                        <div class="review__avatar" style="background: linear-gradient(135deg, #c4b5fd, #ec4899);">О</div>
+                        <div>
+                            <div class="review__name">Ольга</div>
+                            <div class="review__role">психолог</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="review">
                     <div class="review__stars">★★★★★</div>
                     <p class="review__text">«Арт-терапевтические сессии помогли пройти сложный период. Атмосфера — тёплая, поддерживающая, профессиональная.»</p>
-                    <div class="review__author">Марина</div>
+                    <div class="review__author">
+                        <div class="review__avatar" style="background: linear-gradient(135deg, #fbcfe8, #a78bfa);">М</div>
+                        <div>
+                            <div class="review__name">Марина</div>
+                            <div class="review__role">клиент</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="review">
                     <div class="review__stars">★★★★★</div>
                     <p class="review__text">«AI-обучение открыло новые возможности. Теперь использую инструменты в работе с клиентами — экономлю часы.»</p>
-                    <div class="review__author">Анна, таролог</div>
+                    <div class="review__author">
+                        <div class="review__avatar" style="background: linear-gradient(135deg, #a5f3fc, #8b5cf6);">А</div>
+                        <div>
+                            <div class="review__name">Анна</div>
+                            <div class="review__role">таролог</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <section class="cta">
         <div class="container cta__inner">
+            <div class="cta__decor cta__decor--1">✨</div>
+            <div class="cta__decor cta__decor--2">💜</div>
             <h2 class="cta__title">Готовы начать своё путешествие <br>по новой практике?</h2>
             <p class="cta__text">Выберите направление — и сделайте первый шаг сегодня</p>
             <div class="cta__buttons">
