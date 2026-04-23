@@ -958,18 +958,12 @@ img { max-width: 100%; display: block; }
     .hero__divider { display: none; }
     .avatar-stack__item { width: 32px; height: 32px; font-size: 12px; }
 
-    /* Hero visual: keep photo, tidy dashboard cards */
-    .hero__visual { max-width: 340px; aspect-ratio: 1 / 1.25; }
-    .hero__photo-frame { inset: 0 8% 18% 8%; }
-    .hero__photo { inset: 8%; }
-    .dash-card { padding: 12px 14px; min-width: 170px; font-size: 13px; }
-    .dash-card__big { font-size: 22px; }
-    .dash-card__head { margin-bottom: 6px; }
-    .dash-card__title { font-size: 12px; }
-    .dash-card__text { font-size: 13px; }
-    .dash-card--1 { top: 0; right: -4%; min-width: 160px; animation: none; }
-    .dash-card--2 { display: none; } /* chart card hidden on mobile to reduce clutter */
-    .dash-card--3 { bottom: 0; left: -4%; right: auto; min-width: 160px; animation: none; }
+    /* Hero visual: clean centered photo on mobile */
+    .hero__visual { max-width: 320px; aspect-ratio: 1; }
+    .hero__photo-frame { inset: 0; }
+    .hero__photo { inset: 4%; }
+    /* hide all floating dashboard notifications on mobile for a clean photo */
+    .dash-card { display: none; }
 
     /* Section heads */
     .section { padding: 52px 0; }
