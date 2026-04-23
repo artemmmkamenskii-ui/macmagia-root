@@ -1,0 +1,68 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy-root
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH key
+        shell: bash
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_SSH_KEY_B64: ${{ secrets.DEPLOY_SSH_KEY_B64 }}
+        run: |
+          set -e
+          mkdir -p ~/.ssh
+          if [ -n "$DEPLOY_SSH_KEY_B64" ]; then
+            echo "$DEPLOY_SSH_KEY_B64" | base64 -d > ~/.ssh/deploy_key
+          elif [ -n "$DEPLOY_SSH_KEY" ]; then
+            printf "%s" "$DEPLOY_SSH_KEY" | tr -d '\r' > ~/.ssh/deploy_key
+          else
+            echo "No SSH key secret configured (DEPLOY_SSH_KEY or DEPLOY_SSH_KEY_B64)." >&2
+            exit 1
+          fi
+          chmod 600 ~/.ssh/deploy_key
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/deploy_key
+
+      - name: Add server to known_hosts
+        run: ssh-keyscan -p "${{ secrets.DEPLOY_PORT }}" "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Upload static landing to webroot
+        run: |
+          rsync -avz --delete \
+            --include "index.html" \
+            --include "styles.css" \
+            --include "script.js" \
+            --include "favicon.ico" \
+            --include "robots.txt" \
+            --exclude "*" \
+            -e "ssh -p ${{ secrets.DEPLOY_PORT }} -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes" \
+            ./ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/var/www/macmagia-root/"
+
+      - name: Remove nginx root→/cards redirect (optional)
+        continue-on-error: true
+        run: |
+          ssh -p "${{ secrets.DEPLOY_PORT }}" -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            'if [ -f "$HOME/macmagia/deploy/remove-nginx-root-redirect.sh" ]; then bash "$HOME/macmagia/deploy/remove-nginx-root-redirect.sh" || echo "nginx fix failed — see macmagia-root/deploy/setup-server.sh"; else echo "remove-nginx-root-redirect.sh not found (run setup-server.sh once)"; fi'
+
+      - name: Health check
+        run: |
+          echo "Checking https://macmagia.ru/"
+          code=$(curl -s -o /dev/null -w "%{http_code}" -L https://macmagia.ru/)
+          echo "HTTP $code"
+          [ "$code" = "200" ] || exit 1

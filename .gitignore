@@ -1,0 +1,10 @@
+.DS_Store
+*.log
+
+# design reference, not production
+*.png
+*.jpg
+*.jpeg
+
+# if ever added locally
+node_modules/
