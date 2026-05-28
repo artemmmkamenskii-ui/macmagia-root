@@ -129,6 +129,7 @@ img { max-width: 100%; display: block; }
     color: var(--violet-700);
 }
 .logo__mark svg { width: 22px; height: 22px; }
+.logo__img { display: block; height: 36px; width: auto; }
 .logo--light { color: #fff; }
 .logo--light .logo__mark { background: rgba(255,255,255,.12); color: #fff; }
 
@@ -306,8 +307,8 @@ img { max-width: 100%; display: block; }
     border-radius: 50%;
     background:
         linear-gradient(180deg, rgba(255,255,255,0) 55%, rgba(35,20,60,.25) 100%),
-        url("hero.jpg") center/cover,
-        url("https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&q=80") center/cover;
+        url("hero.jpg") center/cover;
+    background-color: #f3e8ff;
     box-shadow: 0 30px 60px rgba(60, 30, 120, .25);
 }
 
@@ -562,6 +563,7 @@ img { max-width: 100%; display: block; }
 .ccard__illo--1 { background: linear-gradient(135deg, #ede4ff, #d9cbff); }
 .ccard__illo--2 { background: linear-gradient(135deg, #ffe4f0, #fbcfe8); }
 .ccard__illo--3 { background: linear-gradient(135deg, #e6dfff, #c4b5fd); }
+.ccard__illo--4 { background: linear-gradient(135deg, #ddd6fe, #f5d0fe); }
 .ccard__illo-emoji {
     font-size: 76px;
     filter: drop-shadow(0 10px 20px rgba(80, 40, 140, .2));
@@ -687,8 +689,8 @@ img { max-width: 100%; display: block; }
     inset: 0;
     background:
         linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(20,10,40,.5) 100%),
-        url("about.jpg") center/cover,
-        url("https://images.unsplash.com/photo-1580489944761-15a19d654956?w=700&q=80") center/cover;
+        url("about.jpg") center/cover;
+    background-color: #f3e8ff;
 }
 .creator__play {
     position: absolute;
@@ -940,6 +942,7 @@ img { max-width: 100%; display: block; }
     .logo { font-size: 17px; }
     .logo__mark { width: 30px; height: 30px; }
     .logo__mark svg { width: 18px; height: 18px; }
+    .logo__img { height: 30px; }
 
     .btn--sm { padding: 9px 14px; font-size: 13px; }
     .btn { padding: 13px 22px; font-size: 14px; }
