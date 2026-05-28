@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Служебные/технические каталоги (на всякий случай — публично не деплоятся)
+Disallow: /docs/
+Disallow: /deploy/
+
+Sitemap: https://macmagia.ru/sitemap.xml
+Host: https://macmagia.ru
