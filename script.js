@@ -18,3 +18,24 @@ if (burger && nav) {
         }
     });
 }
+
+// Reading progress bar (only present on article pages)
+const progressFill = document.querySelector('.reading-progress__fill');
+if (progressFill) {
+    let ticking = false;
+    const update = () => {
+        const h = document.documentElement;
+        const max = h.scrollHeight - h.clientHeight;
+        const pct = max > 0 ? Math.min(100, (h.scrollTop / max) * 100) : 0;
+        progressFill.style.width = pct + '%';
+        ticking = false;
+    };
+    update();
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(update);
+            ticking = true;
+        }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+}
