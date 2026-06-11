@@ -27,18 +27,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://macmagia.ru/blog/</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://macmagia.ru/blog/chto-takoe-mak-karty.html</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://macmagia.ru/public-offer.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -52,5 +40,17 @@
     <loc>https://macmagia.ru/refund-policy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/chto-takoe-mak-karty.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
