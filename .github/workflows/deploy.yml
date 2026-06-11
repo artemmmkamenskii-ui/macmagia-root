@@ -41,6 +41,19 @@ jobs:
       - name: Add server to known_hosts
         run: ssh-keyscan -p "${{ secrets.DEPLOY_PORT }}" "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install build deps
+        run: pip install -r scripts/requirements.txt
+
+      - name: Build blog from markdown
+        run: python3 scripts/build_blog.py
+
       - name: Upload static landing to webroot
         run: |
           rsync -avz --delete \
@@ -50,6 +63,8 @@ jobs:
             --exclude ".DS_Store" \
             --exclude "deploy" \
             --exclude "README.md" \
+            --exclude "docs" \
+            --exclude "scripts" \
             --exclude "*.psd" \
             --exclude "*.fig" \
             --exclude "ChatGPT*.png" \
@@ -65,7 +80,10 @@ jobs:
 
       - name: Health check
         run: |
-          echo "Checking https://macmagia.ru/"
-          code=$(curl -s -o /dev/null -w "%{http_code}" -L https://macmagia.ru/)
-          echo "HTTP $code"
-          [ "$code" = "200" ] || exit 1
+          fail=0
+          for url in https://macmagia.ru/ https://macmagia.ru/blog/; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" -L "$url")
+            echo "$url → HTTP $code"
+            [ "$code" = "200" ] || fail=1
+          done
+          [ "$fail" = "0" ] || exit 1
