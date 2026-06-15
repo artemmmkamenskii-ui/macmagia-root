@@ -17,6 +17,7 @@ lsiKeywords:
   - проективные методики
   - первая сессия с мак
 targetCta: /mac
+relatedProducts: [mac, cards, online]
 ---
 
 # МАК в работе психолога: техники, запрос, защиты, травма

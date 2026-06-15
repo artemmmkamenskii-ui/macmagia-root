@@ -17,6 +17,7 @@ lsiKeywords:
   - виды колод мак
   - универсальная колода мак
 targetCta: /cards
+relatedProducts: [cards, online]
 ---
 
 # Как выбрать колоду МАК: универсальные, тематические, печать

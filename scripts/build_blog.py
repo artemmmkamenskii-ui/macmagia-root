@@ -77,6 +77,48 @@ AUTHORS = {
 }
 DEFAULT_AUTHOR = "ekaterina-kamenskaya"
 
+# Related-products registry. An article's frontmatter can list `relatedProducts:
+# [slug, slug, ...]` and the corresponding card grid is rendered between the
+# article body and the author card. Keep titles short and texts under 120 chars.
+PRODUCTS = {
+    "online": {
+        "url": "/online",
+        "title": "Платформа МАК онлайн",
+        "text": "Виртуальные колоды и инструменты для расклада в браузере — для сессий с клиентом и для домашней практики.",
+        "emoji": "💻",
+    },
+    "cards": {
+        "url": "/cards",
+        "title": "Колоды МакМагии",
+        "text": "Электронные и печатные колоды для работы в кабинете и дома.",
+        "emoji": "🎴",
+    },
+    "mac": {
+        "url": "/mac",
+        "title": "Курс по МАК для специалистов",
+        "text": "Техники и реальные кейсы работы с клиентом — для психологов, арт-терапевтов, коучей.",
+        "emoji": "🧠",
+    },
+    "artterapy": {
+        "url": "/artterapy",
+        "title": "Курс по арт-терапии",
+        "text": "Практические техники арт-терапии: рисунок, лепка, коллаж, песочная работа.",
+        "emoji": "🎨",
+    },
+    "ai": {
+        "url": "/ai",
+        "title": "Курс «Своя колода с AI»",
+        "text": "Пошаговое создание авторской колоды МАК через нейросети: концепция, генерация, печать.",
+        "emoji": "🪄",
+    },
+    "coach": {
+        "url": "/coach",
+        "title": "Курс по коучингу",
+        "text": "Инструменты коучинга для работы с целями, состояниями и ресурсами клиента.",
+        "emoji": "🎯",
+    },
+}
+
 # Эзо-фильтр. Точное совпадение по словарным границам (\b), чтобы бренд
 # "МакМагия" не триггерил "магия" (там нет границы внутри слова).
 FORBIDDEN_PATTERNS = [
@@ -376,6 +418,45 @@ def render_toc(items):
     )
 
 
+def render_products(slugs):
+    """Render the related-products card grid from a list of product slugs.
+
+    Unknown slugs are skipped with a stderr warning so a typo in frontmatter
+    doesn't kill the build.
+    """
+    if not slugs:
+        return ""
+    items_html = []
+    for slug in slugs:
+        product = PRODUCTS.get(slug)
+        if not product:
+            print(f"WARN: unknown relatedProducts slug: {slug!r}", file=sys.stderr)
+            continue
+        items_html.append(
+            '<a class="article-products__item" href="{url}">'
+            '<div class="article-products__icon" aria-hidden="true">{emoji}</div>'
+            '<div class="article-products__body">'
+            '<div class="article-products__name">{title}</div>'
+            '<div class="article-products__text">{text}</div>'
+            '</div>'
+            '<div class="article-products__arrow" aria-hidden="true">→</div>'
+            '</a>'.format(
+                url=html_escape(product["url"]),
+                emoji=product["emoji"],
+                title=html_escape(product["title"]),
+                text=html_escape(product["text"]),
+            )
+        )
+    if not items_html:
+        return ""
+    return (
+        '<aside class="article-products" aria-label="Связанные продукты МакМагии">\n'
+        '                <div class="article-products__title">Связанные продукты МакМагии</div>\n'
+        f'                <div class="article-products__grid">{"".join(items_html)}</div>\n'
+        '            </aside>'
+    )
+
+
 def render_related(current_fm, all_meta):
     current_slug = current_fm["slug"]
     current_tags = set(current_fm.get("tags", []))
@@ -543,6 +624,7 @@ def render_article(md_path, all_meta):
     )
 
     related_html = render_related(fm, all_meta)
+    products_html = render_products(fm.get("relatedProducts") or [])
 
     author_card = (
         '<aside class="article__author-card">\n'
@@ -642,6 +724,8 @@ def render_article(md_path, all_meta):
             <article class="article__body article__body--rich">
 {body_html}
             </article>
+
+            {products_html}
 
             {author_card}
 

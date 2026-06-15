@@ -17,6 +17,7 @@ lsiKeywords:
   - как работают мак карты
   - виды колод мак
 targetCta: /cards
+relatedProducts: [online, cards, mac]
 # Это pillar-статья по сравнению МАК vs Таро (agent-task.md §2.3) —
 # отстраивающий контекст требует упоминания тарошной терминологии.
 esoWhitelist:

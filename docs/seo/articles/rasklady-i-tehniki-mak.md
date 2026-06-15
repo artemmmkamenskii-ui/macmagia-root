@@ -16,6 +16,7 @@ lsiKeywords:
   - упражнения с мак
   - мак для психолога
 targetCta: /mac
+relatedProducts: [mac, cards, online]
 ---
 
 # Техники работы с МАК: схемы, упражнения, разборы

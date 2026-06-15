@@ -17,6 +17,7 @@ lsiKeywords:
   - как работать с мак дома
   - мак для рефлексии
 targetCta: /cards
+relatedProducts: [online, cards]
 ---
 
 # МАК для самопознания: как работать с картами самостоятельно

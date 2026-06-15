@@ -17,6 +17,7 @@ lsiKeywords:
   - мак это не таро
   - проективный метод
 targetCta: /mac
+relatedProducts: [cards, mac]
 esoWhitelist:
   - таро
   - гадан

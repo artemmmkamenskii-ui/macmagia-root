@@ -16,6 +16,7 @@ lsiKeywords:
   - авторская колода мак
   - ии для мак карт
 targetCta: /ai
+relatedProducts: [ai, cards]
 ---
 
 # Как создать свою колоду МАК с помощью нейросетей

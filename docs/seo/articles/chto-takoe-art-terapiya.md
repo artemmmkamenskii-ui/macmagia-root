@@ -16,6 +16,7 @@ lsiKeywords:
   - арт-терапия как работает
   - арт-терапия для взрослых
 targetCta: /artterapy
+relatedProducts: [artterapy, cards]
 ---
 
 # Арт-терапия: что это, как работает и какие техники применяют

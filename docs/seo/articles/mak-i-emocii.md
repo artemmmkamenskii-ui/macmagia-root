@@ -16,6 +16,7 @@ lsiKeywords:
   - "мак на чувства"
   - "упражнения с мак на эмоции"
 targetCta: /cards
+relatedProducts: [online, cards, artterapy]
 ---
 
 # МАК для работы с эмоциями: как назвать то, что внутри
