@@ -258,6 +258,15 @@ def extract_faq(md_text):
 
 
 def convert_custom_blocks(md_text):
+    # Hard-fail if an article emits empty ::: cta ... ::: blocks — the regex
+    # below won't match them and the raw markers would leak into HTML.
+    empty_cta = re.search(r':::\s*cta\s+\S+\s+"[^"]+"\s*\n\s*:::\s*', md_text)
+    if empty_cta:
+        raise ValueError(
+            f"Empty ::: cta block found (no body between markers). "
+            f"Context: …{empty_cta.group(0)[:80]}… "
+            f"Add 1-2 sentences inside the block."
+        )
     # ::: pullquote ... :::
     md_text = re.sub(
         r":::\s*pullquote\s*\n(.+?)\n:::\s*",
