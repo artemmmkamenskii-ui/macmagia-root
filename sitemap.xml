@@ -102,6 +102,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/lichnye-granicy.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/mak-dlya-detey-i-semji.html</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -192,8 +198,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/sozavisimost.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/sozdat-mak-neyrosetyami.html</loc>
     <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/toksichnye-roditeli.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/vybirayu-ne-teh.html</loc>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
