@@ -51,6 +51,19 @@ SITEMAP = ROOT / "sitemap.xml"
 
 SITE_URL = "https://macmagia.ru"
 LOGO_URL = f"{SITE_URL}/icon-512.png"
+
+# Яндекс.Метрика 109562142. Константа НЕ проходит через .format(), скобки литеральные.
+YM_SNIPPET = """<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+   ym(109562142, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109562142" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+"""
+
+def inject_metrika(html):
+    return html.replace("</head>", YM_SNIPPET + "</head>", 1)
 DEFAULT_OG_IMAGE = f"{SITE_URL}/about.jpg"
 
 AUTHORS = {
@@ -1001,10 +1014,10 @@ def main():
     for meta in metas:
         path = meta["__path"]
         out = BLOG_DIR / f"{meta['slug']}.html"
-        out.write_text(render_article(path, metas), encoding="utf-8")
+        out.write_text(inject_metrika(render_article(path, metas)), encoding="utf-8")
         print(f"  built blog/{meta['slug']}.html")
 
-    (BLOG_DIR / "index.html").write_text(render_hub(metas), encoding="utf-8")
+    (BLOG_DIR / "index.html").write_text(inject_metrika(render_hub(metas)), encoding="utf-8")
     print("  built blog/index.html")
 
     update_sitemap(metas, datetime.date.today().isoformat())
