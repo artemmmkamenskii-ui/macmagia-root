@@ -77,5 +77,52 @@ for slug,fn in MAP:
     gap=buckets['gap']
     out.append(f"**⚠️ gap → роадмап:** {'; '.join(gap) if gap else '— нет'}")
     out.append("")
+# ── МАК-кластер: общий CSV против всех 16 МАК-статей разом ──
+import csv
+MAK_SLUGS=["chto-takoe-mak-karty","mak-v-rabote-psihologa","kak-vybrat-kolodu-mak","mak-dlya-detey-i-semji",
+ "mak-dlya-samopoznaniya","mak-i-emocii","mak-onlayn-raboty","mak-i-narcissizm","mak-igrovye-formaty",
+ "mak-v-kratkosrochnoy-terapii","mak-vs-taro","oh-karty-i-mak","sozdat-mak-neyrosetyami",
+ "rasklady-i-tehniki-mak","chto-takoe-art-terapiya","znachenie-i-rasshifrovka-mak"]
+mak_core=""; mak_body=""
+for s in MAK_SLUGS:
+    if os.path.exists(f"{ART}/{s}.md"):
+        c,b=zones(s); mak_core+=" "+c; mak_body+=" "+b
+csvp="docs/seo/raw/wordstat-F-mak-clean-v2.csv"
+mrows={}
+if os.path.exists(csvp):
+    with open(csvp,encoding='utf-8') as f:
+        for r in csv.DictReader(f):
+            ph=(r.get('phrase') or '').strip().lower(); cat=(r.get('category') or '')
+            try: fr=int(r.get('frequency') or 0)
+            except: fr=0
+            if not ph or cat in ('Другое','') or NOISE.search(ph) or fr>=500000 or len(words(ph))<1: continue
+            mrows[ph]=max(mrows.get(ph,0),fr)
+mrows=sorted(mrows.items(),key=lambda x:-x[1])[:40]
+mb={'ядро':[],'тело':[],'gap':[]}
+for ph,fr in mrows: mb[classify(ph,mak_core,mak_body)].append(f"{ph} ({fr})")
+out.append("## МАК-кластер (16 статей, общий CSV wordstat-F-mak)")
+out.append("_Проверка: покрыт ли запрос ХОТЯ БЫ ОДНОЙ из 16 МАК-статей. gap = МАК-запрос, не покрытый нигде._")
+out.append(f"**ядро (в title/H2/FAQ какой-то статьи):** {'; '.join(mb['ядро']) or '—'}  ")
+out.append(f"**тело/синонимы:** {'; '.join(mb['тело']) or '—'}  ")
+out.append(f"**⚠️ gap → роадмап:** {'; '.join(mb['gap']) if mb['gap'] else '— нет'}")
+out.append("")
+
+# ── Постоянный футер (не теряется при регенерации) ──
+out.append("""---
+
+## Роадмап из gap-ов (отдельные статьи — свой интент)
+Писать ТОЛЬКО после сбора Wordstat по теме (правило №0).
+- **Социальная тревожность** (~7,5K) → своя статья «Социальная тревожность / страх оценки в общении». Кратко упомянута в kak-spravitsya-s-trevogoy.
+
+## Закрытые gap-ы (вписаны в тело/FAQ)
+- navyazchivye-mysli: «лезут плохие мысли» — в лид.
+- kak-spravitsya-s-revnostyu: «ревность к бывшим» — новый FAQ.
+- roditelskoe-vygoranie: «нет сил на ребёнка» (ед.ч.) — в тело.
+- kak-spravitsya-s-trevogoy: виды тревоги (ситуативная/фоновая/социальная) — в тело.
+
+## Вне реестра (нет per-article дампа)
+- celi-na-novyy-god, vygoranie — отдельного Wordstat-дампа нет; проверить после сбора.
+""")
+
 open("docs/seo/ключи-разбор.md","w",encoding='utf-8').write("\n".join(out))
-print("готово, gap-ов всего:", sum(1 for _ in re.finditer(r'gap → роадмап:\*\* (?!— нет)', "\n".join(out))))
+print("готово. статей-секций:", sum(1 for l in out if l.startswith('## ')), "| МАК gap:", len(mb['gap']))
