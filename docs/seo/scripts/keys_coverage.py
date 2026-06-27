@@ -56,6 +56,12 @@ MAP=[
  ("smart-celi","2. smart цели.docx"),
  ("net-celi","3. нет цели.docx"),
  ("dostizhenie-celi","1. достижение цели.docx"),
+ ("vygoranie","выгорание.docx"),("celi-na-novyy-god","новый год план.docx"),
+ ("snyatie-stressa","снятие стресса.docx"),("socialnaya-trevozhnost","человек который боится людей.docx"),
+ ("strah-budushchego","страх будущего.docx"),("trevozhnaya-bessonnica","бессонница.docx"),
+ ("kak-perestat-zavidovat","зависть.docx"),("perepady-nastroeniya","эмоциональные качели.docx"),
+ ("strah-otverzheniya","страх отвержения.docx"),("zavisimost-ot-chuzhogo-mneniya","что подумают люди.docx"),
+ ("sryvayus-na-rebenke","срываюсь на ребёнке.docx"),("prokrastinaciya","прокрастинация.docx"),
 ]
 out=["# Реестр покрытия ключей (Wordstat → статья)","",
 "Авто-разбор: по каждому дампу топ чистых запросов классифицирован — **ядро** (title/H2/FAQ), **тело/синонимы**, **gap → роадмап**.",

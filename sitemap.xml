@@ -55,7 +55,7 @@
   </url>
   <url>
     <loc>https://macmagia.ru/blog/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -122,6 +122,12 @@
   <url>
     <loc>https://macmagia.ru/blog/kak-otpustit-obidu.html</loc>
     <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/kak-perestat-zavidovat.html</loc>
+    <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -270,6 +276,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/perepady-nastroeniya.html</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/perfekcionizm.html</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -278,6 +290,12 @@
   <url>
     <loc>https://macmagia.ru/blog/prinyatie-tela.html</loc>
     <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/prokrastinaciya.html</loc>
+    <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -318,6 +336,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/snyatie-stressa.html</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/socialnaya-trevozhnost.html</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/sozavisimost.html</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -330,6 +360,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/sryvayus-na-rebenke.html</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/strah-budushchego.html</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/strah-otverzheniya.html</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/strah-proyavlyatsya.html</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -338,6 +386,12 @@
   <url>
     <loc>https://macmagia.ru/blog/toksichnye-roditeli.html</loc>
     <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/trevozhnaya-bessonnica.html</loc>
+    <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -362,6 +416,12 @@
   <url>
     <loc>https://macmagia.ru/blog/zaedanie-emocij.html</loc>
     <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/zavisimost-ot-chuzhogo-mneniya.html</loc>
+    <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
