@@ -5,6 +5,11 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    # Ежедневная автопубликация: пересобирает блог и выкатывает статьи,
+    # у которых publishedAt уже наступил (по 10 в день через отложенные даты).
+    # 06:10 UTC = 09:10 МСК.
+    - cron: "10 6 * * *"
 
 concurrency:
   group: production-deploy-root

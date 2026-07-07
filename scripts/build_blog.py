@@ -1011,6 +1011,18 @@ def main():
 
     metas = [collect_meta(p) for p in md_files]
 
+    # Отложенная публикация: статьи с publishedAt в будущем не попадают в сборку,
+    # пока не наступит их дата. Ежедневный деплой по расписанию (cron в GitHub Actions)
+    # пересобирает блог и выкатывает статьи, у которых дата уже наступила — по 10 в день.
+    today = datetime.date.today()
+    scheduled = [m for m in metas if ensure_date(m["publishedAt"]) > today]
+    for m in sorted(scheduled, key=lambda m: str(m["publishedAt"])):
+        print(f"  scheduled (skip until {m['publishedAt']}): {m['slug']}")
+    metas = [m for m in metas if ensure_date(m["publishedAt"]) <= today]
+    if not metas:
+        print("No articles due for publication yet.")
+        return 0
+
     for meta in metas:
         path = meta["__path"]
         out = BLOG_DIR / f"{meta['slug']}.html"
