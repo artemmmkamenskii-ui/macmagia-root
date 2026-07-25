@@ -66,6 +66,21 @@ def inject_metrika(html):
     return html.replace("</head>", YM_SNIPPET + "</head>", 1)
 DEFAULT_OG_IMAGE = f"{SITE_URL}/about.jpg"
 
+
+def resolve_og_image(fm):
+    """Обложка статьи для Google Discover / og:image / schema.
+    Приоритет: явный ogImage → своё фото cover: → сгенерированная
+    blog/covers/<slug>.jpg → общий дефолт. Возвращает абсолютный URL."""
+    if fm.get("ogImage"):
+        return fm["ogImage"]
+    cover = fm.get("cover")
+    if cover:
+        return cover if cover.startswith("http") else f"{SITE_URL}{cover}"
+    slug = fm.get("slug")
+    if slug and (BLOG_DIR / "covers" / f"{slug}.jpg").exists():
+        return f"{SITE_URL}/blog/covers/{slug}.jpg"
+    return DEFAULT_OG_IMAGE
+
 AUTHORS = {
     "ekaterina-kamenskaya": {
         "name": "Екатерина Каменская",
@@ -392,7 +407,7 @@ def build_jsonld(fm, faq_items, author, canonical):
         "mainEntityOfPage": canonical,
         "headline": fm["title"],
         "description": fm["description"],
-        "image": fm.get("ogImage", DEFAULT_OG_IMAGE),
+        "image": resolve_og_image(fm),
         "datePublished": str(fm["publishedAt"]),
         "dateModified": str(fm.get("updatedAt", fm["publishedAt"])),
         "inLanguage": "ru-RU",
@@ -638,7 +653,7 @@ def render_article(md_path, all_meta):
     pub_human = format_ru_date(pub)
 
     tag_label = fm.get("category") or (fm.get("tags") or ["Блог"])[0]
-    og_image = fm.get("ogImage", DEFAULT_OG_IMAGE)
+    og_image = resolve_og_image(fm)
 
     article_tags_meta = "\n".join(
         f'    <meta property="article:tag" content="{html_escape(t)}">'
