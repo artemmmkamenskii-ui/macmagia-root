@@ -40,7 +40,8 @@ ARTICLES = ROOT / "docs" / "seo" / "articles"
 OUT = ROOT / "blog" / "covers"
 TEMPLATE = SCRIPTS / "cover_template.html"
 
-W, H = 1600, 900
+W, H = 1600, 900          # обложка статьи (og:image, Discover)
+PIN_W, PIN_H = 1000, 1500  # вертикальный пин для Pinterest (2:3)
 QUALITY = 85
 N_VARIANTS = 6
 N_SHIFTS = 3
@@ -80,7 +81,8 @@ def make_hook(meta):
     return " ".join(acc).strip(" .,:") or title[:30]
 
 
-def render(hook, category, emoji, variant, shift, out_path):
+def render(hook, category, emoji, variant, shift, out_path, fmt="cover"):
+    w, h = (PIN_W, PIN_H) if fmt == "pin" else (W, H)
     html = TEMPLATE.read_text(encoding="utf-8")
     for k, v in {
         "{{HOOK}}": hook,
@@ -88,6 +90,7 @@ def render(hook, category, emoji, variant, shift, out_path):
         "{{EMOJI}}": emoji or "",
         "{{VARIANT}}": str(variant),
         "{{SHIFT}}": str(shift),
+        "{{FORMAT}}": fmt,
     }.items():
         html = html.replace(k, v)
 
@@ -101,14 +104,14 @@ def render(hook, category, emoji, variant, shift, out_path):
                 [
                     CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars",
                     "--force-device-scale-factor=1", "--allow-file-access-from-files",
-                    "--virtual-time-budget=2500", f"--window-size={W},{H}",
+                    "--virtual-time-budget=2500", f"--window-size={w},{h}",
                     f"--screenshot={png}", tmp.as_uri(),
                 ],
                 check=True, capture_output=True, timeout=90,
             )
             img = Image.open(png).convert("RGB")
-            if img.size != (W, H):
-                img = img.resize((W, H), Image.LANCZOS)
+            if img.size != (w, h):
+                img = img.resize((w, h), Image.LANCZOS)
             img.save(out_path, "JPEG", quality=QUALITY, optimize=True, progressive=True)
     finally:
         tmp.unlink(missing_ok=True)
@@ -149,7 +152,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true", help="перерисовать все")
     ap.add_argument("--only", help="один slug")
-    ap.add_argument("--demo", action="store_true", help="6 демо-обложек в blog/covers/_demo/")
+    ap.add_argument("--demo", action="store_true", help="6 демо-обложек")
+    ap.add_argument("--pins", action="store_true",
+                    help="вертикальные пины 1000x1500 для Pinterest в blog/pins/")
     args = ap.parse_args()
 
     if not Path(CHROME).exists():
@@ -158,13 +163,15 @@ def main():
     if args.demo:
         demo_dir = ROOT / "docs" / "seo" / "cover-demo"
         demo_dir.mkdir(parents=True, exist_ok=True)
+        fmt = "pin" if args.pins else "cover"
         for i, (hook, cat, em) in enumerate(DEMO, start=1):
-            out = demo_dir / f"variant{i}.jpg"
-            render(hook, cat, em, i, i % N_SHIFTS, out)
+            out = demo_dir / f"{'pin' if args.pins else 'variant'}{i}.jpg"
+            render(hook, cat, em, i, i % N_SHIFTS, out, fmt=fmt)
             print(f"  demo {out.relative_to(ROOT)}  [{hook}]")
         return
 
-    OUT.mkdir(parents=True, exist_ok=True)
+    out_dir = (ROOT / "blog" / "pins") if args.pins else OUT
+    out_dir.mkdir(parents=True, exist_ok=True)
     made = skipped = 0
     for md in sorted(ARTICLES.glob("*.md")):
         meta = load_meta(md)
@@ -175,14 +182,14 @@ def main():
             continue
         if meta.get("cover"):  # своё реальное фото — не трогаем
             continue
-        out = OUT / f"{slug}.jpg"
+        out = out_dir / f"{slug}.jpg"
         if out.exists() and not args.force:
             skipped += 1
             continue
         hook, cat, em, variant, shift = cover_params(meta, slug)
-        render(hook, cat, em, variant, shift, out)
+        render(hook, cat, em, variant, shift, out, fmt="pin" if args.pins else "cover")
         made += 1
-        print(f"  cover blog/covers/{slug}.jpg  v{variant}  [{hook}]")
+        print(f"  {out.relative_to(ROOT)}  v{variant}  [{hook}]")
     print(f"\nDone. Сгенерировано {made}, пропущено {skipped}.")
 
 

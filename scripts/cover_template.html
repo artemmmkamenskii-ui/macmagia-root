@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-format="{{FORMAT}}">
 <head>
 <meta charset="utf-8">
 <title>cover</title>
@@ -99,6 +99,31 @@ body[data-variant="6"] .blob { filter: blur(100px); }
 body[data-variant="6"] .core { opacity: .9; }
 body[data-variant="6"] .grain { mix-blend-mode: soft-light; opacity: .35; }
 
+/* ---------- вертикальный формат 1000x1500 (2:3) для Pinterest ---------- */
+html[data-format="pin"], html[data-format="pin"] body { width: 1000px; height: 1500px; }
+html[data-format="pin"] .wrap { padding: 72px 68px; }
+html[data-format="pin"] .pill { font-size: 30px; padding: 17px 34px; }
+html[data-format="pin"] #hook { max-width: 100%; font-size: 118px; }
+html[data-format="pin"] .mid { justify-content: center; padding: 0; }
+html[data-format="pin"] #emoji { width: 118px; height: 118px; font-size: 60px; margin-top: 34px; }
+html[data-format="pin"] .brand svg { width: 46px; height: 46px; }
+html[data-format="pin"] .brand span { font-size: 36px; }
+/* пятна собираем сверху и снизу, чтобы середина осталась под текст */
+html[data-format="pin"] .blob--a { width: 820px; height: 820px; right: -260px; top: -300px; }
+html[data-format="pin"] .blob--b { width: 760px; height: 760px; right: -200px; top: 1020px; opacity: .95; }
+html[data-format="pin"] .blob--c { width: 700px; height: 700px; right: 420px; top: 1140px; opacity: .9; }
+html[data-format="pin"] .blob--d { width: 460px; height: 460px; right: 520px; top: -160px; }
+html[data-format="pin"] .core { right: 120px; top: -60px; width: 520px; height: 520px; }
+/* вторая «жемчужина» внизу — иначе низ пина пустует */
+html[data-format="pin"] .wrap::after {
+  content: ""; position: absolute; left: 40px; bottom: 120px;
+  width: 440px; height: 440px; border-radius: 50%; z-index: -1;
+  background:
+    radial-gradient(circle at 34% 30%, rgba(255,255,255,.9), rgba(255,255,255,0) 46%),
+    conic-gradient(from 40deg, var(--b3), var(--b1), var(--b2), var(--b3));
+  filter: blur(46px); opacity: .7;
+}
+
 /* смещение композиции — чтобы 116 обложек не были под копирку */
 body[data-shift="1"] .blob--a { top: -240px; right: -220px; width: 900px; height: 900px; }
 body[data-shift="1"] .core    { right: 90px;  top: 250px; width: 470px; height: 470px; }
@@ -149,17 +174,19 @@ body[data-shift="2"] .blob--c { top: 520px; right: 420px; }
 (function () {
   var el = document.getElementById('hook');
   if (!el) return;
-  var size = 150, min = 62;
+  var pin = document.documentElement.getAttribute('data-format') === 'pin';
+  var size = pin ? 118 : 150, min = pin ? 54 : 62;
+  var maxLines = pin ? 4 : 3;
   // одно слово («МАК-карты», «Психосоматика») не рвём по дефису — жмём в одну строку
   if (!/\s/.test(el.textContent.trim())) el.style.whiteSpace = 'nowrap';
   function lines() { return Math.round(el.offsetHeight / (size * 0.97)); }
-  while (size > min && (lines() > 3 || el.scrollWidth > el.clientWidth + 1)) {
+  while (size > min && (lines() > maxLines || el.scrollWidth > el.clientWidth + 1)) {
     size -= 3;
     el.style.fontSize = size + 'px';
   }
   // короткие слова — наоборот, крупнее
-  if (lines() === 1 && size === 150 && el.textContent.trim().length <= 11) {
-    el.style.fontSize = '184px';
+  if (lines() === 1 && size === (pin ? 118 : 150) && el.textContent.trim().length <= 11) {
+    el.style.fontSize = (pin ? 142 : 184) + 'px';
   }
   document.documentElement.setAttribute('data-ready', '1');
 })();
