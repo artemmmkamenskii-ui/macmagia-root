@@ -1104,7 +1104,9 @@ def update_rss(metas):
   </channel>
 </rss>
 """
-    (ROOT / "rss.xml").write_text(feed, encoding="utf-8")
+    # кладём в blog/: nginx отдаёт эту папку целиком, а корневые файлы —
+    # по явному списку location, куда rss.xml не входит (отдавал 404)
+    (BLOG_DIR / "rss.xml").write_text(feed, encoding="utf-8")
     return len(items)
 
 
