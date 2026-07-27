@@ -1972,3 +1972,13 @@ img { max-width: 100%; display: block; }
     .latest-grid { grid-template-columns: 1fr; gap: 18px; }
     .latest-card__title { font-size: 17px; }
 }
+
+/* ---------- Статья: callout (предупреждение / клиническая оговорка) ---------- */
+.article__callout {
+    margin: 28px 0; padding: 20px 24px;
+    border-radius: var(--radius-md); border-left: 4px solid var(--violet-400);
+    background: var(--violet-50); color: var(--ink-80);
+    font-size: 16px; line-height: 1.65;
+}
+.article__callout--warning { border-left-color: var(--amber-500); background: #fff8ed; }
+.article__callout strong { color: var(--ink); }

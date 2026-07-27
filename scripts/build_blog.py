@@ -318,6 +318,17 @@ def convert_custom_blocks(md_text):
         md_text,
         flags=re.DOTALL,
     )
+    # ::: callout warning
+    #   body
+    # :::
+    md_text = re.sub(
+        r":::\s*callout\s+(\w+)\s*\n(.+?)\n:::\s*",
+        lambda m: (f'\n\n<aside class="article__callout article__callout--{m.group(1)}">'
+                   f'{render_inline_md(m.group(2).strip())}'
+                   f'</aside>\n\n'),
+        md_text,
+        flags=re.DOTALL,
+    )
     # --- on its own line → decorative divider
     md_text = re.sub(
         r"^---\s*$",
@@ -636,6 +647,17 @@ def render_article(md_path, all_meta):
     )
     body_html = md.convert(body_md)
     body_html = body_html.replace("<!--MMFAQ-->", render_faq_cards(faq_items))
+
+    # Ни один ::: не должен пережить конвертацию. Раньше однострочный
+    # «::: cta /coach "…" :::» и неподдержанный «::: callout» уезжали на сайт
+    # сырым текстом и висели там незамеченными.
+    leak = re.search(r":::.*", body_html)
+    if leak:
+        raise ValueError(
+            f"{md_path.name}: незакрытый или неподдержанный ::: -блок — "
+            f"«{leak.group(0)[:90]}». Блок должен быть в три строки: "
+            f"открывающая ::: с типом, тело, закрывающая :::"
+        )
 
     toc_items = extract_toc_from_html(body_html)
     toc_html = render_toc(toc_items)
@@ -987,6 +1009,105 @@ def update_landing_latest(metas, limit=6):
     return len(latest)
 
 
+# ---------- RSS для Дзена ----------
+# Дзен импортирует материалы по RSS: канал настраивается один раз, дальше
+# статьи уезжают туда сами в том же ритме, что и на сайт.
+# RSS_TEASER_PARAS = 0 — отдавать полный текст (Дзен так работает лучше всего);
+# число N — отдать первые N абзацев и ссылку «продолжение на сайте».
+RSS_TEASER_PARAS = 0
+RSS_LIMIT = 50
+
+RFC822_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+RFC822_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def rfc822(d):
+    """Дата в формате RSS. Собираем вручную: strftime зависит от локали."""
+    return (f"{RFC822_DAYS[d.weekday()]}, {d.day:02d} {RFC822_MONTHS[d.month - 1]} "
+            f"{d.year} 09:00:00 +0300")
+
+
+def rss_body_html(md_path):
+    """Тело статьи для ленты: без оглавления, CTA-кнопок и карточек продуктов —
+    в Дзене они не нужны и всё равно вырезаются. Ссылки — абсолютные."""
+    raw = md_path.read_text(encoding="utf-8")
+    fm, body_md = parse_frontmatter(raw)
+
+    body_md = strip_h1(body_md)
+    body_md = strip_toc_section(body_md)
+    body_md = strip_legacy_related(body_md)
+    faq_items, body_md = extract_faq(body_md)
+
+    # промо-блоки вырезаем целиком, цитаты превращаем в blockquote
+    body_md = re.sub(r':::\s*cta\s+\S+\s+"[^"]+"\s*\n.+?\n:::\s*', "\n\n",
+                     body_md, flags=re.DOTALL)
+    body_md = re.sub(r":::\s*(?:pullquote|callout\s+\w+)\s*\n(.+?)\n:::\s*",
+                     lambda m: f"\n\n> {m.group(1).strip()}\n\n",
+                     body_md, flags=re.DOTALL)
+    body_md = re.sub(r"^---\s*$", "", body_md, flags=re.MULTILINE)
+    if ":::" in body_md:
+        raise ValueError(f"{md_path.name}: ::: -блок не разобран для RSS")
+
+    md = md_lib.Markdown(extensions=["tables", "fenced_code"], output_format="html5")
+    html_body = md.convert(body_md)
+    html_body = html_body.replace("<!--MMFAQ-->", "")
+
+    if faq_items:
+        parts = ["<h2>Частые вопросы</h2>"]
+        for q, a in faq_items:
+            parts.append(f"<h3>{html_escape(q)}</h3>\n<p>{render_inline_md(a)}</p>")
+        html_body += "\n" + "\n".join(parts)
+
+    if RSS_TEASER_PARAS:
+        paras = re.findall(r"<p>.*?</p>", html_body, flags=re.DOTALL)
+        html_body = "\n".join(paras[:RSS_TEASER_PARAS])
+        html_body += (f'\n<p><a href="{SITE_URL}/blog/{fm["slug"]}.html">'
+                      f'Продолжение читайте на сайте</a></p>')
+    else:
+        html_body += (f'\n<p><a href="{SITE_URL}/blog/{fm["slug"]}.html">'
+                      f'Источник: МакМагия</a></p>')
+
+    # относительные ссылки → абсолютные, иначе в Дзене они ведут в никуда
+    html_body = re.sub(r'(href|src)="/(?!/)', rf'\1="{SITE_URL}/', html_body)
+    return html_body
+
+
+def update_rss(metas):
+    ordered = sorted(metas, key=lambda m: str(m["publishedAt"]), reverse=True)[:RSS_LIMIT]
+    items = []
+    for m in ordered:
+        link = f"{SITE_URL}/blog/{m['slug']}.html"
+        author = AUTHORS.get(m.get("authorSlug", DEFAULT_AUTHOR), AUTHORS[DEFAULT_AUTHOR])
+        items.append(f"""    <item>
+      <title>{html_escape(str(m["title"]))}</title>
+      <link>{link}</link>
+      <guid isPermaLink="true">{link}</guid>
+      <pubDate>{rfc822(ensure_date(m["publishedAt"]))}</pubDate>
+      <author>{html_escape(author["name"])}</author>
+      <category>{html_escape(str(m.get("category") or "Психология"))}</category>
+      <description>{html_escape(str(m["description"]))}</description>
+      <enclosure url="{resolve_og_image(m)}" type="image/jpeg" length="0"/>
+      <content:encoded><![CDATA[{rss_body_html(m["__path"])}]]></content:encoded>
+    </item>""")
+
+    feed = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>МакМагия — блог о психологии и арт-терапии</title>
+    <link>{SITE_URL}/blog/</link>
+    <description>Разборы, техники и упражнения по психологии, арт-терапии и метафорическим картам.</description>
+    <language>ru</language>
+{chr(10).join(items)}
+  </channel>
+</rss>
+"""
+    (ROOT / "rss.xml").write_text(feed, encoding="utf-8")
+    return len(items)
+
+
 def update_sitemap(metas, today):
     text = SITEMAP.read_text(encoding="utf-8")
     text = re.sub(
@@ -1113,6 +1234,9 @@ def main():
 
     (BLOG_DIR / "index.html").write_text(inject_metrika(render_hub(metas)), encoding="utf-8")
     print("  built blog/index.html")
+
+    n_rss = update_rss(metas)
+    print(f"  updated rss.xml ({n_rss} материалов для Дзена)")
 
     n_latest = update_landing_latest(metas)
     if n_latest:
