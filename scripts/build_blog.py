@@ -1092,6 +1092,15 @@ def main():
     for m in sorted(scheduled, key=lambda m: str(m["publishedAt"])):
         print(f"  scheduled (skip until {m['publishedAt']}): {m['slug']}")
     metas = [m for m in metas if ensure_date(m["publishedAt"]) <= today]
+
+    # Не просто «не собирать», а снести уже лежащий HTML: файл мог остаться от
+    # прошлой сборки (когда дата была в прошлом) — тогда rsync выложит его на
+    # сервер и статья окажется доступна по прямой ссылке раньше срока.
+    for m in scheduled:
+        stale = BLOG_DIR / f"{m['slug']}.html"
+        if stale.exists():
+            stale.unlink()
+            print(f"  removed premature blog/{m['slug']}.html")
     if not metas:
         print("No articles due for publication yet.")
         return 0
