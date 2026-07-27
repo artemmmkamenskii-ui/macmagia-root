@@ -2,8 +2,8 @@
 slug: kto-takoy-psiholog
 title: "Кто такой психолог: чем занимается и когда к нему идти"
 description: "Психолог — это кто и чем он отличается от психотерапевта и психиатра. Разбираем, с какими запросами идут к психологу, когда нужен врач и как выбрать своего специалиста."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-07-30
+updatedAt: 2026-07-30
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🧭

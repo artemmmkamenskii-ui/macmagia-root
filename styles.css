@@ -1947,3 +1947,28 @@ img { max-width: 100%; display: block; }
     .article-products__name { font-size: 14px; }
     .article-products__text { font-size: 12px; }
 }
+
+/* ---------- Главная: свежее в блоге ---------- */
+.latest-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.latest-card {
+    display: flex; flex-direction: column; text-decoration: none;
+    background: #fff; border: 1px solid var(--border-soft); border-radius: var(--radius-lg);
+    overflow: hidden; transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.latest-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--violet-200); }
+.latest-card__img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: var(--violet-50); }
+.latest-card__body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 10px; }
+.latest-card__meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.latest-card__title { font-size: 18px; font-weight: 700; line-height: 1.35; color: var(--ink); }
+.latest-card:hover .latest-card__title { color: var(--violet-700); }
+.latest__more { margin-top: 36px; text-align: center; }
+
+@media (max-width: 900px) {
+    .latest-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+@media (max-width: 640px) {
+    .latest-grid { grid-template-columns: 1fr; gap: 18px; }
+    .latest-card__title { font-size: 17px; }
+}

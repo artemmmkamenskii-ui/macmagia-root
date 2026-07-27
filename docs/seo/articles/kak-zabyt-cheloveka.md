@@ -2,8 +2,8 @@
 slug: kak-zabyt-cheloveka
 title: "Как забыть человека: почему память держит и что с этим делать"
 description: "Как забыть человека и пережить расставание, если мысли возвращаются к нему снова и снова: почему так трудно отпустить и какие упражнения арт-терапии помогают."
-publishedAt: 2026-07-01
-updatedAt: 2026-07-01
+publishedAt: 2026-07-28
+updatedAt: 2026-07-28
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 🍂

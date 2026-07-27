@@ -2,8 +2,8 @@
 slug: deviantnoe-povedenie-podrostkov
 title: "Девиантное поведение подростков: причины и что делать родителю"
 description: "Почему подросток начинает вести себя вызывающе и что за этим стоит: что такое девиантное поведение, какие у него причины и виды, как реагировать родителю и специалисту без клеймения."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-07-29
+updatedAt: 2026-07-29
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🧭

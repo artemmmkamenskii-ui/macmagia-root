@@ -2,8 +2,8 @@
 slug: tipy-privyazannosti
 title: "Типы привязанности: как ранний опыт определяет наши отношения"
 description: "Тревожный, избегающий, тревожно-избегающий и надёжный типы привязанности: откуда они берутся по теории Боулби и Эйнсворт, как узнать свой и можно ли его изменить."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-08-01
+updatedAt: 2026-08-01
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🔗

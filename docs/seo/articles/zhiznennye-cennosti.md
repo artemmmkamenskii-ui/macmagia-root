@@ -2,8 +2,8 @@
 slug: zhiznennye-cennosti
 title: "Жизненные ценности: что это и как определить свои"
 description: "Что такое жизненные ценности и зачем их осознавать, чем ценности отличаются от целей и как определить свою систему ценностей через простое упражнение на прояснение."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-08-01
+updatedAt: 2026-08-01
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 🧭

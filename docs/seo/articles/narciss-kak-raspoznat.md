@@ -2,8 +2,8 @@
 slug: narciss-kak-raspoznat
 title: "Нарцисс: как распознать и что делать в отношениях"
 description: "Кто такой нарцисс простыми словами: чем черты характера отличаются от нарциссического расстройства, как нарцисс ведёт себя в отношениях и как защищать свои границы рядом с ним."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-07-30
+updatedAt: 2026-07-30
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🎭

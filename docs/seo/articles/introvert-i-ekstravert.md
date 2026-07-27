@@ -2,8 +2,8 @@
 slug: introvert-i-ekstravert
 title: "Интроверт и экстраверт: в чём разница и как с этим жить"
 description: "Кто такой интроверт и чем он отличается от экстраверта: откуда взялась эта шкала, почему интроверт — не то же самое, что стеснительный, кто такой амбиверт и как понять свой полюс."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-07-30
+updatedAt: 2026-07-30
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🔋

@@ -2,8 +2,8 @@
 slug: kak-stat-psihologom
 title: "Как стать психологом: пути в профессию и с чего начать"
 description: "Как стать психологом с нуля: вузы и курсы переподготовки, направления, с чего начать обучение и на что смотреть при выборе курсов. Честный разбор без обещаний «за месяц»."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-07-30
+updatedAt: 2026-07-30
 authorSlug: ekaterina-kamenskaya
 category: "Обучение"
 emoji: 🎓

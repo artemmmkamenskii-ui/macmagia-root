@@ -2,8 +2,8 @@
 slug: akcentuacii-haraktera
 title: "Акцентуации характера: что это, типы по Личко и Леонгарду"
 description: "Что такое акцентуация характера простыми словами, чем она отличается от расстройства личности, какие бывают типы по Личко и Леонгарду и зачем знать свою акцентуацию."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-07-28
+updatedAt: 2026-07-28
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🧩

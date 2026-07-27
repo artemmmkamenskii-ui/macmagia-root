@@ -2,8 +2,8 @@
 slug: agressiya-prichiny
 title: "Агрессия: что это такое, её виды и причины"
 description: "Что такое агрессия, где проходит граница между нормой и проблемой, какие бывают виды агрессии — прямая, пассивная, аутоагрессия — и что стоит за агрессивным поведением."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-07-28
+updatedAt: 2026-07-28
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🌋

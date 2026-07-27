@@ -2,8 +2,8 @@
 slug: mbti-tipy-lichnosti
 title: "Тип личности по MBTI: 16 типов, 4 дихотомии и честно про критику"
 description: "Что такое MBTI простыми словами: четыре дихотомии, 16 типов личности, чем интроверт отличается от экстраверта — и почему психологи спорят о валидности этой типологии."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-07-30
+updatedAt: 2026-07-30
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🧩

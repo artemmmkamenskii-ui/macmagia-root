@@ -2,8 +2,8 @@
 slug: kak-perezhit-izmenu
 title: "Как пережить измену: путь через боль к ясности"
 description: "Как пережить измену мужа или партнёра и решить, прощать ли: почему так больно, что происходит внутри и какие упражнения арт-терапии помогают опереться на себя."
-publishedAt: 2026-07-01
-updatedAt: 2026-07-01
+publishedAt: 2026-07-28
+updatedAt: 2026-07-28
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 💔

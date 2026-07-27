@@ -929,6 +929,64 @@ def render_regular_card(meta):
     )
 
 
+def update_landing_latest(metas, limit=6):
+    """Блок «Свежее в блоге» на главной.
+
+    Нужен не для красоты: до него с главной не было ни одной прямой ссылки на
+    статью — все они лежали на глубине двух кликов за /blog/, и краулер молодого
+    домена до них почти не доходил (GSC: «Обнаружена, не проиндексирована»).
+    Перестраивается при каждой сборке между маркерами LATEST_POSTS.
+    """
+    index = ROOT / "index.html"
+    if not index.exists():
+        return 0
+    text = index.read_text(encoding="utf-8")
+    if "<!-- LATEST_POSTS:START -->" not in text:
+        return 0
+
+    # свежие сначала, но не больше двух из одной рубрики — иначе блок
+    # вырождается в шесть подряд «Медитаций» из одного батча
+    ordered = sorted(metas, key=lambda m: str(m["publishedAt"]), reverse=True)
+    latest, per_cat = [], {}
+    for m in ordered:
+        cat = str(m.get("category") or "Блог")
+        if per_cat.get(cat, 0) >= 2:
+            continue
+        per_cat[cat] = per_cat.get(cat, 0) + 1
+        latest.append(m)
+        if len(latest) == limit:
+            break
+    cards = []
+    for m in latest:
+        cover = resolve_og_image(m).replace(SITE_URL, "")
+        date = m.get("pub_human") or format_ru_date(ensure_date(m["publishedAt"]))
+        cards.append(
+            f'                <a class="latest-card" href="/blog/{m["slug"]}.html">\n'
+            f'                    <img class="latest-card__img" src="{cover}" alt="" width="480" height="270" loading="lazy">\n'
+            f'                    <div class="latest-card__body">\n'
+            f'                        <div class="latest-card__meta">'
+            f'<span class="blog-card__tag">{html_escape(str(m.get("category") or "Блог"))}</span>'
+            f'<span class="blog-card__date">{date}</span></div>\n'
+            f'                        <h3 class="latest-card__title">{html_escape(str(m["title"]))}</h3>\n'
+            f'                    </div>\n'
+            f'                </a>'
+        )
+    block = (
+        "<!-- LATEST_POSTS:START -->\n"
+        '            <div class="latest-grid">\n'
+        + "\n".join(cards)
+        + "\n            </div>\n            <!-- LATEST_POSTS:END -->"
+    )
+    text = re.sub(
+        r"<!-- LATEST_POSTS:START -->.*?<!-- LATEST_POSTS:END -->",
+        lambda _: block,
+        text,
+        flags=re.DOTALL,
+    )
+    index.write_text(text, encoding="utf-8")
+    return len(latest)
+
+
 def update_sitemap(metas, today):
     text = SITEMAP.read_text(encoding="utf-8")
     text = re.sub(
@@ -1046,6 +1104,10 @@ def main():
 
     (BLOG_DIR / "index.html").write_text(inject_metrika(render_hub(metas)), encoding="utf-8")
     print("  built blog/index.html")
+
+    n_latest = update_landing_latest(metas)
+    if n_latest:
+        print(f"  updated index.html (свежее в блоге: {n_latest})")
 
     update_sitemap(metas, datetime.date.today().isoformat())
     print("  updated sitemap.xml")

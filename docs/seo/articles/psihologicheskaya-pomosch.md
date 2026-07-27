@@ -2,8 +2,8 @@
 slug: psihologicheskaya-pomosch
 title: "Психологическая помощь: куда обратиться и как выбрать формат"
 description: "Где получить психологическую помощь, если тяжело: какие форматы бывают, куда обратиться бесплатно, чем отличается онлайн от очного и как выбрать то, что подойдёт именно вам."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-07-31
+updatedAt: 2026-07-31
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🤝

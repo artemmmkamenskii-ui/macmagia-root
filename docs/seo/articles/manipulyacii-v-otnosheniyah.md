@@ -2,8 +2,8 @@
 slug: manipulyacii-v-otnosheniyah
 title: "Манипуляции в отношениях: как распознать и выйти"
 description: "Что такое манипуляция и как противостоять манипуляциям в отношениях: виды скрытого давления, треугольник Карпмана и мягкие способы вернуть себе опору без войны."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-07-30
+updatedAt: 2026-07-30
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🎭

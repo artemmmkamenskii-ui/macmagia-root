@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>cover</title>
+<style>
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-SemiBold.woff2') format('woff2'); font-weight: 600; font-display: block; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-ExtraBold.woff2') format('woff2'); font-weight: 800; font-display: block; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1600px; height: 900px; overflow: hidden; }
+
+body {
+  position: relative;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--card);
+  --card:    #faf8ff;
+  --ink:     #2e1065;
+  --pill-bg: #7c3aed;
+  --pill-fg: #ffffff;
+  --mark:    #7c3aed;
+  --wordmark:#2e1065;
+  /* blob-цвета по вариантам */
+  --b1: #a78bfa;
+  --b2: #f472b6;
+  --b3: #c4b5fd;
+  --b4: #8b5cf6;
+}
+
+/* ---------- blob (размытые цветные пятна справа) ---------- */
+.blob { position: absolute; border-radius: 50%; filter: blur(90px); }
+.blob--a { width: 780px; height: 780px; right: -120px; top: -140px;
+           background: radial-gradient(circle at 35% 35%, var(--b1), transparent 68%); opacity: .95; }
+.blob--b { width: 640px; height: 640px; right: 40px;  top: 240px;
+           background: radial-gradient(circle at 50% 50%, var(--b2), transparent 66%); opacity: .85; }
+.blob--c { width: 560px; height: 560px; right: 300px; top: 420px;
+           background: radial-gradient(circle at 50% 50%, var(--b3), transparent 68%); opacity: .8; }
+.blob--d { width: 420px; height: 420px; right: -60px; top: 470px;
+           background: radial-gradient(circle at 50% 50%, var(--b4), transparent 65%); opacity: .7; }
+
+/* ядро — плотная «жемчужина» внутри пятна, даёт глубину как в мокапе */
+.core { position: absolute; right: 130px; top: 190px; width: 520px; height: 520px; border-radius: 50%;
+        background:
+          radial-gradient(circle at 32% 28%, rgba(255,255,255,.95), rgba(255,255,255,0) 45%),
+          conic-gradient(from 210deg, var(--b2), var(--b1), var(--b3), var(--b4), var(--b2));
+        filter: blur(38px); opacity: .82; }
+
+/* ---------- контент ---------- */
+.wrap { position: absolute; inset: 0; padding: 84px 90px; display: flex; flex-direction: column; }
+
+.pill {
+  align-self: flex-start;
+  background: var(--pill-bg); color: var(--pill-fg);
+  font-weight: 800; font-size: 34px; letter-spacing: .06em; text-transform: uppercase;
+  padding: 20px 40px; border-radius: 999px; white-space: nowrap;
+  box-shadow: 0 10px 30px rgba(110,80,200,.22);
+}
+
+.mid { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 34px 0; }
+
+#hook {
+  max-width: 940px;
+  font-weight: 800; font-size: 150px; line-height: .97; letter-spacing: -.025em;
+  text-transform: uppercase; color: var(--ink);
+  text-wrap: balance;
+}
+/* эмодзи в мягком кружке — иначе бледные (🤍, 🌫️) теряются на светлом фоне */
+#emoji {
+  width: 132px; height: 132px; margin-top: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 68px; line-height: 1;
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 12px 34px rgba(110,80,200,.16), inset 0 0 0 1px rgba(255,255,255,.9);
+}
+#emoji:empty { display: none; }
+
+.brand { display: flex; align-items: center; gap: 16px; }
+.brand svg { width: 52px; height: 52px; color: var(--mark); flex: none; }
+.brand span { font-weight: 800; font-size: 40px; letter-spacing: -.01em; color: var(--wordmark); }
+
+/* ---------- зерно ---------- */
+.grain { position: absolute; inset: 0; opacity: .5; mix-blend-mode: multiply; pointer-events: none; }
+
+/* ---------- варианты ---------- */
+body[data-variant="2"] { --b1:#f472b6; --b2:#a78bfa; --b3:#fbcfe8; --b4:#ec4899; }
+body[data-variant="3"] { --b1:#93c5fd; --b2:#a78bfa; --b3:#c4b5fd; --b4:#6366f1; }
+body[data-variant="4"] { --b1:#5eead4; --b2:#a78bfa; --b3:#c4b5fd; --b4:#34d399; }
+body[data-variant="5"] { --b1:#fcd34d; --b2:#f472b6; --b3:#c4b5fd; --b4:#a78bfa; }
+body[data-variant="6"] {
+  --card:#1c0f3d; --ink:#f6f3ff; --pill-bg:#ffffff; --pill-fg:#2e1065;
+  --mark:#c4b5fd; --wordmark:#ede8ff;
+  --b1:#7c3aed; --b2:#ec4899; --b3:#6d28d9; --b4:#4c1d95;
+  background: radial-gradient(1200px 900px at 12% 0%, #2e1065 0%, #15112e 70%);
+}
+body[data-variant="6"] #emoji { background: rgba(255,255,255,.12);
+  box-shadow: 0 12px 34px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.18); }
+body[data-variant="6"] .blob { filter: blur(100px); }
+body[data-variant="6"] .core { opacity: .9; }
+body[data-variant="6"] .grain { mix-blend-mode: soft-light; opacity: .35; }
+
+/* смещение композиции — чтобы 116 обложек не были под копирку */
+body[data-shift="1"] .blob--a { top: -240px; right: -220px; width: 900px; height: 900px; }
+body[data-shift="1"] .core    { right: 90px;  top: 250px; width: 470px; height: 470px; }
+body[data-shift="2"] .blob--b { top: 120px; right: -80px; }
+body[data-shift="2"] .core    { right: 190px; top: 140px; width: 560px; height: 560px; }
+body[data-shift="2"] .blob--c { top: 520px; right: 420px; }
+</style>
+</head>
+<body data-variant="{{VARIANT}}" data-shift="{{SHIFT}}">
+
+  <div class="blob blob--a"></div>
+  <div class="blob blob--b"></div>
+  <div class="blob blob--c"></div>
+  <div class="blob blob--d"></div>
+  <div class="core"></div>
+
+  <div class="wrap">
+    <div class="pill">{{CATEGORY}}</div>
+
+    <div class="mid">
+      <div id="hook">{{HOOK}}</div>
+      <div id="emoji">{{EMOJI}}</div>
+    </div>
+
+    <div class="brand">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="6" fill="currentColor"/>
+        <g stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+          <path d="M20 6 L20 14"/><path d="M20 26 L20 34"/>
+          <path d="M6 20 L14 20"/><path d="M26 20 L34 20"/>
+          <path d="M10 10 L15.5 15.5"/><path d="M24.5 24.5 L30 30"/>
+          <path d="M30 10 L24.5 15.5"/><path d="M15.5 24.5 L10 30"/>
+        </g>
+      </svg>
+      <span>МакМагия</span>
+    </div>
+  </div>
+
+  <svg class="grain" xmlns="http://www.w3.org/2000/svg">
+    <filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".07"/></feComponentTransfer></filter>
+    <rect width="100%" height="100%" filter="url(#n)"/>
+  </svg>
+
+<script>
+// авто-подгон кегля: ужимаем, пока заголовок не влезет в 3 строки и в свою колонку
+(function () {
+  var el = document.getElementById('hook');
+  if (!el) return;
+  var size = 150, min = 62;
+  // одно слово («МАК-карты», «Психосоматика») не рвём по дефису — жмём в одну строку
+  if (!/\s/.test(el.textContent.trim())) el.style.whiteSpace = 'nowrap';
+  function lines() { return Math.round(el.offsetHeight / (size * 0.97)); }
+  while (size > min && (lines() > 3 || el.scrollWidth > el.clientWidth + 1)) {
+    size -= 3;
+    el.style.fontSize = size + 'px';
+  }
+  // короткие слова — наоборот, крупнее
+  if (lines() === 1 && size === 150 && el.textContent.trim().length <= 11) {
+    el.style.fontSize = '184px';
+  }
+  document.documentElement.setAttribute('data-ready', '1');
+})();
+</script>
+</body>
+</html>

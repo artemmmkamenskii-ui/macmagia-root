@@ -2,8 +2,8 @@
 slug: uverennost-v-sebe
 title: "Уверенность в себе: откуда берётся и как её развить"
 description: "Что такое уверенность в себе, чем она отличается от самооценки, откуда берётся неуверенность и как стать увереннее через реальный опыт, а не через самовнушение."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-08-01
+updatedAt: 2026-08-01
 authorSlug: ekaterina-kamenskaya
 category: "Самооценка"
 emoji: 🌿

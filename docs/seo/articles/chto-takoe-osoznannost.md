@@ -2,8 +2,8 @@
 slug: chto-takoe-osoznannost
 title: "Что такое осознанность простыми словами: тренируемый навык внимания"
 description: "Что такое осознанность (mindfulness) на самом деле: тренируемый навык внимания с научной базой, который часто путают с медитативным трансом. Как он работает и с чего начать практику."
-publishedAt: 2026-07-07
-updatedAt: 2026-07-07
+publishedAt: 2026-07-29
+updatedAt: 2026-07-29
 authorSlug: ekaterina-kamenskaya
 category: "Осознанность"
 emoji: 🌿
