@@ -9,3 +9,6 @@ reference*.png
 
 # if ever added locally
 node_modules/
+
+# secrets — токены соцсетей, никогда не коммитим
+.env
