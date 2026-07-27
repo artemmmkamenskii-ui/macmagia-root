@@ -1982,3 +1982,13 @@ img { max-width: 100%; display: block; }
 }
 .article__callout--warning { border-left-color: var(--amber-500); background: #fff8ed; }
 .article__callout strong { color: var(--ink); }
+
+/* ---------- Подвал: ссылки на статьи (для обхода краулером) ---------- */
+.footer__articles { padding: 26px 0 6px; border-top: 1px solid rgba(255,255,255,.08); }
+.footer__articles-list {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px 26px; margin-top: 14px;
+}
+.footer__articles-list a { font-size: 13px; line-height: 1.5; opacity: .75; }
+.footer__articles-list a:hover { opacity: 1; }
+@media (max-width: 900px) { .footer__articles-list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .footer__articles-list { grid-template-columns: 1fr; } }

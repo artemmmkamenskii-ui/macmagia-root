@@ -951,6 +951,9 @@ def render_regular_card(meta):
     )
 
 
+FOOTER_LINKS = 24   # сколько ссылок на статьи класть в подвал главной
+
+
 def update_landing_latest(metas, limit=6):
     """Блок «Свежее в блоге» на главной.
 
@@ -1005,6 +1008,26 @@ def update_landing_latest(metas, limit=6):
         text,
         flags=re.DOTALL,
     )
+
+    # Плюс текстовый список ссылок в подвале. Google не сканировал /blog/, а
+    # значит и 71 ссылку с хаба он не видит: «Ссылающаяся страница — не найдено».
+    # Главная — единственная страница, которую он точно знает, поэтому ссылки
+    # на статьи должны стоять именно на ней.
+    if "<!-- FOOTER_LINKS:START -->" in text:
+        shown = {m["slug"] for m in latest}
+        rest = [m for m in ordered if m["slug"] not in shown][:FOOTER_LINKS]
+        links = "\n".join(
+            f'            <a href="/blog/{m["slug"]}.html">{html_escape(str(m["title"]).split(":")[0])}</a>'
+            for m in rest
+        )
+        text = re.sub(
+            r"<!-- FOOTER_LINKS:START -->.*?<!-- FOOTER_LINKS:END -->",
+            lambda _: ('<!-- FOOTER_LINKS:START -->\n        <div class="footer__articles-list">\n'
+                       + links + '\n        </div>\n        <!-- FOOTER_LINKS:END -->'),
+            text,
+            flags=re.DOTALL,
+        )
+
     index.write_text(text, encoding="utf-8")
     return len(latest)
 
