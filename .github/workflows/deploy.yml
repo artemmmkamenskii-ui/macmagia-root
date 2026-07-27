@@ -86,7 +86,10 @@ jobs:
       - name: Post fresh articles to VK
         # Только по расписанию: деплой запускается и на каждый push,
         # иначе одна и та же статья улетела бы в группу несколько раз за день.
-        if: github.event_name == 'schedule'
+        # ОТКЛЮЧЕНО по решению 2026-07-27: VK-статьи через API не создаются,
+        # а полные дубли текста на трастовом vk.com конкурируют с молодым сайтом.
+        # Чтобы вернуть — заменить false на github.event_name == 'schedule'.
+        if: false
         continue-on-error: true
         env:
           VK_TOKEN: ${{ secrets.VK_TOKEN }}
