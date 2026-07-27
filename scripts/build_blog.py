@@ -1070,6 +1070,60 @@ def rss_body_html(md_path):
 
     # относительные ссылки → абсолютные, иначе в Дзене они ведут в никуда
     html_body = re.sub(r'(href|src)="/(?!/)', rf'\1="{SITE_URL}/', html_body)
+    return sanitize_for_dzen(html_body, fm)
+
+
+# Дзен принимает в content:encoded только эти теги, всё остальное режет
+# (или заворачивает ленту на проверке — а проверок даётся три в год).
+DZEN_ALLOWED_TAGS = {"p", "a", "b", "i", "u", "s", "h1", "h2", "h3", "h4",
+                     "blockquote", "ul", "li", "ol", "figure", "img",
+                     "figcaption", "video", "br"}
+
+
+def sanitize_for_dzen(html_body, fm):
+    # YouTube-вставки (<div><iframe>…) — iframe запрещён, отдаём ссылкой
+    def embed_to_link(m):
+        src = re.search(r'src="([^"]+)"', m.group(0))
+        if not src:
+            return ""
+        url = src.group(1).replace("/embed/", "/watch?v=")
+        return f'<p><a href="{url}">Смотреть медитацию на YouTube</a></p>'
+
+    html_body = re.sub(r'<div[^>]*>\s*<iframe.*?</iframe>\s*</div>', embed_to_link,
+                       html_body, flags=re.DOTALL)
+    html_body = re.sub(r'<iframe.*?</iframe>', embed_to_link, html_body, flags=re.DOTALL)
+
+    # таблицы запрещены → разворачиваем в список «ячейка — ячейка»
+    def table_to_list(m):
+        rows = re.findall(r"<tr>(.*?)</tr>", m.group(0), flags=re.DOTALL)
+        out = []
+        for r in rows:
+            cells = [re.sub(r"<[^>]+>", "", c).strip()
+                     for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", r, flags=re.DOTALL)]
+            cells = [c for c in cells if c]
+            if cells:
+                out.append(f"<li>{' — '.join(cells)}</li>")
+        return "<ul>" + "".join(out) + "</ul>" if out else ""
+
+    html_body = re.sub(r"<table.*?</table>", table_to_list, html_body, flags=re.DOTALL)
+
+    # markdown даёт strong/em, Дзен понимает b/i
+    for src, dst in (("strong", "b"), ("em", "i")):
+        html_body = html_body.replace(f"<{src}>", f"<{dst}>").replace(f"</{src}>", f"</{dst}>")
+
+    # у разрешённых тегов оставляем только нужные атрибуты
+    html_body = re.sub(r"<(h[1-4]|p|ul|ol|li|blockquote)\s+[^>]*>", r"<\1>", html_body)
+
+    # последний рубеж: снимаем обёртку с любого тега вне белого списка
+    def unwrap(m):
+        return "" if m.group(2).lower() not in DZEN_ALLOWED_TAGS else m.group(0)
+
+    html_body = re.sub(r"<(/?)\s*([a-zA-Z][a-zA-Z0-9]*)[^>]*>", unwrap, html_body)
+
+    left = {t.lower() for t in re.findall(r"<\s*([a-zA-Z][a-zA-Z0-9]*)", html_body)}
+    bad = left - DZEN_ALLOWED_TAGS
+    if bad:
+        raise ValueError(f"{fm.get('slug')}: в RSS остались запрещённые Дзеном теги: {sorted(bad)}")
     return html_body
 
 
@@ -1078,13 +1132,11 @@ def update_rss(metas):
     items = []
     for m in ordered:
         link = f"{SITE_URL}/blog/{m['slug']}.html"
-        author = AUTHORS.get(m.get("authorSlug", DEFAULT_AUTHOR), AUTHORS[DEFAULT_AUTHOR])
         items.append(f"""    <item>
       <title>{html_escape(str(m["title"]))}</title>
       <link>{link}</link>
       <guid isPermaLink="true">{link}</guid>
       <pubDate>{rfc822(ensure_date(m["publishedAt"]))}</pubDate>
-      <author>{html_escape(author["name"])}</author>
       <category>{html_escape(str(m.get("category") or "Психология"))}</category>
       <description>{html_escape(str(m["description"]))}</description>
       <enclosure url="{resolve_og_image(m)}" type="image/jpeg" length="0"/>
