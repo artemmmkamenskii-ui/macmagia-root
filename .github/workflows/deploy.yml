@@ -83,6 +83,21 @@ jobs:
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
             'if [ -f "$HOME/macmagia/deploy/remove-nginx-root-redirect.sh" ]; then bash "$HOME/macmagia/deploy/remove-nginx-root-redirect.sh" || echo "nginx fix failed — see macmagia-root/deploy/setup-server.sh"; else echo "remove-nginx-root-redirect.sh not found (run setup-server.sh once)"; fi'
 
+      - name: Post fresh articles to VK
+        # Только по расписанию: деплой запускается и на каждый push,
+        # иначе одна и та же статья улетела бы в группу несколько раз за день.
+        if: github.event_name == 'schedule'
+        continue-on-error: true
+        env:
+          VK_TOKEN: ${{ secrets.VK_TOKEN }}
+          VK_GROUP_ID: ${{ secrets.VK_GROUP_ID }}
+        run: |
+          printf 'VK_TOKEN=%s\nVK_GROUP_ID=%s\nVK_API_VERSION=5.199\n' \
+            "$VK_TOKEN" "$VK_GROUP_ID" > .env
+          pip install requests
+          python3 scripts/post_vk.py --limit 10
+          rm -f .env
+
       - name: Health check
         run: |
           fail=0
