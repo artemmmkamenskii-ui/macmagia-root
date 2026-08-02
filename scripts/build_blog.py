@@ -285,6 +285,58 @@ def extract_faq(md_text):
     return items, new
 
 
+TESTS_DIR = ROOT / "docs" / "seo" / "tests"
+
+
+def render_test(test_id):
+    """Интерактивный тест из docs/seo/tests/<id>.yaml.
+
+    Важно для SEO: сюда попадают только вопросы. Тексты результатов живут в
+    самой статье обычными заголовками с якорями — то есть присутствуют в HTML
+    всегда, а не подставляются скриптом. Иначе поисковик увидит пустую
+    страницу с кнопкой, и весь смысл затеи теряется.
+    """
+    spec = yaml.safe_load((TESTS_DIR / f"{test_id}.yaml").read_text(encoding="utf-8"))
+    opts = spec["options"]
+
+    qs = []
+    for i, q in enumerate(spec["questions"]):
+        answers = "".join(
+            f'<label class="quiz__opt"><input type="radio" name="q{i}" '
+            f'value="{o["value"]}" data-scale="{q["scale"]}">'
+            f'<span>{html_escape(o["label"])}</span></label>'
+            for o in opts
+        )
+        qs.append(
+            f'<li class="quiz__q" id="q{i}"><p class="quiz__q-text">{html_escape(q["text"])}</p>'
+            f'<div class="quiz__opts">{answers}</div></li>'
+        )
+
+    cfg = json.dumps({
+        "threshold": spec["threshold"],
+        "total": len(spec["questions"]),
+        "results": spec["results"],
+    }, ensure_ascii=False)
+
+    return (
+        '\n\n<div class="quiz" id="quiz" data-cfg=\'' + cfg + '\'>\n'
+        f'  <ol class="quiz__list">{"".join(qs)}</ol>\n'
+        '  <div class="quiz__foot">\n'
+        '    <div class="quiz__progress"><span id="quiz-bar"></span></div>\n'
+        f'    <p class="quiz__count">Отвечено <b id="quiz-done">0</b> из {len(spec["questions"])}</p>\n'
+        '    <button type="button" class="btn btn--primary" id="quiz-go" disabled>Узнать результат</button>\n'
+        '  </div>\n'
+        '  <div class="quiz__result" id="quiz-result" hidden>\n'
+        '    <div class="quiz__result-head">Ваш тип привязанности</div>\n'
+        '    <div class="quiz__result-title" id="quiz-title"></div>\n'
+        '    <div class="quiz__scales" id="quiz-scales"></div>\n'
+        '    <a class="btn btn--primary btn--sm" id="quiz-jump" href="#">Читать разбор типа →</a>\n'
+        '    <button type="button" class="quiz__again" id="quiz-again">Пройти заново</button>\n'
+        '  </div>\n'
+        '</div>\n\n'
+    )
+
+
 def convert_custom_blocks(md_text):
     # Hard-fail if an article emits empty ::: cta ... ::: blocks — the regex
     # below won't match them and the raw markers would leak into HTML.
@@ -317,6 +369,13 @@ def convert_custom_blocks(md_text):
         ),
         md_text,
         flags=re.DOTALL,
+    )
+    # ::: test <id>  → интерактивный тест из docs/seo/tests/<id>.yaml
+    md_text = re.sub(
+        r"^:::\s*test\s+([a-z0-9-]+)\s*$",
+        lambda m: render_test(m.group(1)),
+        md_text,
+        flags=re.MULTILINE,
     )
     # ::: callout warning
     #   body
@@ -797,6 +856,7 @@ def render_article(md_path, all_meta):
 {FOOTER_HTML}
 
 <script src="/script.js"></script>
+<script src="/quiz.js"></script>
 </body>
 </html>
 """
@@ -1068,6 +1128,7 @@ def rss_body_html(md_path):
     body_md = re.sub(r":::\s*(?:pullquote|callout\s+\w+)\s*\n(.+?)\n:::\s*",
                      lambda m: f"\n\n> {m.group(1).strip()}\n\n",
                      body_md, flags=re.DOTALL)
+    body_md = re.sub(r"^:::\s*test\s+\S+\s*$", "", body_md, flags=re.MULTILINE)
     body_md = re.sub(r"^---\s*$", "", body_md, flags=re.MULTILINE)
     if ":::" in body_md:
         raise ValueError(f"{md_path.name}: ::: -блок не разобран для RSS")
@@ -1151,7 +1212,8 @@ def sanitize_for_dzen(html_body, fm):
 
 
 def update_rss(metas):
-    ordered = sorted(metas, key=lambda m: str(m["publishedAt"]), reverse=True)[:RSS_LIMIT]
+    feedable = [m for m in metas if not m.get("noRss")]
+    ordered = sorted(feedable, key=lambda m: str(m["publishedAt"]), reverse=True)[:RSS_LIMIT]
     items = []
     for m in ordered:
         link = f"{SITE_URL}/blog/{m['slug']}.html"

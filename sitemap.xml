@@ -55,9 +55,27 @@
   </url>
   <url>
     <loc>https://macmagia.ru/blog/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/abyuzivnye-otnosheniya.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/agressiya-prichiny.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/akcentuacii-haraktera.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://macmagia.ru/blog/apatiya.html</loc>
@@ -66,8 +84,38 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/arhetip-teni.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/art-terapiya-dlya-detey.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/art-terapiya-dlya-podrostkov.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/art-terapiya-dlya-zhenshchin.html</loc>
     <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/autizm-priznaki.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/boyus-ostatsya-odna.html</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -96,6 +144,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/chto-takoe-osoznannost.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/chto-takoe-stress.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/chuvstvo-odinochestva.html</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -108,14 +168,68 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/depressiya-simptomy.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/deviantnoe-povedenie-podrostkov.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/dostizhenie-celi.html</loc>
     <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/ekzistencialnyy-krizis.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/emocionalnaya-zavisimost.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/emocionalnyy-intellekt.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/empatiya.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/gazlajting.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/geshtalt-terapiya.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/giperkontrol.html</loc>
     <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/introvert-i-ekstravert.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -138,6 +252,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/kak-perezhit-izmenu.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/kak-perezhit-razvod.html</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -150,8 +270,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/kak-povysit-samoocenku.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/kak-prinyat-i-polyubit-sebya.html</loc>
     <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/kak-prinyat-vozrast.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/kak-smenit-rabotu.html</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -180,6 +318,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/kak-stat-psihologom.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/kak-vosstanovit-resurs.html</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -192,8 +336,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/kak-zabyt-cheloveka.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/kpt-chto-eto.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/krizis-srednego-vozrasta.html</loc>
     <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/kto-takoy-psiholog.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -258,6 +420,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/manipulyacii-v-otnosheniyah.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/mbti-tipy-lichnosti.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/meditaciya-dlya-sna.html</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -278,6 +452,12 @@
   <url>
     <loc>https://macmagia.ru/blog/meditaciya-lyubov-k-sebe.html</loc>
     <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/narciss-kak-raspoznat.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -336,14 +516,80 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/psihoanaliz-prostymi-slovami.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/psihodrama.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/psihologicheskaya-pomosch.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/psihologicheskaya-travma.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/psihologiya-konflikta.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/psihologiya-lichnosti.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/psihologiya-podrostka.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/rasklady-i-tehniki-mak.html</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/rasstroystva-lichnosti.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/refleksiya.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/roditelskoe-vygoranie.html</loc>
     <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/samocennost.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/sdvg-priznaki.html</loc>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -414,6 +660,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/test-tip-privyazannosti.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/tipy-privyazannosti.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/tipy-temperamenta.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/toksichnaya-druzhba.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/toksichnye-roditeli.html</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -428,6 +698,12 @@
   <url>
     <loc>https://macmagia.ru/blog/tvorcheskij-blok.html</loc>
     <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/uverennost-v-sebe.html</loc>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -450,14 +726,32 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/zaschitnye-mehanizmy.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/zavisimost-ot-chuzhogo-mneniya.html</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/zdorovye-otnosheniya.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/zhenskie-arhetipy.html</loc>
     <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/zhiznennye-cennosti.html</loc>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
