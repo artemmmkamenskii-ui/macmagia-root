@@ -856,7 +856,7 @@ def render_article(md_path, all_meta):
 {FOOTER_HTML}
 
 <script src="/script.js"></script>
-<script src="/quiz.js"></script>
+<script src="/blog/quiz.js"></script>
 </body>
 </html>
 """
