@@ -1958,7 +1958,7 @@ img { max-width: 100%; display: block; }
     overflow: hidden; transition: transform .2s, box-shadow .2s, border-color .2s;
 }
 .latest-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--violet-200); }
-.latest-card__img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: var(--violet-50); }
+.latest-card__img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: var(--violet-50); }
 .latest-card__body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 10px; }
 .latest-card__meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .latest-card__title { font-size: 18px; font-weight: 700; line-height: 1.35; color: var(--ink); }
@@ -2055,3 +2055,90 @@ img { max-width: 100%; display: block; }
 .tests-intro p { font-size: 17px; line-height: 1.7; color: var(--ink-80); margin-bottom: 16px; }
 .tests-intro h2 { font-size: 26px; font-weight: 800; color: var(--ink); margin: 36px 0 18px; }
 .tests-intro h3 { font-size: 18px; font-weight: 700; color: var(--ink); margin: 22px 0 8px; }
+
+/* ---------- Каталог тестов ---------- */
+.tests-hero {
+    padding: 46px 0 40px; text-align: center;
+    background: linear-gradient(160deg, var(--violet-50) 0%, #fdf4ff 55%, #fff 100%);
+    border-bottom: 1px solid var(--border-soft);
+}
+.tests-hero .breadcrumb { justify-content: center; margin-bottom: 18px; }
+.tests-hero__title { font-size: 44px; font-weight: 800; letter-spacing: -.02em; color: var(--ink); margin-bottom: 14px; }
+.tests-hero__lead { font-size: 18px; line-height: 1.65; color: var(--ink-60); max-width: 660px; margin: 0 auto; }
+
+.tests-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;
+    margin: 48px 0 8px;
+}
+.test-card {
+    display: flex; flex-direction: column; text-decoration: none; overflow: hidden;
+    background: #fff; border: 1px solid var(--border-soft); border-radius: var(--radius-lg);
+    transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.test-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--violet-200); }
+.test-card__img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--violet-50); }
+.test-card__body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+.test-card__meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.test-card__tag {
+    padding: 4px 11px; border-radius: 999px; background: var(--violet-100);
+    color: var(--violet-700); font-size: 12px; font-weight: 600;
+}
+.test-card__time { font-size: 13px; color: var(--ink-40); }
+.test-card__title { font-size: 21px; font-weight: 800; line-height: 1.28; color: var(--ink); margin-bottom: 10px; }
+.test-card:hover .test-card__title { color: var(--violet-700); }
+.test-card__text { font-size: 15px; line-height: 1.6; color: var(--ink-60); margin-bottom: 18px; flex: 1; }
+.test-card__go { font-size: 15px; font-weight: 700; color: var(--violet-600); }
+
+.tests-soon {
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    margin: 34px 0 60px; padding: 20px 26px;
+    background: var(--bg-muted); border-radius: var(--radius-md);
+}
+.tests-soon__label {
+    font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--violet-600);
+}
+.tests-soon__list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
+.tests-soon__list li {
+    padding: 6px 14px; border-radius: 999px; background: #fff;
+    border: 1px dashed var(--violet-200); font-size: 14px; color: var(--ink-60);
+}
+
+.tests-faq { max-width: 760px; margin: 0 auto 80px; }
+.tests-faq__title { font-size: 30px; font-weight: 800; color: var(--ink); margin-bottom: 22px; text-align: center; }
+.tests-faq__item {
+    border: 1px solid var(--border-soft); border-radius: var(--radius-md);
+    background: #fff; margin-bottom: 12px; overflow: hidden;
+}
+.tests-faq__item summary {
+    padding: 18px 22px; cursor: pointer; font-size: 17px; font-weight: 600; color: var(--ink);
+    list-style: none; position: relative; padding-right: 52px;
+}
+.tests-faq__item summary::-webkit-details-marker { display: none; }
+.tests-faq__item summary::after {
+    content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%);
+    font-size: 22px; font-weight: 400; color: var(--violet-500); transition: transform .2s;
+}
+.tests-faq__item[open] summary::after { content: "−"; }
+.tests-faq__item summary:hover { color: var(--violet-700); }
+.tests-faq__item p { padding: 0 22px 20px; font-size: 16px; line-height: 1.7; color: var(--ink-60); }
+
+@media (max-width: 900px) { .tests-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) {
+    .tests-grid { grid-template-columns: 1fr; gap: 20px; }
+    .tests-hero__title { font-size: 30px; }
+    .tests-hero__lead { font-size: 16px; }
+}
+
+/* пока тестов меньше трёх — широкая карточка вместо сиротливой сетки */
+.tests-grid--wide { grid-template-columns: 1fr; max-width: 900px; margin-left: auto; margin-right: auto; }
+.test-card--wide { display: grid; grid-template-columns: 420px 1fr; align-items: center; background: var(--bg-soft); }
+.test-card--wide .test-card__img { align-self: center; aspect-ratio: 16/9; height: auto; }
+.test-card--wide .test-card__body { padding: 30px 34px; justify-content: center; }
+.test-card--wide .test-card__title { font-size: 26px; }
+.test-card--wide .test-card__text { font-size: 16px; }
+@media (max-width: 760px) {
+    .test-card--wide { grid-template-columns: 1fr; }
+    .test-card--wide .test-card__img { aspect-ratio: 16/9; height: auto; }
+    .test-card--wide .test-card__title { font-size: 21px; }
+}

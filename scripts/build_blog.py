@@ -893,6 +893,142 @@ TESTS_INTRO = """<div class="tests-intro">
 </div>"""
 
 
+FAQ_TESTS = [
+    ("Насколько точны онлайн-тесты?",
+     "Любой самоопросник отражает то, как вы видите себя сегодня, — а это зависит и от настроения, "
+     "и от текущей жизненной ситуации. Тест даёт ориентир и повод задуматься, но не заменяет "
+     "консультацию специалиста. Если результат кажется неточным, прочитайте описания всех "
+     "вариантов: узнавание в тексте обычно надёжнее цифры."),
+    ("Нужно ли готовиться к прохождению?",
+     "Нет. Стоит только выделить несколько спокойных минут и отвечать о том, как обычно бывает, "
+     "а не о том, как хотелось бы. Первая реакция чаще точнее долгих раздумий."),
+    ("Результаты сохраняются? Их кто-то видит?",
+     "Нет. Подсчёт происходит прямо в вашем браузере, ответы никуда не отправляются и нигде "
+     "не хранятся. Ссылкой с результатом можно поделиться самому, если захотите."),
+    ("Что делать с результатом?",
+     "Прочитать разбор целиком и обратить внимание на то, что откликается. Если тема оказалась "
+     "болезненной или результат встревожил — это хороший повод обсудить её с психологом, "
+     "а не искать ответ в следующем тесте."),
+]
+
+SOON_TESTS = ["Тип темперамента", "Тяжёлый характер и комплексы",
+              "Твой архетип", "Тип личности по MBTI"]
+
+
+def render_test_card(m, wide=False):
+    mins = m.get("__minutes")
+    qs = m.get("__questions")
+    meta_bits = []
+    if qs:
+        meta_bits.append(f"{qs} вопросов")
+    if mins:
+        meta_bits.append(f"{mins} мин")
+    meta = " · ".join(meta_bits)
+    title = str(m["title"]).split(":")[0]
+    return (
+        f'<a class="test-card{" test-card--wide" if wide else ""}" href="/{article_path(m)}">\n'
+        f'  <img class="test-card__img" src="/blog/covers/{m["slug"]}.jpg" alt="" '
+        f'width="480" height="270" loading="lazy">\n'
+        f'  <div class="test-card__body">\n'
+        f'    <div class="test-card__meta"><span class="test-card__tag">'
+        f'{html_escape(str(m.get("category") or "Тест"))}</span>'
+        f'<span class="test-card__time">{meta}</span></div>\n'
+        f'    <h2 class="test-card__title">{html_escape(title)}</h2>\n'
+        f'    <p class="test-card__text">{html_escape(str(m["description"]))}</p>\n'
+        f'    <span class="test-card__go">Пройти тест →</span>\n'
+        f'  </div>\n'
+        f'</a>'
+    )
+
+
+def render_tests_hub(items):
+    ordered = sorted(items, key=lambda m: str(m["publishedAt"]), reverse=True)
+    # пока тестов мало, одинокая карточка в трёхколоночной сетке смотрится сиротливо —
+    # показываем широкой, а сетку включаем начиная с трёх
+    wide = len(ordered) < 3
+    cards = "\n".join(render_test_card(m, wide=wide) for m in ordered)
+    soon = "".join(f"<li>{html_escape(s)}</li>" for s in SOON_TESTS)
+    faq = "".join(
+        f'<details class="tests-faq__item"><summary>{html_escape(q)}</summary>'
+        f'<p>{html_escape(a)}</p></details>' for q, a in FAQ_TESTS
+    )
+    faq_ld = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q,
+             "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ_TESTS
+        ],
+    }, ensure_ascii=False, indent=2)
+
+    return f"""<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Психологические тесты онлайн — бесплатно и без регистрации | МакМагия</title>
+    <meta name="description" content="Бесплатные психологические тесты онлайн без регистрации: тип привязанности и другие. Результат считается по нескольким шкалам, разбор пишет психолог.">
+    <link rel="canonical" href="{SITE_URL}/blog/testy/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="МакМагия">
+    <meta property="og:url" content="{SITE_URL}/blog/testy/">
+    <meta property="og:title" content="Психологические тесты онлайн — бесплатно и без регистрации">
+    <meta property="og:description" content="Тесты, где результат считается по нескольким шкалам, а разбор пишет психолог. Бесплатно, без регистрации.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script type="application/ld+json">
+{faq_ld}
+    </script>
+</head>
+<body>
+
+{HEADER_HTML}
+
+<main>
+    <section class="tests-hero">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Хлебные крошки">
+                <a href="/">Главная</a>
+                <span class="breadcrumb__sep">›</span>
+                <a href="/blog/">Блог</a>
+                <span class="breadcrumb__sep">›</span>
+                <span class="breadcrumb__current">Тесты</span>
+            </nav>
+            <h1 class="tests-hero__title">Психологические тесты</h1>
+            <p class="tests-hero__lead">Результат считается по нескольким независимым шкалам, а не назначается по одному ответу. Разбор каждого типа пишет психолог. Бесплатно, без регистрации и без сбора почты.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="tests-grid{" tests-grid--wide" if wide else ""}">
+{cards}
+        </div>
+
+        <div class="tests-soon">
+            <div class="tests-soon__label">Скоро</div>
+            <ul class="tests-soon__list">{soon}</ul>
+        </div>
+
+        <section class="tests-faq">
+            <h2 class="tests-faq__title">Частые вопросы</h2>
+            {faq}
+        </section>
+    </div>
+</main>
+
+{FOOTER_HTML}
+
+<script src="/script.js"></script>
+</body>
+</html>
+"""
+
+
 def render_hub(metas, *, crumb="Блог", tag="Блог МакМагии",
                h1="Статьи о картах, психологии и работе с собой",
                lead=("Метафорические карты, арт-терапия, психология и AI-инструменты — "
@@ -1352,6 +1488,15 @@ def collect_meta(md_path):
     fm["pub_iso"] = pub.isoformat()
     fm["pub_human"] = format_ru_date(pub)
     fm["__path"] = md_path
+    # для карточки теста в каталоге: сколько вопросов и сколько это займёт
+    m = re.search(r"^:::\s*test\s+([a-z0-9-]+)\s*$", raw, flags=re.M)
+    if m:
+        spec_file = TESTS_DIR / f"{m.group(1)}.yaml"
+        if spec_file.exists():
+            spec = yaml.safe_load(spec_file.read_text(encoding="utf-8"))
+            n = len(spec["questions"])
+            fm["__questions"] = n
+            fm["__minutes"] = max(2, round(n * 13 / 60))
     return fm
 
 
@@ -1424,24 +1569,13 @@ def main():
     (BLOG_DIR / "index.html").write_text(inject_metrika(render_hub(plain)), encoding="utf-8")
     print("  built blog/index.html")
 
-    for sec, sec_title in SECTIONS.items():
+    for sec in SECTIONS:
         items = [m for m in metas if m.get("section") == sec]
         if not items:
             continue
         out = BLOG_DIR / sec
         out.mkdir(parents=True, exist_ok=True)
-        (out / "index.html").write_text(
-            inject_metrika(render_hub(
-                items,
-                crumb=sec_title, tag="Тесты МакМагии",
-                h1="Психологические тесты онлайн",
-                lead=("Тесты, которые не назначают вам тип за один ответ, а считают результат "
-                      "по нескольким шкалам. Бесплатно, без регистрации, с подробным разбором "
-                      "каждого результата от психолога."),
-                intro=TESTS_INTRO,
-                canonical=f"{SITE_URL}/blog/{sec}/",
-            )),
-            encoding="utf-8")
+        (out / "index.html").write_text(inject_metrika(render_tests_hub(items)), encoding="utf-8")
         print(f"  built blog/{sec}/index.html ({len(items)})")
 
     n_rss = update_rss(metas)
