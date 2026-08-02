@@ -129,8 +129,8 @@ PRODUCTS = {
     },
     "artterapy": {
         "url": "/artterapy",
-        "title": "Курс по арт-терапии",
-        "text": "Практические техники арт-терапии: рисунок, лепка, коллаж, песочная работа.",
+        "title": "Арт-практикум «Путешествие к себе»",
+        "text": "Час в неделю только для себя. Через цвет и образ — к внутренней опоре и своему голосу. Восемь недель, час в неделю.",
         "emoji": "🎨",
     },
     "ai": {
@@ -171,6 +171,19 @@ FORBIDDEN_PATTERNS = [
 ]
 FORBIDDEN_RE = re.compile(r"\b(?:" + "|".join(FORBIDDEN_PATTERNS) + r")\b",
                           re.IGNORECASE | re.UNICODE)
+
+
+SECTIONS = {"testy": "Тесты"}   # frontmatter `section:` → подпапка в /blog/
+
+
+def article_path(fm):
+    """Относительный путь материала внутри сайта, без ведущего слэша."""
+    sec = fm.get("section")
+    return f"blog/{sec}/{fm['slug']}.html" if sec in SECTIONS else f"blog/{fm['slug']}.html"
+
+
+def article_url(fm):
+    return f"{SITE_URL}/{article_path(fm)}"
 
 
 def parse_frontmatter(text):
@@ -579,7 +592,7 @@ def render_related(current_fm, all_meta):
     if not related:
         return ""
     items = "\n                    ".join(
-        f'<li><a href="/blog/{m["slug"]}.html">{html_escape(m["title"])}</a></li>'
+        f'<li><a href="/{article_path(m)}">{html_escape(m["title"])}</a></li>'
         for m in related
     )
     return (
@@ -612,6 +625,7 @@ HEADER_HTML = """<header class="header">
             <a href="/#products">Продукты</a>
             <a href="/#courses">Обучение</a>
             <a href="/blog/">Блог</a>
+            <a href="/blog/testy/">Тесты</a>
             <a href="/#creator">Обо мне</a>
             <a href="/#footer">Контакты</a>
         </nav>
@@ -656,6 +670,7 @@ FOOTER_HTML = """<footer class="footer" id="footer">
             <a href="/artterapy">Арт-терапия</a>
             <a href="/mac">МАК-карты</a>
             <a href="/blog/">Блог</a>
+            <a href="/blog/testy/">Тесты</a>
         </div>
         <div class="footer__col">
             <div class="footer__title">Контакты</div>
@@ -723,7 +738,7 @@ def render_article(md_path, all_meta):
 
     rt = fm.get("readingTime") or reading_time_min(body_md)
 
-    canonical = f"{SITE_URL}/blog/{fm['slug']}.html"
+    canonical = article_url(fm)
     ld_json = json.dumps(
         build_jsonld(fm, faq_items, author, canonical),
         ensure_ascii=False, indent=4,
@@ -809,6 +824,7 @@ def render_article(md_path, all_meta):
                 <a href="/">Главная</a>
                 <span class="breadcrumb__sep">›</span>
                 <a href="/blog/">Блог</a>
+            <a href="/blog/testy/">Тесты</a>
                 <span class="breadcrumb__sep">›</span>
                 <span class="breadcrumb__current">{html_escape(fm["title"])}</span>
             </nav>
@@ -862,7 +878,27 @@ def render_article(md_path, all_meta):
 """
 
 
-def render_hub(metas):
+TESTS_INTRO = """<div class="tests-intro">
+<p>Психологический тест — не диагноз и не приговор, а способ посмотреть на себя со стороны и получить язык для того, что раньше было просто смутным ощущением. Наши тесты устроены так, что результат считается по нескольким независимым шкалам, а не назначается по одному ответу: вы не выбираете свой тип из списка — он складывается из профиля ответов.</p>
+<p>Все тесты бесплатные, без регистрации и без сбора почты. Разбор каждого результата написан психологом и включает не только описание, но и то, что с этим делать.</p>
+<h2>Частые вопросы</h2>
+<h3>Насколько точны онлайн-тесты?</h3>
+<p>Любой самоопросник отражает то, как вы видите себя сегодня, — а это зависит и от настроения, и от текущей жизненной ситуации. Тест даёт ориентир и повод задуматься, но не заменяет консультацию специалиста. Если результат кажется неточным, прочитайте описания всех вариантов: узнавание в тексте обычно надёжнее цифры.</p>
+<h3>Нужно ли готовиться к прохождению?</h3>
+<p>Нет. Стоит только выделить несколько спокойных минут и отвечать о том, как обычно бывает, а не о том, как хотелось бы. Первая реакция чаще точнее долгих раздумий.</p>
+<h3>Результаты сохраняются? Их кто-то видит?</h3>
+<p>Нет. Подсчёт происходит прямо в вашем браузере, ответы никуда не отправляются и нигде не хранятся. Ссылкой с результатом можно поделиться самому, если захотите.</p>
+<h3>Что делать с результатом?</h3>
+<p>Прочитать разбор целиком и обратить внимание на то, что откликается. Если тема оказалась болезненной или результат встревожил — это хороший повод обсудить её с психологом, а не искать ответ в следующем тесте.</p>
+</div>"""
+
+
+def render_hub(metas, *, crumb="Блог", tag="Блог МакМагии",
+               h1="Статьи о картах, психологии и работе с собой",
+               lead=("Метафорические карты, арт-терапия, психология и AI-инструменты — "
+                     "для практикующих специалистов и для тех, кто хочет глубже понять себя. "
+                     "Пишет Екатерина Каменская и редакция МакМагии."),
+               intro="", canonical=f"{SITE_URL}/blog/"):
     sorted_meta = sorted(metas, key=lambda m: str(m["publishedAt"]), reverse=True)
     cards_html_parts = []
 
@@ -891,7 +927,7 @@ def render_hub(metas):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог МакМагии — психология, метафорические карты, арт-терапия</title>
     <meta name="description" content="Статьи Екатерины Каменской и редакции МакМагии о метафорических картах, арт-терапии, психологии и AI-инструментах для специалистов и для самопознания.">
-    <link rel="canonical" href="https://macmagia.ru/blog/">
+    <link rel="canonical" href="{canonical}">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#7c3aed">
 
@@ -946,15 +982,16 @@ def render_hub(metas):
             <nav class="breadcrumb" aria-label="Хлебные крошки">
                 <a href="/">Главная</a>
                 <span class="breadcrumb__sep">›</span>
-                <span class="breadcrumb__current">Блог</span>
+                <span class="breadcrumb__current">{crumb}</span>
             </nav>
-            <div class="blog-hub-v2__hero-tag">Блог МакМагии</div>
-            <h1 class="blog-hub-v2__title">Статьи о картах, психологии и работе с собой</h1>
-            <p class="blog-hub-v2__lead">Метафорические карты, арт-терапия, психология и AI-инструменты — для практикующих специалистов и для тех, кто хочет глубже понять себя. Пишет Екатерина Каменская и редакция МакМагии.</p>
+            <div class="blog-hub-v2__hero-tag">{tag}</div>
+            <h1 class="blog-hub-v2__title">{h1}</h1>
+            <p class="blog-hub-v2__lead">{lead}</p>
         </div>
     </section>
 
     <div class="blog-hub-v2__container">
+        {intro}
         {cards_html}
     </div>
 </main>
@@ -972,7 +1009,7 @@ def render_featured_card(meta):
     gradient = meta.get("coverGradient", 1)
     tag = meta.get("category") or (meta.get("tags") or ["Статья"])[0]
     return (
-        f'<a href="/blog/{meta["slug"]}.html" class="blog-card blog-card--featured">\n'
+        f'<a href="/{article_path(meta)}" class="blog-card blog-card--featured">\n'
         f'            <div class="blog-card__cover blog-card__cover--{gradient}" aria-hidden="true">\n'
         f'                <span class="blog-card__emoji">{emoji}</span>\n'
         f'            </div>\n'
@@ -994,7 +1031,7 @@ def render_regular_card(meta):
     gradient = meta.get("coverGradient", 1)
     tag = meta.get("category") or (meta.get("tags") or ["Статья"])[0]
     return (
-        f'<a href="/blog/{meta["slug"]}.html" class="blog-card">\n'
+        f'<a href="/{article_path(meta)}" class="blog-card">\n'
         f'                <div class="blog-card__cover blog-card__cover--{gradient}" aria-hidden="true">\n'
         f'                    <span class="blog-card__emoji">{emoji}</span>\n'
         f'                </div>\n'
@@ -1046,7 +1083,7 @@ def update_landing_latest(metas, limit=6):
         cover = resolve_og_image(m).replace(SITE_URL, "")
         date = m.get("pub_human") or format_ru_date(ensure_date(m["publishedAt"]))
         cards.append(
-            f'                <a class="latest-card" href="/blog/{m["slug"]}.html">\n'
+            f'                <a class="latest-card" href="/{article_path(m)}">\n'
             f'                    <img class="latest-card__img" src="{cover}" alt="" width="480" height="270" loading="lazy">\n'
             f'                    <div class="latest-card__body">\n'
             f'                        <div class="latest-card__meta">'
@@ -1077,7 +1114,7 @@ def update_landing_latest(metas, limit=6):
         shown = {m["slug"] for m in latest}
         rest = [m for m in ordered if m["slug"] not in shown][:FOOTER_LINKS]
         links = "\n".join(
-            f'            <a href="/blog/{m["slug"]}.html">{html_escape(str(m["title"]).split(":")[0])}</a>'
+            f'            <a href="/{article_path(m)}">{html_escape(str(m["title"]).split(":")[0])}</a>'
             for m in rest
         )
         text = re.sub(
@@ -1216,7 +1253,7 @@ def update_rss(metas):
     ordered = sorted(feedable, key=lambda m: str(m["publishedAt"]), reverse=True)[:RSS_LIMIT]
     items = []
     for m in ordered:
-        link = f"{SITE_URL}/blog/{m['slug']}.html"
+        link = article_url(m)
         items.append(f"""    <item>
       <title>{html_escape(str(m["title"]))}</title>
       <link>{link}</link>
@@ -1267,7 +1304,7 @@ def update_sitemap(metas, today):
         lastmod = str(m.get("updatedAt") or m["publishedAt"])
         parts.extend([
             '  <url>',
-            f'    <loc>https://macmagia.ru/blog/{m["slug"]}.html</loc>',
+            f'    <loc>{article_url(m)}</loc>',
             f'    <lastmod>{lastmod}</lastmod>',
             '    <changefreq>monthly</changefreq>',
             '    <priority>0.7</priority>',
@@ -1357,22 +1394,44 @@ def main():
     # прошлой сборки (когда дата была в прошлом) — тогда rsync выложит его на
     # сервер и статья окажется доступна по прямой ссылке раньше срока.
     for m in scheduled:
-        stale = BLOG_DIR / f"{m['slug']}.html"
+        stale = ROOT / article_path(m)
         if stale.exists():
             stale.unlink()
-            print(f"  removed premature blog/{m['slug']}.html")
+            print(f"  removed premature {article_path(m)}")
     if not metas:
         print("No articles due for publication yet.")
         return 0
 
     for meta in metas:
         path = meta["__path"]
-        out = BLOG_DIR / f"{meta['slug']}.html"
+        out = ROOT / article_path(meta)
+        out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(inject_metrika(render_article(path, metas)), encoding="utf-8")
-        print(f"  built blog/{meta['slug']}.html")
+        print(f"  built {article_path(meta)}")
 
-    (BLOG_DIR / "index.html").write_text(inject_metrika(render_hub(metas)), encoding="utf-8")
+    plain = [m for m in metas if not m.get("section")]
+    (BLOG_DIR / "index.html").write_text(inject_metrika(render_hub(plain)), encoding="utf-8")
     print("  built blog/index.html")
+
+    for sec, sec_title in SECTIONS.items():
+        items = [m for m in metas if m.get("section") == sec]
+        if not items:
+            continue
+        out = BLOG_DIR / sec
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "index.html").write_text(
+            inject_metrika(render_hub(
+                items,
+                crumb=sec_title, tag="Тесты МакМагии",
+                h1="Психологические тесты онлайн",
+                lead=("Тесты, которые не назначают вам тип за один ответ, а считают результат "
+                      "по нескольким шкалам. Бесплатно, без регистрации, с подробным разбором "
+                      "каждого результата от психолога."),
+                intro=TESTS_INTRO,
+                canonical=f"{SITE_URL}/blog/{sec}/",
+            )),
+            encoding="utf-8")
+        print(f"  built blog/{sec}/index.html ({len(items)})")
 
     n_rss = update_rss(metas)
     print(f"  updated rss.xml ({n_rss} материалов для Дзена)")

@@ -2049,3 +2049,9 @@ img { max-width: 100%; display: block; }
     .quiz__opt span { font-size: 13px; padding: 8px 13px; }
     .quiz__scale span { min-width: 84px; font-size: 13px; }
 }
+
+/* ---------- Каталог тестов: вводный текст ---------- */
+.tests-intro { max-width: 720px; margin: 0 auto 48px; }
+.tests-intro p { font-size: 17px; line-height: 1.7; color: var(--ink-80); margin-bottom: 16px; }
+.tests-intro h2 { font-size: 26px; font-weight: 800; color: var(--ink); margin: 36px 0 18px; }
+.tests-intro h3 { font-size: 18px; font-weight: 700; color: var(--ink); margin: 22px 0 8px; }
