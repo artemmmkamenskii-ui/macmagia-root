@@ -1300,6 +1300,17 @@ def update_sitemap(metas, today):
         '    <priority>0.8</priority>',
         '  </url>',
     ]
+    for sec in SECTIONS:
+        if any(m.get("section") == sec for m in metas):
+            parts.extend([
+                '  <url>',
+                f'    <loc>{SITE_URL}/blog/{sec}/</loc>',
+                f'    <lastmod>{today}</lastmod>',
+                '    <changefreq>weekly</changefreq>',
+                '    <priority>0.8</priority>',
+                '  </url>',
+            ])
+
     for m in metas:
         lastmod = str(m.get("updatedAt") or m["publishedAt"])
         parts.extend([
