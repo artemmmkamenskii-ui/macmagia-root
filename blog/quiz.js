@@ -48,6 +48,18 @@
   }
 
   function pick(s) {
+    // режим «axes»: четыре бинарные оси, результат — код из четырёх букв
+    if (cfg.mode === 'axes') {
+      var code = cfg.axes.map(function (ax) {
+        var a = s[ax.key + '_' + ax.poles[0]] || 0;
+        var b = s[ax.key + '_' + ax.poles[1]] || 0;
+        return a >= b ? ax.poles[0] : ax.poles[1];
+      }).join('').toLowerCase();
+      for (var q = 0; q < cfg.results.length; q++) {
+        if (cfg.results[q].key === code) return cfg.results[q];
+      }
+      return cfg.results[0];
+    }
     // режим «top»: результат — шкала с максимальным баллом (архетипы и т.п.)
     if (cfg.mode === 'top') {
       var best = null;
@@ -110,6 +122,21 @@
 
   function show(res, s) {
     titleEl.textContent = res.title;
+    if (cfg.mode === 'axes') {
+      scalesEl.innerHTML = cfg.axes.map(function (ax) {
+        var a = s[ax.key + '_' + ax.poles[0]] || 0;
+        var b = s[ax.key + '_' + ax.poles[1]] || 0;
+        var win = a >= b ? 0 : 1;
+        // полоска заполняется со стороны победившего полюса, иначе при
+        // победе правого она выглядит пустой
+        var pct = Math.round((win === 0 ? a : b) / (a + b || 1) * 100);
+        return '<div class="quiz__axis">' +
+          '<span class="' + (win === 0 ? 'is-win' : '') + '">' + ax.labels[0] + '</span>' +
+          '<i class="' + (win === 1 ? 'is-right' : '') + '"><b style="width:' + pct + '%"></b></i>' +
+          '<span class="' + (win === 1 ? 'is-win' : '') + '">' + ax.labels[1] + '</span>' +
+          '</div>';
+      }).join('');
+    } else {
     var keys = Object.keys(s);
     if (cfg.mode === 'top') {
       keys.sort(function (a, b) { return s[b] - s[a]; });
@@ -123,6 +150,7 @@
         '<i><b style="width:' + Math.min(pct, 100) + '%"></b></i>' +
         '<em>' + s[k] + '</em></div>';
     }).join('');
+    }
     jump.setAttribute('href', '#' + res.key);
     setupShare(res);
     box.hidden = false;

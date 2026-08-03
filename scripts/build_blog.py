@@ -344,6 +344,7 @@ def render_test(test_id):
         "scaleLabels": spec.get("scaleLabels", {}),
         "mode": spec.get("mode", "quadrant"),
         "scaleMax": spec.get("scaleMax"),
+        "axes": spec.get("axes", []),
     }, ensure_ascii=False)
 
     return (
@@ -937,7 +938,7 @@ FAQ_TESTS = [
 ]
 
 # Готовые темы отсюда убирать вручную, иначе в «Скоро» висит уже сделанное.
-SOON_TESTS = ["Тип личности по MBTI"]
+SOON_TESTS = []   # все запланированные тесты сделаны
 
 
 def render_test_card(m, wide=False):
@@ -972,7 +973,11 @@ def render_tests_hub(items):
     # показываем широкой, а сетку включаем начиная с трёх
     wide = len(ordered) < 3
     cards = "\n".join(render_test_card(m, wide=wide) for m in ordered)
-    soon = "".join(f"<li>{html_escape(s)}</li>" for s in SOON_TESTS)
+    soon_block = ""
+    if SOON_TESTS:
+        soon = "".join(f"<li>{html_escape(s)}</li>" for s in SOON_TESTS)
+        soon_block = ('<div class="tests-soon"><div class="tests-soon__label">Скоро</div>'
+                      f'<ul class="tests-soon__list">{soon}</ul></div>')
     faq = "".join(
         f'<details class="tests-faq__item"><summary>{html_escape(q)}</summary>'
         f'<p>{html_escape(a)}</p></details>' for q, a in FAQ_TESTS
@@ -1056,10 +1061,7 @@ def render_tests_hub(items):
 {cards}
         </div>
 
-        <div class="tests-soon">
-            <div class="tests-soon__label">Скоро</div>
-            <ul class="tests-soon__list">{soon}</ul>
-        </div>
+        {soon_block}
 
         <section class="tests-faq">
             <h2 class="tests-faq__title">Частые вопросы</h2>

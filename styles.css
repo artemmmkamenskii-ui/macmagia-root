@@ -2168,3 +2168,13 @@ img { max-width: 100%; display: block; }
 .quiz__share-btn--copy:hover { background: var(--violet-600); border-color: var(--violet-600); }
 .quiz__share-btn.is-done { background: var(--green-500); border-color: var(--green-500); color: #fff; }
 @media (max-width: 640px) { .quiz__share-btn { font-size: 13px; padding: 8px 13px; } }
+
+/* оси в результате MBTI-теста */
+.quiz__axis { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--ink-40); }
+.quiz__axis span { min-width: 108px; }
+.quiz__axis span:last-child { text-align: right; }
+.quiz__axis span.is-win { color: var(--violet-700); font-weight: 700; }
+.quiz__axis i { flex: 1; height: 8px; border-radius: 4px; background: var(--violet-100); overflow: hidden; }
+.quiz__axis i b { display: block; height: 100%; background: var(--violet-500); }
+@media (max-width: 640px) { .quiz__axis { font-size: 12px; } .quiz__axis span { min-width: 74px; } }
+.quiz__axis i.is-right { display: flex; justify-content: flex-end; }
