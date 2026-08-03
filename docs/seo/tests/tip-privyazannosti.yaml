@@ -12,6 +12,8 @@ id: tip-privyazannosti
 scaleMax: 24
 threshold: 12
 
+resultHead: "Ваш тип привязанности"
+
 scaleLabels:
   anxiety: "Тревожность"
   avoidance: "Избегание"

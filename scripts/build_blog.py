@@ -341,6 +341,7 @@ def render_test(test_id):
         "threshold": spec["threshold"],
         "total": len(spec["questions"]),
         "results": spec["results"],
+        "scaleLabels": spec.get("scaleLabels", {}),
     }, ensure_ascii=False)
 
     return (
@@ -352,7 +353,7 @@ def render_test(test_id):
         '    <button type="button" class="btn btn--primary" id="quiz-go" disabled>Узнать результат</button>\n'
         '  </div>\n'
         '  <div class="quiz__result" id="quiz-result" hidden>\n'
-        '    <div class="quiz__result-head">Ваш тип привязанности</div>\n'
+        f'    <div class="quiz__result-head">{html_escape(spec.get("resultHead", "Ваш результат"))}</div>\n'
         '    <div class="quiz__result-title" id="quiz-title"></div>\n'
         '    <div class="quiz__scales" id="quiz-scales"></div>\n'
         '    <a class="btn btn--primary btn--sm" id="quiz-jump" href="#">Читать разбор типа →</a>\n'
@@ -964,12 +965,30 @@ def render_tests_hub(items):
         f'<details class="tests-faq__item"><summary>{html_escape(q)}</summary>'
         f'<p>{html_escape(a)}</p></details>' for q, a in FAQ_TESTS
     )
+    og_image = (f"{SITE_URL}/blog/covers/{ordered[0]['slug']}.jpg"
+                if ordered else f"{SITE_URL}/about.jpg")
     faq_ld = json.dumps({
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {"@type": "Question", "name": q,
-             "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ_TESTS
+        "@graph": [
+            {"@type": "FAQPage",
+             "mainEntity": [
+                 {"@type": "Question", "name": q,
+                  "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ_TESTS
+             ]},
+            {"@type": "BreadcrumbList",
+             "itemListElement": [
+                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": f"{SITE_URL}/"},
+                 {"@type": "ListItem", "position": 2, "name": "Блог", "item": f"{SITE_URL}/blog/"},
+                 {"@type": "ListItem", "position": 3, "name": "Тесты",
+                  "item": f"{SITE_URL}/blog/testy/"},
+             ]},
+            {"@type": "ItemList",
+             "name": "Психологические тесты",
+             "itemListElement": [
+                 {"@type": "ListItem", "position": i, "url": article_url(m),
+                  "name": str(m["title"]).split(":")[0]}
+                 for i, m in enumerate(ordered, start=1)
+             ]},
         ],
     }, ensure_ascii=False, indent=2)
 
@@ -990,6 +1009,10 @@ def render_tests_hub(items):
     <meta property="og:url" content="{SITE_URL}/blog/testy/">
     <meta property="og:title" content="Психологические тесты онлайн — бесплатно и без регистрации">
     <meta property="og:description" content="Тесты, где результат считается по нескольким шкалам, а разбор пишет психолог. Бесплатно, без регистрации.">
+    <meta property="og:image" content="{og_image}">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{og_image}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css?v={STYLES_V}">

@@ -61,7 +61,7 @@
   function show(res, s) {
     titleEl.textContent = res.title;
     scalesEl.innerHTML = Object.keys(s).map(function (k) {
-      var label = k === 'anxiety' ? 'Тревожность' : 'Избегание';
+      var label = (cfg.scaleLabels && cfg.scaleLabels[k]) || k;
       var pct = Math.round(s[k] / (cfg.threshold * 2) * 100);
       return '<div class="quiz__scale"><span>' + label + '</span>' +
         '<i><b style="width:' + Math.min(pct, 100) + '%"></b></i>' +
