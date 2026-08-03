@@ -50,6 +50,7 @@ BLOG_DIR = ROOT / "blog"
 SITEMAP = ROOT / "sitemap.xml"
 
 SITE_URL = "https://macmagia.ru"
+STYLES_V = ""   # отпечаток styles.css, заполняется в main()
 LOGO_URL = f"{SITE_URL}/icon-512.png"
 
 # Яндекс.Метрика 109562142. Константа НЕ проходит через .format(), скобки литеральные.
@@ -174,6 +175,17 @@ FORBIDDEN_RE = re.compile(r"\b(?:" + "|".join(FORBIDDEN_PATTERNS) + r")\b",
 
 
 SECTIONS = {"testy": "Тесты"}   # frontmatter `section:` → подпапка в /blog/
+
+
+def styles_version():
+    """Отпечаток styles.css для сброса кэша.
+
+    nginx отдаёт стили с max-age=604800 — без версии в адресе правка вёрстки
+    доходит до вернувшегося посетителя только через неделю.
+    """
+    import hashlib
+    f = ROOT / "styles.css"
+    return hashlib.md5(f.read_bytes()).hexdigest()[:8] if f.exists() else "1"
 
 
 def article_path(fm):
@@ -805,7 +817,7 @@ def render_article(md_path, all_meta):
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css?v={STYLES_V}">
 
     <script type="application/ld+json">
 {ld_json}
@@ -980,7 +992,7 @@ def render_tests_hub(items):
     <meta property="og:description" content="Тесты, где результат считается по нескольким шкалам, а разбор пишет психолог. Бесплатно, без регистрации.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css?v={STYLES_V}">
     <script type="application/ld+json">
 {faq_ld}
     </script>
@@ -1088,7 +1100,7 @@ def render_hub(metas, *, crumb="Блог", tag="Блог МакМагии",
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css?v={STYLES_V}">
 
     <script type="application/ld+json">
     {{
@@ -1261,6 +1273,7 @@ def update_landing_latest(metas, limit=6):
             flags=re.DOTALL,
         )
 
+    text = re.sub(r'href="styles\.css(\?v=[a-f0-9]+)?"', f'href="styles.css?v={STYLES_V}"', text)
     index.write_text(text, encoding="utf-8")
     return len(latest)
 
@@ -1501,6 +1514,8 @@ def collect_meta(md_path):
 
 
 def main():
+    global STYLES_V
+    STYLES_V = styles_version()
     parser = argparse.ArgumentParser()
     parser.add_argument("--allow-eso", action="store_true",
                         help="bypass the esoteric-terms gate (don't normally use this)")
