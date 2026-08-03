@@ -1270,8 +1270,8 @@ img { max-width: 100%; display: block; }
     font-size: 21px; font-weight: 700; line-height: 1.3; color: var(--ink);
     margin: 36px 0 14px; scroll-margin-top: 90px;
 }
-.article__body a { color: var(--violet-700); border-bottom: 1px solid var(--violet-200); transition: border-color .2s; }
-.article__body a:hover { border-bottom-color: var(--violet-600); }
+.article__body a:not(.btn):not(.quiz__share-btn) { color: var(--violet-700); border-bottom: 1px solid var(--violet-200); transition: border-color .2s; }
+.article__body a:not(.btn):not(.quiz__share-btn):hover { border-bottom-color: var(--violet-600); }
 .article__body strong { color: var(--ink); font-weight: 700; }
 .article__list { margin: 0 0 22px; padding-left: 22px; }
 .article__list li { margin-bottom: 10px; }
@@ -1520,13 +1520,14 @@ img { max-width: 100%; display: block; }
     margin: 40px 0 14px; scroll-margin-top: 90px;
 }
 
-.article__body--rich a {
+/* :not(.btn) — иначе маркерная подсветка ссылок затирает фон кнопок в CTA-блоках */
+.article__body--rich a:not(.btn):not(.quiz__share-btn) {
     color: var(--violet-700);
     background: linear-gradient(transparent 70%, var(--violet-100) 70%);
     border-bottom: 1px solid var(--violet-300); transition: background .2s, border-color .2s;
     padding: 0 2px;
 }
-.article__body--rich a:hover { background: linear-gradient(transparent 0%, var(--violet-100) 0%); border-bottom-color: var(--violet-600); }
+.article__body--rich a:not(.btn):not(.quiz__share-btn):hover { background: linear-gradient(transparent 0%, var(--violet-100) 0%); border-bottom-color: var(--violet-600); }
 .article__body--rich strong { color: var(--ink); font-weight: 700; }
 
 /* Pull quote — decorative callout sentence */
@@ -2142,3 +2143,28 @@ img { max-width: 100%; display: block; }
     .test-card--wide .test-card__img { aspect-ratio: 16/9; height: auto; }
     .test-card--wide .test-card__title { font-size: 21px; }
 }
+
+/* ---------- Поделиться результатом теста ---------- */
+.quiz__share { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border-soft); }
+.quiz__share-label {
+    display: block; font-size: 13px; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--ink-40); margin-bottom: 12px;
+}
+.quiz__share-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.article__body .quiz__share-btn,
+.quiz__share-btn {
+    display: inline-block; line-height: 1.2; padding: 9px 16px; border-radius: 999px; font-size: 14px; font-weight: 600;
+    text-decoration: none; cursor: pointer; font-family: inherit;
+    border: 1px solid var(--border); background: #fff; color: var(--ink-80);
+    border-bottom: 1px solid var(--border); text-decoration: none;
+    transition: all .15s;
+}
+.article__body .quiz__share-btn:hover,
+.quiz__share-btn:hover { transform: translateY(-1px); color: #fff; border-bottom-color: transparent; }
+.quiz__share-btn--vk:hover { background: #0077ff; border-color: #0077ff; }
+.quiz__share-btn--tg:hover { background: #29a9eb; border-color: #29a9eb; }
+.quiz__share-btn--wa:hover { background: #25d366; border-color: #25d366; }
+.quiz__share-btn--ok:hover { background: #ee8208; border-color: #ee8208; }
+.quiz__share-btn--copy:hover { background: var(--violet-600); border-color: var(--violet-600); }
+.quiz__share-btn.is-done { background: var(--green-500); border-color: var(--green-500); color: #fff; }
+@media (max-width: 640px) { .quiz__share-btn { font-size: 13px; padding: 8px 13px; } }

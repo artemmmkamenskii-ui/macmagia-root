@@ -67,6 +67,47 @@
     return cfg.results[0];
   }
 
+  function setupShare(res) {
+    var url = location.origin + location.pathname + '?r=' + res.key;
+    var head = (root.querySelector('.quiz__result-head') || {}).textContent || 'Мой результат';
+    var text = head.replace(/^Ваш/, 'Мой') + ' — ' + res.title + '. А какой у вас?';
+    var u = encodeURIComponent(url), tx = encodeURIComponent(text);
+
+    var links = {
+      'share-vk': 'https://vk.com/share.php?url=' + u + '&title=' + tx,
+      'share-tg': 'https://t.me/share/url?url=' + u + '&text=' + tx,
+      'share-wa': 'https://api.whatsapp.com/send?text=' + encodeURIComponent(text + ' ' + url),
+      'share-ok': 'https://connect.ok.ru/offer?url=' + u + '&title=' + tx
+    };
+    Object.keys(links).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.setAttribute('href', links[id]);
+      el.onclick = function () { if (window.ym) ym(109562142, 'reachGoal', id.replace('-', '_')); };
+    });
+
+    var copy = document.getElementById('share-copy');
+    if (copy) {
+      copy.onclick = function () {
+        var done = function () {
+          var was = copy.textContent;
+          copy.textContent = 'Ссылка скопирована';
+          copy.classList.add('is-done');
+          setTimeout(function () { copy.textContent = was; copy.classList.remove('is-done'); }, 2000);
+          if (window.ym) ym(109562142, 'reachGoal', 'share_copy');
+        };
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(url).then(done, done);
+        } else {
+          var i = document.createElement('input');
+          i.value = url; document.body.appendChild(i); i.select();
+          try { document.execCommand('copy'); } catch (e) {}
+          document.body.removeChild(i); done();
+        }
+      };
+    }
+  }
+
   function show(res, s) {
     titleEl.textContent = res.title;
     var keys = Object.keys(s);
@@ -83,6 +124,7 @@
         '<em>' + s[k] + '</em></div>';
     }).join('');
     jump.setAttribute('href', '#' + res.key);
+    setupShare(res);
     box.hidden = false;
 
     // подсветить нужный разбор в тексте статьи
