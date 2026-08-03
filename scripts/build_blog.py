@@ -338,10 +338,12 @@ def render_test(test_id):
         )
 
     cfg = json.dumps({
-        "threshold": spec["threshold"],
+        "threshold": spec.get("threshold"),  # в режиме top не нужен
         "total": len(spec["questions"]),
         "results": spec["results"],
         "scaleLabels": spec.get("scaleLabels", {}),
+        "mode": spec.get("mode", "quadrant"),
+        "scaleMax": spec.get("scaleMax"),
     }, ensure_ascii=False)
 
     return (

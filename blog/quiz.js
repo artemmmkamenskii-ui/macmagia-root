@@ -48,6 +48,15 @@
   }
 
   function pick(s) {
+    // режим «top»: результат — шкала с максимальным баллом (архетипы и т.п.)
+    if (cfg.mode === 'top') {
+      var best = null;
+      Object.keys(s).forEach(function (k) { if (!best || s[k] > s[best]) best = k; });
+      for (var j = 0; j < cfg.results.length; j++) {
+        if (cfg.results[j].scale === best) return cfg.results[j];
+      }
+      return cfg.results[0];
+    }
     var hi = {};
     Object.keys(s).forEach(function (k) { hi[k] = s[k] >= cfg.threshold ? 'high' : 'low'; });
     for (var i = 0; i < cfg.results.length; i++) {
@@ -60,9 +69,15 @@
 
   function show(res, s) {
     titleEl.textContent = res.title;
-    scalesEl.innerHTML = Object.keys(s).map(function (k) {
+    var keys = Object.keys(s);
+    if (cfg.mode === 'top') {
+      keys.sort(function (a, b) { return s[b] - s[a]; });
+      keys = keys.slice(0, 3);
+    }
+    scalesEl.innerHTML = keys.map(function (k) {
       var label = (cfg.scaleLabels && cfg.scaleLabels[k]) || k;
-      var pct = Math.round(s[k] / (cfg.threshold * 2) * 100);
+      var max = cfg.mode === 'top' ? (cfg.scaleMax || cfg.threshold * 2) : cfg.threshold * 2;
+      var pct = Math.round(s[k] / max * 100);
       return '<div class="quiz__scale"><span>' + label + '</span>' +
         '<i><b style="width:' + Math.min(pct, 100) + '%"></b></i>' +
         '<em>' + s[k] + '</em></div>';
