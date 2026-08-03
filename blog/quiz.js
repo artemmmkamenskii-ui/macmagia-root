@@ -42,7 +42,12 @@
     var s = {};
     root.querySelectorAll('.quiz__q input:checked').forEach(function (i) {
       var k = i.getAttribute('data-scale');
-      s[k] = (s[k] || 0) + parseInt(i.value, 10);
+      var v = parseInt(i.value, 10);
+      // обратное утверждение: согласие означает НИЗКИЙ балл по шкале,
+      // поэтому значение инвертируется. Так гасится склонность
+      // соглашаться со всем подряд, которая иначе завышает все шкалы.
+      if (i.getAttribute('data-reverse')) v = (cfg.maxOption || 3) - v;
+      s[k] = (s[k] || 0) + v;
     });
     return s;
   }
@@ -70,7 +75,9 @@
       return cfg.results[0];
     }
     var hi = {};
-    Object.keys(s).forEach(function (k) { hi[k] = s[k] >= cfg.threshold ? 'high' : 'low'; });
+    // строго больше середины: ровно середина = нет выраженного предпочтения,
+    // и в спорной точке мы не приписываем человеку проблемный полюс
+    Object.keys(s).forEach(function (k) { hi[k] = s[k] > cfg.threshold ? 'high' : 'low'; });
     for (var i = 0; i < cfg.results.length; i++) {
       var r = cfg.results[i], ok = true;
       Object.keys(hi).forEach(function (k) { if (r[k] && r[k] !== hi[k]) ok = false; });

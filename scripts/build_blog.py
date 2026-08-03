@@ -328,7 +328,8 @@ def render_test(test_id):
     for i, q in enumerate(spec["questions"]):
         answers = "".join(
             f'<label class="quiz__opt"><input type="radio" name="q{i}" '
-            f'value="{o["value"]}" data-scale="{q["scale"]}">'
+            f'value="{o["value"]}" data-scale="{q["scale"]}"'
+            + (' data-reverse="1"' if q.get("reverse") else "") + '>'
             f'<span>{html_escape(o["label"])}</span></label>'
             for o in opts
         )
@@ -345,6 +346,7 @@ def render_test(test_id):
         "mode": spec.get("mode", "quadrant"),
         "scaleMax": spec.get("scaleMax"),
         "axes": spec.get("axes", []),
+        "maxOption": max(o["value"] for o in opts),
     }, ensure_ascii=False)
 
     return (
