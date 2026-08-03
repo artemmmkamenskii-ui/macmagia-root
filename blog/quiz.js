@@ -147,7 +147,7 @@
     var keys = Object.keys(s);
     if (cfg.mode === 'top') {
       keys.sort(function (a, b) { return s[b] - s[a]; });
-      keys = keys.slice(0, 3);
+      keys = keys.slice(0, cfg.showScales || 3);
     }
     scalesEl.innerHTML = keys.map(function (k) {
       var label = (cfg.scaleLabels && cfg.scaleLabels[k]) || k;

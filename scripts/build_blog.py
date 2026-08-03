@@ -346,6 +346,7 @@ def render_test(test_id):
         "mode": spec.get("mode", "quadrant"),
         "scaleMax": spec.get("scaleMax"),
         "axes": spec.get("axes", []),
+        "showScales": spec.get("showScales"),
         "maxOption": max(o["value"] for o in opts),
     }, ensure_ascii=False)
 
