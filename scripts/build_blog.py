@@ -788,6 +788,19 @@ def render_article(md_path, all_meta):
     related_html = render_related(fm, all_meta)
     products_html = render_products(fm.get("relatedProducts") or [])
 
+    # Обложка в начале статьи — та же картинка, что уходит в og:image. Читатель
+    # приходит из ленты по крючку на ней, и логично, что на странице он видит
+    # то же изображение. Это LCP-элемент: без lazy, с высоким приоритетом.
+    hero_cover = ""
+    if (BLOG_DIR / "covers" / f"{fm['slug']}.jpg").exists():
+        hero_cover = (
+            '<figure class="article-hero__cover">\n'
+            f'                <img src="/blog/covers/{fm["slug"]}.jpg" '
+            f'alt="{html_escape(fm["title"])}" width="1600" height="900" '
+            'fetchpriority="high" decoding="async">\n'
+            '            </figure>'
+        )
+
     author_card = (
         '<aside class="article__author-card">\n'
         f'                <div class="article__author-card-photo" style="background: url(\'{author["avatar"]}\') center/cover, var(--violet-100);" aria-hidden="true"></div>\n'
@@ -876,6 +889,8 @@ def render_article(md_path, all_meta):
                     <span>{rt} минут чтения</span>
                 </div>
             </div>
+
+            {hero_cover}
         </div>
     </section>
 

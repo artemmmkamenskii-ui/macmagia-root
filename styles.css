@@ -1577,6 +1577,16 @@ img { max-width: 100%; display: block; }
 .article-hero__dates time { font-weight: 500; }
 .article-hero__dates-sep { width: 3px; height: 3px; border-radius: 50%; background: var(--ink-40); }
 
+/* Обложка статьи. height:auto обязателен: у <img> проставлены width/height
+   для резерва места, и без него атрибуты переопределяют пропорции. */
+.article-hero__cover { margin: 32px 0 0; }
+.article-hero__cover img {
+    display: block; width: 100%; height: auto;
+    aspect-ratio: 16 / 9; object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 12px 32px rgba(30, 20, 60, .10);
+}
+
 /* ---------- Article body (enhanced typography) ---------- */
 .article-body-wrap { background: #fff; padding: 56px 0 64px; }
 .article-body-wrap__inner { max-width: 760px; margin: 0 auto; padding: 0 28px; }
