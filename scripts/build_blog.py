@@ -1081,6 +1081,50 @@ def render_tests_hub(items):
 """
 
 
+# Тематические хабы: собирают уже существующие статьи в раздел, НЕ меняя их
+# адреса. Хаб берёт общие запросы («эмоции человека»), а поисковику показывает
+# плотный тематический кластер — именно этого требует Discover.
+TOPIC_HUBS = {
+    "emocii": {
+        "match": r"эмоц|чувств|тревог|стресс|апати|гнев|злост|обид|вин[аы]|стыд|страх|"
+                 r"тоск|одиночеств|выгоран|раздражен|грусть|печал|радост|зависть|"
+                 r"ревност|психосоматик|подавлен",
+        "crumb": "Эмоции",
+        "tag": "Эмоции и состояния",
+        "h1": "Эмоции и состояния",
+        "lead": "Что мы чувствуем и что с этим делать: тревога, вина, стыд, злость, "
+                "апатия, одиночество. Разборы от психолога — без осуждения и без "
+                "советов «просто не думай об этом».",
+        "title": "Эмоции и чувства: разборы состояний от психолога | МакМагия",
+        "desc": "Статьи о чувствах и состояниях: тревога, вина, стыд, гнев, апатия, "
+                "одиночество, выгорание. Что за каждым стоит и что с этим делать.",
+    },
+}
+
+
+def build_topic_hubs(metas):
+    """Хаб-страницы разделов. Статьи остаются по своим адресам."""
+    made = []
+    for slug, cfg in TOPIC_HUBS.items():
+        pat = re.compile(cfg["match"])
+        items = [m for m in metas if not m.get("section") and pat.search(
+            " ".join([str(m.get("title", "")), str(m.get("primaryKeyword", "")),
+                      " ".join(map(str, m.get("tags") or []))]).lower())]
+        if len(items) < 5:
+            continue
+        out = BLOG_DIR / slug
+        out.mkdir(parents=True, exist_ok=True)
+        html = render_hub(items, crumb=cfg["crumb"], tag=cfg["tag"], h1=cfg["h1"],
+                          lead=cfg["lead"], canonical=f"{SITE_URL}/blog/{slug}/")
+        html = html.replace("<title>Блог МакМагии — психология, метафорические карты, арт-терапия</title>",
+                            f'<title>{cfg["title"]}</title>')
+        html = re.sub(r'<meta name="description" content="[^"]*">',
+                      f'<meta name="description" content="{cfg["desc"]}">', html, count=1)
+        (out / "index.html").write_text(inject_metrika(html), encoding="utf-8")
+        made.append((slug, len(items)))
+    return made
+
+
 def render_hub(metas, *, crumb="Блог", tag="Блог МакМагии",
                h1="Статьи о картах, психологии и работе с собой",
                lead=("Метафорические карты, арт-терапия, психология и AI-инструменты — "
@@ -1499,6 +1543,12 @@ def update_sitemap(metas, today):
         '    <priority>0.8</priority>',
         '  </url>',
     ]
+    for sec in list(TOPIC_HUBS):
+        parts.extend(['  <url>', f'    <loc>{SITE_URL}/blog/{sec}/</loc>',
+                      f'    <lastmod>{today}</lastmod>',
+                      '    <changefreq>weekly</changefreq>',
+                      '    <priority>0.8</priority>', '  </url>'])
+
     for sec in SECTIONS:
         if any(m.get("section") == sec for m in metas):
             parts.extend([
@@ -1642,6 +1692,9 @@ def main():
         out.mkdir(parents=True, exist_ok=True)
         (out / "index.html").write_text(inject_metrika(render_tests_hub(items)), encoding="utf-8")
         print(f"  built blog/{sec}/index.html ({len(items)})")
+
+    for slug, n in build_topic_hubs(metas):
+        print(f"  built blog/{slug}/index.html ({n} материалов)")
 
     n_rss = update_rss(metas)
     print(f"  updated rss.xml ({n_rss} материалов для Дзена)")
