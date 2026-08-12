@@ -1236,7 +1236,7 @@ def render_regular_card(meta):
     )
 
 
-FOOTER_LINKS = 24   # сколько ссылок на статьи класть в подвал главной
+FOOTER_LINKS = 45   # сколько ссылок на статьи класть в подвал главной
 
 
 def update_landing_latest(metas, limit=6):
@@ -1300,7 +1300,17 @@ def update_landing_latest(metas, limit=6):
     # на статьи должны стоять именно на ней.
     if "<!-- FOOTER_LINKS:START -->" in text:
         shown = {m["slug"] for m in latest}
-        rest = [m for m in ordered if m["slug"] not in shown][:FOOTER_LINKS]
+        # В подвал ставим не просто свежее, а страницы с наименьшим числом
+        # входящих внутренних ссылок: главную Google обходит чаще всего, и
+        # разумнее тратить её вес на то, до чего он иначе не доберётся.
+        import collections as _c
+        inbound = _c.Counter()
+        for f in list(BLOG_DIR.glob("*.html")) + list((BLOG_DIR / "testy").glob("*.html")):
+            html = f.read_text(encoding="utf-8", errors="ignore")
+            for href in set(re.findall(r'href="/(blog/[^"#?]+\.html)"', html)):
+                inbound[href] += 1
+        rest = sorted((m for m in ordered if m["slug"] not in shown),
+                      key=lambda m: (inbound.get(article_path(m), 0), str(m["publishedAt"])))[:FOOTER_LINKS]
         links = "\n".join(
             f'            <a href="/{article_path(m)}">{html_escape(str(m["title"]).split(":")[0])}</a>'
             for m in rest
