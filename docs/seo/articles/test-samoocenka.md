@@ -9,6 +9,7 @@ category: "Самооценка"
 emoji: 🤍
 coverGradient: 2
 coverHook: "Тест на самооценку"
+coverLead: "Опора внутри или снаружи"
 tags: ["самооценка", "тест", "самопознание", "уверенность"]
 primaryKeyword: тест на самооценку
 lsiKeywords:

@@ -9,6 +9,7 @@ category: "Самопознание"
 emoji: 🧭
 coverGradient: 6
 coverHook: "Тест MBTI"
+coverLead: "Кто вы из шестнадцати"
 tags: ["mbti", "тест", "тип личности", "самопознание"]
 primaryKeyword: тест mbti
 lsiKeywords:

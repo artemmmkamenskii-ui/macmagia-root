@@ -7,6 +7,7 @@ updatedAt: 2026-06-23
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 🌳
+coverLead: "Любят, но рядом тяжело"
 coverGradient: 6
 tags: ["арт-терапия", "токсичные родители", "отношения с родителями", "психология"]
 primaryKeyword: токсичные родители

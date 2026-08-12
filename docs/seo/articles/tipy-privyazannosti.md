@@ -7,6 +7,7 @@ updatedAt: 2026-08-01
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🔗
+coverLead: "Откуда ваш способ любить"
 coverGradient: 4
 tags: ["привязанность", "отношения", "психология", "самопознание"]
 primaryKeyword: типы привязанности

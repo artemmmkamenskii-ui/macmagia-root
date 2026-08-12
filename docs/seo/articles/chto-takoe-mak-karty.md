@@ -7,6 +7,7 @@ updatedAt: 2026-06-09
 authorSlug: ekaterina-kamenskaya
 category: "Метафорические карты"
 emoji: 🃏
+coverLead: "Картинка говорит за вас"
 coverGradient: 1
 tags: ["метафорические карты", "МАК", "психология", "арт-терапия"]
 primaryKeyword: метафорические карты

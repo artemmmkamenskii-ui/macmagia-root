@@ -9,6 +9,7 @@ category: "Самопознание"
 emoji: 💛
 coverGradient: 5
 coverHook: "Тест на ЭИ"
+coverLead: "Что вы улавливаете, а что нет"
 tags: ["эмоциональный интеллект", "тест", "эмоции", "самопознание"]
 primaryKeyword: тест на эмоциональный интеллект
 lsiKeywords:

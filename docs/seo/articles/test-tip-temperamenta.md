@@ -9,6 +9,7 @@ category: "Самопознание"
 emoji: 🎭
 coverGradient: 2
 coverHook: "Тест на темперамент"
+coverLead: "Почему вы реагируете именно так"
 tags: ["темперамент", "тест", "самопознание", "психология"]
 primaryKeyword: тест на тип темперамента
 lsiKeywords:

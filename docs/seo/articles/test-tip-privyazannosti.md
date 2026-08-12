@@ -9,6 +9,7 @@ category: "Отношения"
 emoji: 🔗
 coverGradient: 4
 coverHook: "Тест на привязанность"
+coverLead: "Почему вас тянет то ближе, то прочь"
 tags: ["привязанность", "тест", "отношения", "самопознание"]
 primaryKeyword: тест на тип привязанности
 lsiKeywords:

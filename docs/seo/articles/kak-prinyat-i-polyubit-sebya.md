@@ -7,6 +7,7 @@ updatedAt: 2026-06-23
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 🪞
+coverLead: "Принять себя без насилия над собой"
 coverGradient: 2
 tags: ["арт-терапия", "самооценка", "принятие себя", "психология"]
 primaryKeyword: как полюбить себя

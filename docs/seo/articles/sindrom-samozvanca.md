@@ -7,6 +7,7 @@ updatedAt: 2026-06-23
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 🎭
+coverLead: "Кажется, вас вот-вот разоблачат"
 coverGradient: 4
 tags: ["арт-терапия", "синдром самозванца", "самооценка", "психология"]
 primaryKeyword: синдром самозванца

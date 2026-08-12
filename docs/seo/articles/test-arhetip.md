@@ -9,6 +9,7 @@ category: "Самопознание"
 emoji: 🪞
 coverGradient: 5
 coverHook: "Тест на архетип"
+coverLead: "Какой образ ведёт вас по жизни"
 tags: ["архетипы", "тест", "самопознание", "юнг"]
 primaryKeyword: тест на архетип
 lsiKeywords:

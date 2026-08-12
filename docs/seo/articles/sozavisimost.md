@@ -7,6 +7,7 @@ updatedAt: 2026-06-23
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 🔗
+coverLead: "Его жизнь важнее вашей"
 coverGradient: 3
 tags: ["арт-терапия", "созависимость", "отношения", "психология"]
 primaryKeyword: созависимые отношения

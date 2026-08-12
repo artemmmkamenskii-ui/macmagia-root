@@ -7,6 +7,7 @@ updatedAt: 2026-06-18
 authorSlug: ekaterina-kamenskaya
 category: "Психо-помощь"
 emoji: 🔥
+coverLead: "Сил нет даже на отдых"
 coverGradient: 3
 tags: ["выгорание", "апатия", "психология"]
 primaryKeyword: признаки выгорания

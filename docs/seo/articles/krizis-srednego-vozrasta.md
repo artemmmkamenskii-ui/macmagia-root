@@ -7,6 +7,7 @@ updatedAt: 2026-06-23
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 🌗
+coverLead: "Это не кризис, это развилка"
 coverGradient: 1
 tags: ["арт-терапия", "кризис среднего возраста", "идентичность", "психология"]
 primaryKeyword: кризис среднего возраста

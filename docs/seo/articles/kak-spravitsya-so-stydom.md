@@ -7,6 +7,7 @@ updatedAt: 2026-06-24
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 🫥
+coverLead: "Стыдно быть собой"
 coverGradient: 5
 tags: ["арт-терапия", "чувство стыда", "психология"]
 primaryKeyword: чувство стыда

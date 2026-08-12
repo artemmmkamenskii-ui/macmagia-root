@@ -9,6 +9,7 @@ category: "Отношения"
 emoji: 💔
 coverGradient: 2
 coverHook: "Тест на ревность"
+coverLead: "Страх потери или контроль"
 tags: ["ревность", "тест", "отношения", "доверие"]
 primaryKeyword: тест на ревность
 lsiKeywords:

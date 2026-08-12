@@ -2267,3 +2267,14 @@ img { max-width: 100%; display: block; }
 .quiz__axis i b { display: block; height: 100%; background: var(--violet-500); }
 @media (max-width: 640px) { .quiz__axis { font-size: 12px; } .quiz__axis span { min-width: 74px; } }
 .quiz__axis i.is-right { display: flex; justify-content: flex-end; }
+
+/* обложки в карточках списков — вместо эмодзи на градиенте */
+.blog-card__cover--img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover;
+    display: block; background: var(--violet-50); min-height: 0; }
+/* не растягиваем по высоте: при object-fit:cover обложку режет по бокам
+   и срезает крупный заголовок. Центрируем в своей колонке. */
+.blog-card--featured .blog-card__cover--img,
+.blog-card .blog-card__cover--img { align-self: center; aspect-ratio: 16/9; height: auto; }
+@media (max-width: 720px) {
+    .blog-card--featured .blog-card__cover--img { aspect-ratio: 16/9; height: auto; }
+}

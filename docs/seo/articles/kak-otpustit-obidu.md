@@ -7,6 +7,7 @@ updatedAt: 2026-06-24
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 🪨
+coverLead: "Простить не получается"
 coverGradient: 3
 tags: ["арт-терапия", "обида", "психология"]
 primaryKeyword: как отпустить обиду

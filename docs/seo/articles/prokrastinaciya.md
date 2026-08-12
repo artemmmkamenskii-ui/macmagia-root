@@ -7,6 +7,7 @@ updatedAt: 2026-06-27
 authorSlug: ekaterina-kamenskaya
 category: "Цели и развитие"
 emoji: ⏳
+coverLead: "Знаю, что надо. Не делаю"
 coverGradient: 1
 tags: ["цели", "прокрастинация", "коучинг", "психология"]
 primaryKeyword: прокрастинация

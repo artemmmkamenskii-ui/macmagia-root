@@ -7,6 +7,7 @@ updatedAt: 2026-06-24
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 🌙
+coverLead: "Одиноко даже среди своих"
 coverGradient: 4
 tags: ["арт-терапия", "одиночество", "психология"]
 primaryKeyword: чувство одиночества

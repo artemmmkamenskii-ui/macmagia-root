@@ -7,6 +7,7 @@ updatedAt: 2026-06-24
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 🪶
+coverLead: "Виноваты всегда и во всём"
 coverGradient: 4
 tags: ["арт-терапия", "чувство вины", "психология"]
 primaryKeyword: чувство вины

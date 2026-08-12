@@ -9,6 +9,7 @@ category: "Отношения"
 emoji: 🪢
 coverGradient: 4
 coverHook: "Тест на отношения"
+coverLead: "Что расшатывает вашу пару"
 tags: ["отношения", "тест", "пара", "близость"]
 primaryKeyword: тест на отношения
 lsiKeywords:

@@ -9,6 +9,7 @@ category: "Психология"
 emoji: 🫀
 coverGradient: 2
 coverHook: "Психосоматика"
+coverLead: "Тело говорит, когда вы молчите"
 tags: ["психосоматика", "эмоции", "тело", "стресс", "психология"]
 primaryKeyword: психосоматика
 lsiKeywords:

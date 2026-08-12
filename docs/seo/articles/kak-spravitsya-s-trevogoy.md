@@ -7,6 +7,7 @@ updatedAt: 2026-06-24
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 🌫️
+coverLead: "Внутри всё сжато без причины"
 coverGradient: 3
 tags: ["арт-терапия", "тревога", "психология"]
 primaryKeyword: как справиться с тревогой

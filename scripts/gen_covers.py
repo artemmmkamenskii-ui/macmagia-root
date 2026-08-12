@@ -81,11 +81,12 @@ def make_hook(meta):
     return " ".join(acc).strip(" .,:") or title[:30]
 
 
-def render(hook, category, emoji, variant, shift, out_path, fmt="cover"):
+def render(hook, category, emoji, variant, shift, out_path, fmt="cover", sub=""):
     w, h = (PIN_W, PIN_H) if fmt == "pin" else (W, H)
     html = TEMPLATE.read_text(encoding="utf-8")
     for k, v in {
         "{{HOOK}}": hook,
+        "{{SUB}}": sub,
         "{{CATEGORY}}": category,
         "{{EMOJI}}": emoji or "",
         "{{VARIANT}}": str(variant),
@@ -123,7 +124,13 @@ def cover_params(meta, slug):
     variant = int(variant) if str(variant).isdigit() else h % N_VARIANTS + 1
     shift = (h // 7) % N_SHIFTS
     category = str(meta.get("category") or (meta.get("tags") or ["Блог"])[0])
-    return make_hook(meta), category, str(meta.get("emoji") or ""), variant, shift
+    # coverLead — продающая фраза крупно, тема уходит мелкой строкой под ней.
+    # Заголовок статьи в ленте и так подписан под картинкой, дублировать его
+    # на обложке — терять место, которое может работать на CTR.
+    lead = str(meta.get("coverLead") or "").strip()
+    topic = make_hook(meta)
+    big, sub = (lead, topic) if lead else (topic, "")
+    return big, category, str(meta.get("emoji") or ""), variant, shift, sub
 
 
 def load_meta(md_path):
@@ -186,8 +193,8 @@ def main():
         if out.exists() and not args.force:
             skipped += 1
             continue
-        hook, cat, em, variant, shift = cover_params(meta, slug)
-        render(hook, cat, em, variant, shift, out, fmt="pin" if args.pins else "cover")
+        hook, cat, em, variant, shift, sub = cover_params(meta, slug)
+        render(hook, cat, em, variant, shift, out, fmt="pin" if args.pins else "cover", sub=sub)
         made += 1
         print(f"  {out.relative_to(ROOT)}  v{variant}  [{hook}]")
     print(f"\nDone. Сгенерировано {made}, пропущено {skipped}.")

@@ -1236,15 +1236,27 @@ def render_hub(metas, *, crumb="Блог", tag="Блог МакМагии",
 """
 
 
+def card_cover_html(meta, cls="blog-card__cover"):
+    """Обложка для карточки в списке. Обложки генерятся gen_covers.py и лежат
+    в blog/covers/. Если для статьи её нет (например, задан свой `cover:`) —
+    остаётся прежний вариант с эмодзи на градиенте."""
+    slug = meta.get("slug")
+    if slug and (BLOG_DIR / "covers" / f"{slug}.jpg").exists():
+        return (f'<img class="{cls} {cls}--img" src="/blog/covers/{slug}.jpg" alt="" '
+                f'width="480" height="270" loading="lazy">')
+    emoji = meta.get("emoji", "📖")
+    gradient = meta.get("coverGradient", 1)
+    return (f'<div class="{cls} {cls}--{gradient}" aria-hidden="true">'
+            f'<span class="blog-card__emoji">{emoji}</span></div>')
+
+
 def render_featured_card(meta):
     emoji = meta.get("emoji", "📖")
     gradient = meta.get("coverGradient", 1)
     tag = meta.get("category") or (meta.get("tags") or ["Статья"])[0]
     return (
         f'<a href="/{article_path(meta)}" class="blog-card blog-card--featured">\n'
-        f'            <div class="blog-card__cover blog-card__cover--{gradient}" aria-hidden="true">\n'
-        f'                <span class="blog-card__emoji">{emoji}</span>\n'
-        f'            </div>\n'
+        f'            {card_cover_html(meta)}\n'
         f'            <div class="blog-card__body">\n'
         f'                <div class="blog-card__meta">\n'
         f'                    <span class="blog-card__tag">{html_escape(tag)}</span>\n'
@@ -1264,9 +1276,7 @@ def render_regular_card(meta):
     tag = meta.get("category") or (meta.get("tags") or ["Статья"])[0]
     return (
         f'<a href="/{article_path(meta)}" class="blog-card">\n'
-        f'                <div class="blog-card__cover blog-card__cover--{gradient}" aria-hidden="true">\n'
-        f'                    <span class="blog-card__emoji">{emoji}</span>\n'
-        f'                </div>\n'
+        f'                {card_cover_html(meta)}\n'
         f'                <div class="blog-card__body">\n'
         f'                    <div class="blog-card__meta">\n'
         f'                        <span class="blog-card__tag">{html_escape(tag)}</span>\n'

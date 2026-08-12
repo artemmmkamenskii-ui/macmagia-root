@@ -9,6 +9,7 @@ category: "Самопознание"
 emoji: 🧩
 coverGradient: 3
 coverHook: "Тест на характер"
+coverLead: "Что в вас мешает людям рядом"
 tags: ["характер", "тест", "самопознание", "отношения"]
 primaryKeyword: тест на характер
 lsiKeywords:
