@@ -2230,6 +2230,45 @@ img { max-width: 100%; display: block; }
     .tests-hero__lead { font-size: 16px; }
 }
 
+/* ---------- Словарь психолога ---------- */
+.slovar-alphabet {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    max-width: 900px; margin: 0 auto 44px; padding: 18px 20px;
+    background: var(--bg-soft); border-radius: 16px;
+}
+.slovar-alphabet__letter {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 38px; height: 38px; padding: 0 8px;
+    border-radius: 10px; background: #fff;
+    font-size: 16px; font-weight: 700; color: var(--ink);
+    text-decoration: none; transition: background .15s, color .15s, transform .15s;
+}
+.slovar-alphabet__letter:hover { background: var(--violet-600, #7c3aed); color: #fff; transform: translateY(-2px); }
+
+.slovar-group { max-width: 900px; margin: 0 auto 40px; scroll-margin-top: 90px; }
+.slovar-group__letter {
+    font-size: 26px; font-weight: 800; color: var(--violet-600, #7c3aed);
+    margin: 0 0 14px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-soft);
+}
+.slovar-list { list-style: none; margin: 0; padding: 0; }
+.slovar-list__item {
+    display: grid; grid-template-columns: 240px 1fr; gap: 6px 24px;
+    align-items: baseline; padding: 14px 0;
+    border-bottom: 1px solid var(--border-soft);
+}
+.slovar-list__item:last-child { border-bottom: none; }
+.slovar-list__term { font-size: 18px; font-weight: 700; color: var(--ink); text-decoration: none; }
+.slovar-list__term:hover { color: var(--violet-600, #7c3aed); text-decoration: underline; }
+.slovar-list__def { font-size: 16px; line-height: 1.6; color: var(--ink-60); }
+
+@media (max-width: 640px) {
+    .slovar-list__item { grid-template-columns: 1fr; gap: 4px; }
+    .slovar-alphabet { gap: 6px; padding: 14px 12px; }
+    .slovar-alphabet__letter { min-width: 34px; height: 34px; font-size: 15px; }
+    .slovar-group__letter { font-size: 22px; }
+}
+
 /* пока тестов меньше трёх — широкая карточка вместо сиротливой сетки */
 .tests-grid--wide { grid-template-columns: 1fr; max-width: 900px; margin-left: auto; margin-right: auto; }
 .test-card--wide { display: grid; grid-template-columns: 420px 1fr; align-items: center; background: var(--bg-soft); }

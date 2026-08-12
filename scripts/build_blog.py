@@ -174,7 +174,7 @@ FORBIDDEN_RE = re.compile(r"\b(?:" + "|".join(FORBIDDEN_PATTERNS) + r")\b",
                           re.IGNORECASE | re.UNICODE)
 
 
-SECTIONS = {"testy": "Тесты"}   # frontmatter `section:` → подпапка в /blog/
+SECTIONS = {"testy": "Тесты", "slovar": "Словарь"}   # frontmatter `section:` → подпапка в /blog/
 
 
 def styles_version():
@@ -763,7 +763,9 @@ def render_article(md_path, all_meta):
         )
 
     toc_items = extract_toc_from_html(body_html)
-    toc_html = render_toc(toc_items)
+    # В словаре статьи короткие: оглавление из трёх пунктов над текстом на
+    # полтора экрана только отодвигает ответ, за которым человек пришёл.
+    toc_html = "" if fm.get("section") == "slovar" else render_toc(toc_items)
 
     rt = fm.get("readingTime") or reading_time_min(body_md)
 
@@ -1096,6 +1098,158 @@ def render_tests_hub(items):
 """
 
 
+FAQ_SLOVAR = [
+    ("Чем словарь отличается от статей блога?",
+     "Словарь отвечает на вопрос «что это такое» — коротко и по делу, за минуту чтения. "
+     "Статьи разбирают тему подробно: причины, что с этим делать, упражнения. "
+     "Из каждой статьи словаря есть ссылка на подробный разбор, если он у нас есть."),
+    ("Можно ли поставить себе диагноз по этому словарю?",
+     "Нет, и это важно. Многие термины здесь описывают состояния, которые в бытовой речи "
+     "и в психиатрии значат разное. Узнать себя в описании — повод сходить к специалисту, "
+     "а не основание для диагноза."),
+    ("Кто пишет эти определения?",
+     "Практикующий психолог. Мы намеренно избегаем академических формулировок из учебников: "
+     "задача словаря — объяснить понятие так, чтобы им можно было пользоваться."),
+]
+
+
+def term_letter(meta):
+    """Буква для алфавитного указателя. Ё сводим к Е — иначе она уезжает
+    в отдельную секцию из одного слова."""
+    name = str(meta.get("term") or meta.get("title", "?")).strip()
+    ch = name[0].upper()
+    return "Е" if ch == "Ё" else ch
+
+
+def render_slovar_hub(items):
+    by_letter = {}
+    for m in items:
+        by_letter.setdefault(term_letter(m), []).append(m)
+    for group in by_letter.values():
+        group.sort(key=lambda m: str(m.get("term") or m["title"]).lower())
+    letters = sorted(by_letter)
+
+    nav = "".join(
+        f'<a class="slovar-alphabet__letter" href="#letter-{l}">{l}</a>' for l in letters
+    )
+    blocks = []
+    for l in letters:
+        entries = "".join(
+            f'<li class="slovar-list__item">'
+            f'<a class="slovar-list__term" href="/{article_path(m)}">'
+            f'{html_escape(str(m.get("term") or m["title"]))}</a>'
+            f'<span class="slovar-list__def">{html_escape(str(m.get("shortDef") or ""))}</span>'
+            f'</li>'
+            for m in by_letter[l]
+        )
+        blocks.append(
+            f'<section class="slovar-group" id="letter-{l}">\n'
+            f'            <h2 class="slovar-group__letter">{l}</h2>\n'
+            f'            <ul class="slovar-list">{entries}</ul>\n'
+            f'        </section>'
+        )
+    groups_html = "\n        ".join(blocks)
+
+    faq = "".join(
+        f'<details class="tests-faq__item"><summary>{html_escape(q)}</summary>'
+        f'<p>{html_escape(a)}</p></details>' for q, a in FAQ_SLOVAR
+    )
+    og_image = f"{SITE_URL}/blog/covers/{items[0]['slug']}.jpg" if items else f"{SITE_URL}/about.jpg"
+    ld = json.dumps({
+        "@context": "https://schema.org",
+        "@graph": [
+            {"@type": "DefinedTermSet",
+             "name": "Словарь психологических терминов",
+             "url": f"{SITE_URL}/blog/slovar/",
+             "hasDefinedTerm": [
+                 {"@type": "DefinedTerm",
+                  "name": str(m.get("term") or m["title"]),
+                  "description": str(m.get("shortDef") or m.get("description", "")),
+                  "url": article_url(m)}
+                 for m in sorted(items, key=lambda m: str(m.get("term") or m["title"]).lower())
+             ]},
+            {"@type": "FAQPage",
+             "mainEntity": [
+                 {"@type": "Question", "name": q,
+                  "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ_SLOVAR
+             ]},
+            {"@type": "BreadcrumbList",
+             "itemListElement": [
+                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": f"{SITE_URL}/"},
+                 {"@type": "ListItem", "position": 2, "name": "Блог", "item": f"{SITE_URL}/blog/"},
+                 {"@type": "ListItem", "position": 3, "name": "Словарь",
+                  "item": f"{SITE_URL}/blog/slovar/"},
+             ]},
+        ],
+    }, ensure_ascii=False, indent=2)
+
+    return f"""<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Словарь психологических терминов простыми словами | МакМагия</title>
+    <meta name="description" content="Словарь психологических терминов простыми словами: {len(items)} понятий с объяснением от практикующего психолога. Что это такое, как проявляется и что с этим делать.">
+    <link rel="canonical" href="{SITE_URL}/blog/slovar/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="МакМагия">
+    <meta property="og:url" content="{SITE_URL}/blog/slovar/">
+    <meta property="og:title" content="Словарь психологических терминов простыми словами">
+    <meta property="og:description" content="{len(items)} понятий с объяснением от практикующего психолога: что это, как проявляется и что с этим делать.">
+    <meta property="og:image" content="{og_image}">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{og_image}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v={STYLES_V}">
+    <script type="application/ld+json">
+{ld}
+    </script>
+</head>
+<body>
+
+{HEADER_HTML}
+
+<main>
+    <section class="tests-hero">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Хлебные крошки">
+                <a href="/">Главная</a>
+                <span class="breadcrumb__sep">›</span>
+                <a href="/blog/">Блог</a>
+                <span class="breadcrumb__sep">›</span>
+                <span class="breadcrumb__current">Словарь</span>
+            </nav>
+            <h1 class="tests-hero__title">Словарь психолога</h1>
+            <p class="tests-hero__lead">Термины, которые слышишь повсюду, — простыми словами. Что это такое, как выглядит в жизни и что с этим делать. Без академических формулировок и без диагнозов по интернету.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <nav class="slovar-alphabet" aria-label="Указатель по алфавиту">{nav}</nav>
+
+        {groups_html}
+
+        <section class="tests-faq">
+            <h2 class="tests-faq__title">Частые вопросы</h2>
+            {faq}
+        </section>
+    </div>
+</main>
+
+{FOOTER_HTML}
+
+<script src="/script.js"></script>
+</body>
+</html>
+"""
+
+
 # Тематические хабы: собирают уже существующие статьи в раздел, НЕ меняя их
 # адреса. Хаб берёт общие запросы («эмоции человека»), а поисковику показывает
 # плотный тематический кластер — именно этого требует Discover.
@@ -1374,7 +1528,7 @@ def update_landing_latest(metas, limit=6):
         # разумнее тратить её вес на то, до чего он иначе не доберётся.
         import collections as _c
         inbound = _c.Counter()
-        for f in list(BLOG_DIR.glob("*.html")) + list((BLOG_DIR / "testy").glob("*.html")):
+        for f in list(BLOG_DIR.glob("*.html")) + list(BLOG_DIR.glob("*/*.html")):
             html = f.read_text(encoding="utf-8", errors="ignore")
             for href in set(re.findall(r'href="/(blog/[^"#?]+\.html)"', html)):
                 inbound[href] += 1
@@ -1705,6 +1859,32 @@ def main():
         out.write_text(inject_metrika(render_article(path, metas)), encoding="utf-8")
         print(f"  built {article_path(meta)}")
 
+    # Внутренние ссылки на блог проверяем на существование файла. При
+    # перелинковке словаря легко сослаться на страницу, которая ещё не написана
+    # или названа иначе, — и получить 404, который никто не заметит.
+    # Продуктовые адреса (/cards, /artterapy) отдаёт другое приложение, их не трогаем.
+    broken = {}
+    for meta in metas:
+        page = ROOT / article_path(meta)
+        if not page.exists():
+            continue
+        html = page.read_text(encoding="utf-8")
+        for href in set(re.findall(r'href="/(blog/[^"#?]*)"', html)):
+            target = ROOT / (href + "index.html" if href.endswith("/") else href)
+            if not target.exists():
+                broken.setdefault(article_path(meta), set()).add("/" + href)
+    if broken:
+        # Отдельно поясняем случай, когда цель ещё в очереди публикации: ссылка
+        # не опечатка, но до её даты отдаёт 404, и ставить её сейчас нельзя.
+        later = {"/" + article_path(m): str(m["publishedAt"]) for m in scheduled}
+        lines = "\n".join(
+            f"  {src} → " + ", ".join(
+                h + (f" (выйдет {later[h]})" if h in later else "") for h in sorted(hrefs)
+            )
+            for src, hrefs in sorted(broken.items())
+        )
+        raise ValueError(f"битые внутренние ссылки:\n{lines}")
+
     plain = [m for m in metas if not m.get("section")]
     (BLOG_DIR / "index.html").write_text(inject_metrika(render_hub(plain)), encoding="utf-8")
     print("  built blog/index.html")
@@ -1715,7 +1895,8 @@ def main():
             continue
         out = BLOG_DIR / sec
         out.mkdir(parents=True, exist_ok=True)
-        (out / "index.html").write_text(inject_metrika(render_tests_hub(items)), encoding="utf-8")
+        renderer = render_slovar_hub if sec == "slovar" else render_tests_hub
+        (out / "index.html").write_text(inject_metrika(renderer(items)), encoding="utf-8")
         print(f"  built blog/{sec}/index.html ({len(items)})")
 
     for slug, n in build_topic_hubs(metas):
