@@ -1868,6 +1868,29 @@ def main():
         out.write_text(inject_metrika(render_article(path, metas)), encoding="utf-8")
         print(f"  built {article_path(meta)}")
 
+    # Страница словаря не должна брать тот же запрос, что уже закрыт полной
+    # статьёй: две наши страницы начнут конкурировать друг с другом, а
+    # выиграет чужая. Именно так вышло с газлайтингом — статья лежала с июля,
+    # а я завёл ещё и термин.
+    by_kw = {}
+    for m in metas:
+        kw = str(m.get("primaryKeyword") or "").strip().lower()
+        if kw:
+            by_kw.setdefault(kw, []).append(m)
+    clashes = [
+        (kw, group) for kw, group in by_kw.items()
+        if len(group) > 1 and any(m.get("section") == "slovar" for m in group)
+    ]
+    if clashes:
+        lines = "\n".join(
+            f'  «{kw}»: ' + ", ".join("/" + article_path(m) for m in group)
+            for kw, group in sorted(clashes)
+        )
+        raise ValueError(
+            f"словарь дублирует запрос существующей статьи:\n{lines}\n"
+            f"убрать страницу словаря и сослаться на статью"
+        )
+
     # Внутренние ссылки на блог проверяем на существование файла. При
     # перелинковке словаря легко сослаться на страницу, которая ещё не написана
     # или названа иначе, — и получить 404, который никто не заметит.

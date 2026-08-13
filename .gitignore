@@ -19,3 +19,10 @@ node_modules/
 сео/
 /*.csv
 /*.docx
+
+# ключи сервисных аккаунтов Google — им место в ~/.config/macmagia/,
+# а не в проекте: отсюда файл уезжает и в репозиторий, и на сервер
+*-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]*.json
+*service-account*.json
+*credentials*.json
+gsc*.json
