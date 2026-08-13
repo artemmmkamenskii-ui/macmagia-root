@@ -1594,13 +1594,16 @@ def rss_body_html(md_path):
 
     md = md_lib.Markdown(extensions=["tables", "fenced_code"], output_format="html5")
     html_body = md.convert(body_md)
-    html_body = html_body.replace("<!--MMFAQ-->", "")
-
-    if faq_items:
-        parts = ["<h2>Частые вопросы</h2>"]
-        for q, a in faq_items:
-            parts.append(f"<h3>{html_escape(q)}</h3>\n<p>{render_inline_md(a)}</p>")
-        html_body += "\n" + "\n".join(parts)
+    # extract_faq отдаёт список словарей. Раньше здесь было
+    # `for q, a in faq_items` — распаковка словаря даёт его ключи, и в Дзен
+    # вместо вопросов и ответов уезжали строчки «q» и «a_md».
+    # Вопросы ставим на место плейсхолдера: заголовок «Частые вопросы» уже
+    # стоит в тексте над ним, а приписанные в конец они оставляли его пустым.
+    faq_html = "\n".join(
+        f'<h3>{html_escape(it["q"])}</h3>\n<p>{render_inline_md(it["a_md"])}</p>'
+        for it in faq_items
+    )
+    html_body = html_body.replace("<!--MMFAQ-->", faq_html)
 
     if RSS_TEASER_PARAS:
         paras = re.findall(r"<p>.*?</p>", html_body, flags=re.DOTALL)
@@ -1608,7 +1611,7 @@ def rss_body_html(md_path):
         html_body += (f'\n<p><a href="{SITE_URL}/blog/{fm["slug"]}.html">'
                       f'Продолжение читайте на сайте</a></p>')
     else:
-        html_body += (f'\n<p><a href="{SITE_URL}/blog/{fm["slug"]}.html">'
+        html_body += (f'\n<p><a href="{article_url(fm)}">'
                       f'Источник: МакМагия</a></p>')
 
     # относительные ссылки → абсолютные, иначе в Дзене они ведут в никуда
