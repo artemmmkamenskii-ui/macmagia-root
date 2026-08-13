@@ -1554,9 +1554,15 @@ def update_landing_latest(metas, limit=6):
 # ---------- RSS для Дзена ----------
 # Дзен импортирует материалы по RSS: канал настраивается один раз, дальше
 # статьи уезжают туда сами в том же ритме, что и на сайт.
-# RSS_TEASER_PARAS = 0 — отдавать полный текст (Дзен так работает лучше всего);
-# число N — отдать первые N абзацев и ссылку «продолжение на сайте».
-RSS_TEASER_PARAS = 0
+#
+# ВЫКЛЮЧЕНО 13.08.2026. Полный текст статьи на dzen.ru — прямой конкурент
+# нашей же странице в Яндексе, где у нас 92 страницы в поиске и хорошие
+# позиции. За всё время канал дал один переход, так что менять на это
+# работающий Яндекс невыгодно. Лента остаётся валидной, но пустой: адрес
+# отдаёт 200, а импортировать оттуда нечего.
+# Чтобы вернуть: RSS_ENABLED = True. Для режима анонсов — RSS_TEASER_PARAS = 3.
+RSS_ENABLED = False
+RSS_TEASER_PARAS = 0   # 0 — полный текст; N — первые N абзацев и ссылка на сайт
 RSS_LIMIT = 50
 
 RFC822_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
@@ -1674,7 +1680,7 @@ def sanitize_for_dzen(html_body, fm):
 
 
 def update_rss(metas):
-    feedable = [m for m in metas if not m.get("noRss")]
+    feedable = [] if not RSS_ENABLED else [m for m in metas if not m.get("noRss")]
     ordered = sorted(feedable, key=lambda m: str(m["publishedAt"]), reverse=True)[:RSS_LIMIT]
     items = []
     for m in ordered:
