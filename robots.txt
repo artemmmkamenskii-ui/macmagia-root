@@ -10,7 +10,9 @@ Disallow: /deploy/
 # приходят ysclid (Директ), _rsc (внутренние переходы Next.js), url/w/q
 # (оптимизатор картинок). Проверено по Search Console: адресов с "?" в
 # трафике 0, живого тут не режем.
-Clean-param: ysclid&yclid&utm_source&utm_medium&utm_campaign&utm_content&utm_term&gclid&srsltid&shem&_rsc&from&roistat
+# blok — метка тематической рассылки на /free-session/ (?blok=dengi и т.п.):
+# страница одна и та же, меняются только заголовок и лид.
+Clean-param: ysclid&yclid&utm_source&utm_medium&utm_campaign&utm_content&utm_term&gclid&srsltid&shem&_rsc&from&roistat&blok
 
 Sitemap: https://macmagia.ru/sitemap.xml
 Host: https://macmagia.ru

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бесплатная МАК-сессия с начинающим специалистом — МакМагия</title>
+    <meta name="description" content="Студенты курса «МАК-практик» набирают людей на бесплатные онлайн-сессии с метафорическими картами. Сессия около 60 минут, бесплатно. Оставьте заявку.">
+    <link rel="canonical" href="https://macmagia.ru/free-session/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#7c3aed">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="МакМагия">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:url" content="https://macmagia.ru/free-session/">
+    <meta property="og:title" content="Бесплатная МАК-сессия с начинающим специалистом">
+    <meta property="og:description" content="Студенты курса «МАК-практик» набирают людей на бесплатные онлайн-сессии с метафорическими картами. Около 60 минут, бесплатно.">
+    <meta property="og:image" content="https://macmagia.ru/about.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Бесплатная МАК-сессия с начинающим специалистом">
+    <meta name="twitter:description" content="Онлайн-сессия с метафорическими картами около 60 минут. Бесплатно, с начинающим специалистом.">
+    <meta name="twitter:image" content="https://macmagia.ru/about.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=960951c6">
+
+    <style>
+        /* ---------- Страница «Бесплатная сессия» ---------- */
+        .fs-hero {
+            position: relative;
+            padding: 64px 0 72px;
+            background:
+                radial-gradient(ellipse 60% 70% at 50% 15%, rgba(199, 180, 255, .22), transparent 70%),
+                linear-gradient(180deg, #faf8ff 0%, #ffffff 100%);
+            overflow: hidden;
+        }
+        .badge a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: opacity .2s ease;
+        }
+        .badge a:hover { opacity: .7; }
+
+        .fs-hero__inner {
+            position: relative;
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .fs-hero__title {
+            font-size: clamp(32px, 4.4vw, 52px);
+            font-weight: 800;
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+        .fs-hero__text {
+            font-size: 17px;
+            line-height: 1.65;
+            color: var(--ink-60);
+            max-width: 620px;
+            margin: 0 auto 28px;
+        }
+        .fs-facts {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .fs-fact {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: #fff;
+            border: 1.5px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ink-80);
+        }
+        .fs-fact svg { width: 16px; height: 16px; color: var(--violet-600); flex-shrink: 0; }
+
+        .fs-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 8px;
+        }
+        .fs-step {
+            background: #fff;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 26px 22px;
+            box-shadow: var(--shadow-sm);
+        }
+        .fs-step__num {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--violet-600), var(--violet-500));
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 14px;
+        }
+        .fs-step__title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .fs-step__text { font-size: 14.5px; line-height: 1.6; color: var(--ink-60); }
+
+        .fs-cols {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .fs-card {
+            background: #fff;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 30px 28px;
+            box-shadow: var(--shadow-sm);
+        }
+        .fs-card__title { font-size: 18px; font-weight: 700; margin-bottom: 14px; }
+        .fs-list { list-style: none; display: grid; gap: 10px; }
+        .fs-list li {
+            position: relative;
+            padding-left: 28px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--ink-80);
+        }
+        .fs-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--violet-100);
+            box-shadow: inset 0 0 0 4px var(--violet-500);
+        }
+        .fs-list--muted li::before { background: var(--border-soft); box-shadow: inset 0 0 0 4px var(--ink-40); }
+
+        .fs-note {
+            max-width: 820px;
+            margin: 22px auto 0;
+            padding: 20px 22px;
+            border-radius: var(--radius-md);
+            background: var(--violet-50);
+            border: 1.5px solid var(--violet-100);
+            font-size: 14.5px;
+            line-height: 1.65;
+            color: var(--ink-80);
+        }
+        .fs-note strong { color: var(--ink); }
+        .fs-note a { color: var(--violet-700); text-decoration: underline; }
+
+        /* ---------- Форма ---------- */
+        .fs-form-section { padding: 80px 0 96px; background: var(--bg-muted); }
+        .fs-form-wrap {
+            max-width: 620px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 38px 36px;
+            box-shadow: var(--shadow-md);
+        }
+        .fs-form-wrap__title { font-size: 24px; font-weight: 800; letter-spacing: -0.01em; }
+        .fs-form-wrap__lead { margin-top: 8px; font-size: 15px; color: var(--ink-60); line-height: 1.6; }
+        .fs-form { margin-top: 26px; display: grid; gap: 18px; }
+        .fs-field { display: grid; gap: 7px; }
+        .fs-label { font-size: 14px; font-weight: 600; color: var(--ink-80); }
+        .fs-label span { color: var(--ink-40); font-weight: 500; }
+        .fs-input,
+        .fs-textarea {
+            width: 100%;
+            font-family: inherit;
+            font-size: 15px;
+            color: var(--ink);
+            background: var(--bg-soft);
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            padding: 13px 15px;
+            transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+        .fs-input::placeholder, .fs-textarea::placeholder { color: var(--ink-40); }
+        .fs-input:focus, .fs-textarea:focus {
+            outline: none;
+            background: #fff;
+            border-color: var(--violet-300);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, .12);
+        }
+        .fs-textarea { min-height: 104px; resize: vertical; line-height: 1.55; }
+        .fs-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .fs-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+        .fs-consent { display: flex; gap: 11px; align-items: flex-start; font-size: 13.5px; line-height: 1.55; color: var(--ink-60); }
+        .fs-consent input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--violet-600); flex-shrink: 0; cursor: pointer; }
+        .fs-consent a { color: var(--violet-700); text-decoration: underline; }
+
+        .fs-form .btn { width: 100%; }
+        .fs-msg {
+            display: none;
+            font-size: 14.5px;
+            line-height: 1.6;
+            padding: 14px 16px;
+            border-radius: 12px;
+        }
+        .fs-msg--error { background: #fff1f2; border: 1.5px solid #fecdd3; color: #9f1239; }
+        .fs-msg--visible { display: block; }
+        .fs-hint { font-size: 13px; color: var(--ink-40); text-align: center; line-height: 1.55; }
+
+        .fs-success { display: none; text-align: center; }
+        .fs-success--visible { display: block; }
+        .fs-success__icon {
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--green-400), var(--green-500));
+            color: #fff;
+        }
+        .fs-success__icon svg { width: 30px; height: 30px; }
+        .fs-success__title { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+        .fs-success__text { font-size: 15px; color: var(--ink-60); line-height: 1.65; }
+
+        @media (max-width: 900px) {
+            .fs-steps { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .fs-hero { padding: 40px 0 52px; }
+            .fs-steps { grid-template-columns: 1fr; }
+            .fs-row { grid-template-columns: 1fr; }
+            .fs-form-section { padding: 56px 0 72px; }
+            .fs-form-wrap { padding: 28px 22px; border-radius: var(--radius-lg); }
+            .fs-card { padding: 24px 22px; }
+        }
+    </style>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+       ym(109562142, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/109562142" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+
+<header class="header">
+    <div class="container header__inner">
+        <a href="/" class="logo">
+            <span class="logo__mark">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="20" cy="20" r="6" fill="currentColor"/>
+                    <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M20 6 L20 14"/><path d="M20 26 L20 34"/>
+                        <path d="M6 20 L14 20"/><path d="M26 20 L34 20"/>
+                        <path d="M10 10 L15.5 15.5"/><path d="M24.5 24.5 L30 30"/>
+                        <path d="M30 10 L24.5 15.5"/><path d="M15.5 24.5 L10 30"/>
+                    </g>
+                </svg>
+            </span>
+            <span class="logo__text">МакМагия</span>
+        </a>
+        <nav class="nav">
+            <a href="/">Главная</a>
+            <a href="/blog/">Блог</a>
+            <a href="/blog/testy/">Тесты</a>
+            <a href="https://macmagia.ru/praktik">Обучение</a>
+        </nav>
+        <div class="header__cta">
+            <a href="#zayavka" class="btn btn--primary btn--sm">Оставить заявку</a>
+        </div>
+        <button class="burger" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<main>
+
+    <section class="fs-hero">
+        <div class="hero__bg-orbs">
+            <span class="orb orb--1"></span>
+            <span class="orb orb--2"></span>
+            <span class="orb orb--3"></span>
+            <span class="orb orb--4"></span>
+        </div>
+        <div class="container fs-hero__inner">
+            <div class="badge"><span class="badge__plus">+</span> Практика студентов курса <a href="https://macmagia.ru/praktik" target="_blank" rel="noopener">«МАК-практик»</a></div>
+            <h1 class="fs-hero__title">
+                Бесплатная <span class="accent">МАК-сессия</span><br>с начинающим специалистом
+            </h1>
+            <p class="fs-hero__text">
+                Наши студенты проходят обучение, и им нужна практика с живыми людьми. Вы получаете полноценную
+                сессию с метафорическими картами — бесплатно.
+            </p>
+            <div class="fs-facts">
+                <span class="fs-fact">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                    Онлайн, около 60 минут
+                </span>
+                <span class="fs-fact">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7"/><path d="M3 8h18v4H3z"/><path d="M12 20V8"/><path d="M12 8S9.5 4 7.5 4a2.5 2.5 0 0 0 0 5"/><path d="M12 8s2.5-4 4.5-4a2.5 2.5 0 0 1 0 5"/></svg>
+                    Полностью бесплатно
+                </span>
+                <span class="fs-fact">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Один запрос — один разбор
+                </span>
+            </div>
+            <a href="#zayavka" class="btn btn--primary">Оставить заявку</a>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 64px;">
+        <div class="container">
+            <div class="section__head section__head--compact">
+                <div class="eyebrow">Как это проходит</div>
+                <h2 class="section__title">Четыре шага — от заявки до сессии</h2>
+            </div>
+            <div class="fs-steps">
+                <div class="fs-step">
+                    <div class="fs-step__num">1</div>
+                    <div class="fs-step__title">Заявка</div>
+                    <div class="fs-step__text">Заполняете форму внизу страницы — это займёт минуту.</div>
+                </div>
+                <div class="fs-step">
+                    <div class="fs-step__num">2</div>
+                    <div class="fs-step__title">Подбор специалиста</div>
+                    <div class="fs-step__text">Смотрим ваш запрос и передаём его студенту, которому он подходит. Пишем вам в течение 1–3 дней.</div>
+                </div>
+                <div class="fs-step">
+                    <div class="fs-step__num">3</div>
+                    <div class="fs-step__title">Сессия</div>
+                    <div class="fs-step__text">Договариваетесь о времени напрямую и встречаетесь по видеосвязи. Около часа работы с картами.</div>
+                </div>
+                <div class="fs-step">
+                    <div class="fs-step__num">4</div>
+                    <div class="fs-step__title">После сессии</div>
+                    <div class="fs-step__text">Если захочется — скажете специалисту, что было полезно, а что нет. Ему это помогает расти.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--muted" style="padding-top: 72px; padding-bottom: 72px;">
+        <div class="container">
+            <div class="fs-cols">
+                <div class="fs-card">
+                    <div class="fs-card__title">Что важно знать заранее</div>
+                    <ul class="fs-list fs-list--muted">
+                        <li>Сессию ведёт <strong>начинающий специалист</strong> — студент курса, который учится под руководством преподавателей.</li>
+                        <li>МАК-сессия — это про исследование своего запроса через образы, а не медицинская помощь и не лечение.</li>
+                        <li>Всё, что вы расскажете, остаётся между вами и специалистом. Случай может обсуждаться на учебной супервизии — без имени и деталей, по которым вас можно узнать.</li>
+                        <li>Это одна встреча. Продолжать или нет — решаете вы, отдельно и по договорённости.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fs-note">
+                <strong>Если сейчас очень тяжело.</strong> При острых состояниях, мыслях о причинении вреда себе или
+                тяжёлых диагнозах формат учебной сессии не подходит — нужна помощь профильного специалиста.
+            </div>
+        </div>
+    </section>
+
+
+    <section class="fs-form-section" id="zayavka">
+        <div class="container">
+            <div class="fs-form-wrap">
+                <div class="fs-form-content" id="fs-form-content">
+                    <div class="fs-form-wrap__title">Оставить заявку</div>
+                    <p class="fs-form-wrap__lead">
+                        Заполните форму — мы напишем вам, когда найдём специалиста под ваш запрос.
+                        Обычно это занимает от одного до трёх дней.
+                    </p>
+
+                    <form class="fs-form" id="fs-form" novalidate>
+                        <div class="fs-field">
+                            <label class="fs-label" for="fs-name">Как к вам обращаться</label>
+                            <input class="fs-input" type="text" id="fs-name" name="name" placeholder="Имя" autocomplete="name" maxlength="80" required>
+                        </div>
+
+                        <div class="fs-field">
+                            <label class="fs-label" for="fs-phone">Телефон</label>
+                            <input class="fs-input" type="tel" id="fs-phone" name="phone" placeholder="+7 900 000-00-00" autocomplete="tel" maxlength="40" required>
+                        </div>
+
+                        <div class="fs-field">
+                            <label class="fs-label" for="fs-request">С чем хотелось бы поработать <span>— пара предложений</span></label>
+                            <textarea class="fs-textarea" id="fs-request" name="request" placeholder="Например: не могу решиться на смену работы, топчусь на месте уже полгода" maxlength="1500"></textarea>
+                        </div>
+
+                        <div class="fs-hp" aria-hidden="true">
+                            <label for="fs-company">Не заполняйте это поле</label>
+                            <input type="text" id="fs-company" name="company" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <label class="fs-consent">
+                            <input type="checkbox" id="fs-consent" name="consent">
+                            <span>Согласен(на) на обработку персональных данных в соответствии с <a href="/privacy-policy.html" target="_blank" rel="noopener">политикой обработки ПДн</a>.</span>
+                        </label>
+
+                        <div class="fs-msg fs-msg--error" id="fs-error" role="alert"></div>
+
+                        <button type="submit" class="btn btn--primary" id="fs-submit">Отправить заявку</button>
+
+                        <p class="fs-hint">
+                            Никакой рассылки и звонков «по базе» — номер нужен только для того,
+                            чтобы связать вас со специалистом.
+                        </p>
+                    </form>
+                </div>
+
+                <div class="fs-success" id="fs-success">
+                    <div class="fs-success__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                    </div>
+                    <div class="fs-success__title">Заявка принята</div>
+                    <p class="fs-success__text">
+                        Мы получили её и передадим специалисту, которому подходит ваш запрос.
+                        Напишем вам в течение 1–3 дней. Если вдруг не дождётесь ответа —
+                        напишите на <a href="mailto:macmagia@yandex.ru" style="color: var(--violet-700); text-decoration: underline;">macmagia@yandex.ru</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer" id="footer">
+    <div class="container footer__inner">
+        <div class="footer__col">
+            <a href="/" class="logo logo--light">
+                <span class="logo__mark">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="20" cy="20" r="6" fill="currentColor"/>
+                        <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <path d="M20 6 L20 14"/><path d="M20 26 L20 34"/>
+                            <path d="M6 20 L14 20"/><path d="M26 20 L34 20"/>
+                            <path d="M10 10 L15.5 15.5"/><path d="M24.5 24.5 L30 30"/>
+                            <path d="M30 10 L24.5 15.5"/><path d="M15.5 24.5 L10 30"/>
+                        </g>
+                    </svg>
+                </span>
+                <span class="logo__text">МакМагия</span>
+            </a>
+            <p class="footer__about">Психология, метафорические карты и AI в одном пространстве.</p>
+        </div>
+        <div class="footer__col">
+            <div class="footer__title">Обучение</div>
+            <a href="https://macmagia.ru/praktik">МАК-практик (с дипломом)</a>
+            <a href="https://macmagia.ru/mac">МАК-карты</a>
+            <a href="https://macmagia.ru/artterapy">Арт-терапия</a>
+            <a href="https://macmagia.ru/coach">Коучинг</a>
+        </div>
+        <div class="footer__col">
+            <div class="footer__title">Читать</div>
+            <a href="/blog/">Блог</a>
+            <a href="/blog/testy/">Тесты</a>
+            <a href="/blog/kak-rabotat-s-mak.html">Как работать с МАК</a>
+            <a href="/blog/rasklady-i-tehniki-mak.html">Техники работы с МАК</a>
+        </div>
+        <div class="footer__col">
+            <div class="footer__title">Контакты</div>
+            <a href="mailto:macmagia@yandex.ru">macmagia@yandex.ru</a>
+            <div class="footer__title" style="margin-top: 22px;">Документы</div>
+            <a href="/public-offer.html">Публичная оферта</a>
+            <a href="/privacy-policy.html">Политика обработки ПДн</a>
+            <a href="/refund-policy.html">Политика возвратов</a>
+        </div>
+    </div>
+    <div class="container footer__bottom">
+        © <span id="year"></span> МакМагия. ИП Каменская Е.В., ОГРНИП 319732500013182, ИНН 732808256904. Все права защищены.
+    </div>
+</footer>
+
+<script src="/script.js"></script>
+<script>
+(function () {
+    /* ------------------------------------------------------------------
+       Куда уходят заявки.
+       Сюда нужно вставить URL веб-приложения Google Apps Script
+       (Развернуть → Новое развёртывание → Веб-приложение).
+       Инструкция и код скрипта: docs/free-session-google-sheets.md
+       ------------------------------------------------------------------ */
+    var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzrrlMDZKZe2zEdkML5Cbj9Un3jBFLJKrhWDVaAKuWrM3wP51umD3WKvLMfOLW4vN87bA/exec';
+
+    var form    = document.getElementById('fs-form');
+    var content = document.getElementById('fs-form-content');
+    var success = document.getElementById('fs-success');
+    var errorEl = document.getElementById('fs-error');
+    var submit  = document.getElementById('fs-submit');
+    if (!form) return;
+
+    var openedAt = Date.now();
+
+    /* Метка рассылки из ссылки: /free-session/?blok=dengi
+       На саму страницу не влияет — уходит вместе с заявкой, чтобы в таблице
+       было видно, с какой рассылки пришёл человек. Ключи ниже нужны только
+       для читаемости; незнакомый ключ пишется в таблицу как есть,
+       так что в рассылке можно ставить любую метку. */
+    var BLOKI = {
+        dengi:       'Деньги и финансы',
+        otnosheniya: 'Отношения',
+        samoocenka:  'Самооценка и уверенность',
+        celi:        'Цели и выбор пути',
+        resurs:      'Состояние и ресурс',
+        rod:         'Родители и семья'
+    };
+    var blok = '';
+    try {
+        var blokKey = (new URLSearchParams(location.search).get('blok') || '').toLowerCase().trim().slice(0, 40);
+        if (blokKey) blok = BLOKI[blokKey] || blokKey;
+    } catch (e) { /* старый браузер — заявка просто уйдёт без метки */ }
+
+    function showError(text) {
+        errorEl.textContent = text;
+        errorEl.classList.add('fs-msg--visible');
+    }
+    function clearError() {
+        errorEl.textContent = '';
+        errorEl.classList.remove('fs-msg--visible');
+    }
+
+    /* Один номер на одну заполненную форму: при повторном нажатии кнопки
+       (или переотправке ниже) скрипт в таблице отбросит дубль. */
+    var uid = String(Date.now()) + '-' + Math.random().toString(36).slice(2, 10);
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        clearError();
+
+        var data = {
+            uid:      uid,                                // номер заявки: страховка от дубля при переотправке
+            name:     form.name.value.trim(),
+            phone:    form.phone.value.trim(),
+            request:  form.request.value.trim(),
+            topic:    blok,                               // метка рассылки, если пришли по ?blok=
+            company:  form.company.value.trim(),          // honeypot: у людей пустой
+            elapsed:  Math.round((Date.now() - openedAt) / 1000),
+            page:     location.pathname + location.search,
+            referrer: document.referrer || ''
+        };
+
+        if (!data.name) {
+            showError('Напишите, как к вам обращаться.');
+            form.name.focus();
+            return;
+        }
+        if (!data.phone) {
+            showError('Оставьте номер телефона, иначе мы не сможем с вами связаться.');
+            form.phone.focus();
+            return;
+        }
+        if (!form.consent.checked) {
+            showError('Нужно согласие на обработку персональных данных.');
+            return;
+        }
+
+        if (!ENDPOINT) {
+            showError('Форма пока не подключена к приёму заявок. Напишите, пожалуйста, на macmagia@yandex.ru — ответим и запишем вас.');
+            return;
+        }
+
+        submit.disabled = true;
+        submit.textContent = 'Отправляем…';
+
+        var body = JSON.stringify(data);
+
+        function done() {
+            content.style.display = 'none';
+            success.classList.add('fs-success--visible');
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (typeof ym === 'function') ym(109562142, 'reachGoal', 'free_session_lead');
+        }
+
+        function fail() {
+            submit.disabled = false;
+            submit.textContent = 'Отправить заявку';
+            showError('Не получилось отправить заявку. Проверьте интернет и попробуйте ещё раз — либо напишите на macmagia@yandex.ru.');
+        }
+
+        /* text/plain — чтобы браузер не слал preflight-запрос:
+           Apps Script на OPTIONS не отвечает. Тело всё равно читается как JSON. */
+        fetch(ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: body,
+            redirect: 'follow'
+        }).then(function (res) {
+            if (!res.ok) throw new Error('http ' + res.status);
+            done();
+        }).catch(function () {
+            /* Запасной путь: если ответ срезал CORS, отправляем вслепую —
+               заявка до таблицы доходит, просто подтверждение прочитать нельзя. */
+            fetch(ENDPOINT, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: body
+            }).then(done).catch(fail);
+        });
+    });
+})();
+</script>
+</body>
+</html>
