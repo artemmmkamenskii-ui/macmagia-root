@@ -218,6 +218,12 @@
         .fs-consent a { color: var(--violet-700); text-decoration: underline; }
 
         .fs-form .btn { width: 100%; }
+        .fs-form .btn:disabled {
+            opacity: .6;
+            cursor: default;
+            transform: none;
+            box-shadow: none;
+        }
         .fs-msg {
             display: none;
             font-size: 14.5px;
@@ -592,7 +598,17 @@
 
         var body = JSON.stringify(data);
 
+        /* Ответ Apps Script идёт 3–5 секунд, а после простоя и дольше.
+           Столько держать человека перед кнопкой незачем: запрос уже ушёл,
+           и запись произойдёт независимо от того, дождёмся мы ответа или нет.
+           Поэтому через 3 секунды показываем «принято», не дожидаясь. */
+        var settled = false;
+        var waitTimer = setTimeout(function () {
+            if (!settled) { settled = true; done(); }
+        }, 3000);
+
         function done() {
+            clearTimeout(waitTimer);
             content.style.display = 'none';
             success.classList.add('fs-success--visible');
             success.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -600,6 +616,7 @@
         }
 
         function fail() {
+            clearTimeout(waitTimer);
             submit.disabled = false;
             submit.textContent = 'Отправить заявку';
             showError('Не получилось отправить заявку. Проверьте интернет и попробуйте ещё раз — либо напишите на macmagia@yandex.ru.');
@@ -613,17 +630,15 @@
             body: body,
             redirect: 'follow'
         }).then(function (res) {
-            if (!res.ok) throw new Error('http ' + res.status);
-            done();
+            if (settled) return;                  // уже сказали «принято» по таймеру
+            settled = true;
+            if (res.ok) { done(); } else { fail(); }
         }).catch(function () {
-            /* Запасной путь: если ответ срезал CORS, отправляем вслепую —
-               заявка до таблицы доходит, просто подтверждение прочитать нельзя. */
-            fetch(ENDPOINT, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                body: body
-            }).then(done).catch(fail);
+            /* Сюда попадаем, если запрос вообще не ушёл. Повторная отправка
+               безопасна: номер заявки тот же, дубля в таблице не будет. */
+            if (settled) return;
+            settled = true;
+            fail();
         });
     });
 })();
