@@ -9,6 +9,8 @@
  * Пошаговая инструкция: docs/free-session-google-sheets.md
  */
 
+var VERSION = 'v4-phone-8';
+
 var SHEET_NAME = 'Заявки';
 
 var HEADERS = [
@@ -52,13 +54,21 @@ function doPost(e) {
     }
 
     var name = text(data.name, 100);
-    var phone = text(data.phone, 50);
+    var phone = normalizePhone(data.phone);
 
     if (!name || !phone) {
       return jsonResponse({ ok: false, error: 'empty' });
     }
 
-    getSheet().appendRow([
+    var sheet = getSheet();
+    var row = sheet.getLastRow() + 1;
+
+    /* Телефон «+7 900…» и всё, что начинается с + или =, таблица принимает
+       за формулу и показывает #ERROR!. Поэтому колонки со свободным текстом
+       переводим в текстовый формат до записи. */
+    sheet.getRange(row, 2, 1, HEADERS.length - 1).setNumberFormat('@');
+
+    sheet.getRange(row, 1, 1, HEADERS.length).setValues([[
       Utilities.formatDate(new Date(), 'Europe/Moscow', 'dd.MM.yyyy HH:mm'),
       name,
       phone,
@@ -68,7 +78,14 @@ function doPost(e) {
       '',
       buildSource(data),
       ''
-    ]);
+    ]]);
+
+    // Страховка: если телефон всё-таки стал формулой — переписываем ячейку текстом.
+    var phoneCell = sheet.getRange(row, 3);
+    if (phoneCell.getDisplayValue().charAt(0) === '#') {
+      phoneCell.setNumberFormat('@');
+      phoneCell.setValue(phone);
+    }
 
     return jsonResponse({ ok: true });
   } catch (err) {
@@ -79,9 +96,25 @@ function doPost(e) {
   }
 }
 
-/** Открыть URL веб-приложения в браузере — быстрая проверка, что оно живо. */
+/** Открыть URL веб-приложения в браузере — быстрая проверка, что оно живо.
+ *  VERSION меняется вместе с кодом: по нему видно, какая версия развёрнута.
+ *  Телефон наружу не отдаём — только признак, текст в ячейке или ошибка. */
 function doGet() {
-  return jsonResponse({ ok: true, service: 'macmagia free-session', rows: getSheet().getLastRow() - 1 });
+  var sheet = getSheet();
+  var last = sheet.getLastRow();
+  var out = {
+    ok: true,
+    service: 'macmagia free-session',
+    version: VERSION,
+    rows: last - 1
+  };
+
+  if (last > 1) {
+    var shown = sheet.getRange(last, 3).getDisplayValue();
+    out.lastPhoneOk = shown.charAt(0) !== '#';
+  }
+
+  return jsonResponse(out);
 }
 
 function parseRequest(e) {
@@ -102,6 +135,19 @@ function buildSource(data) {
   return parts.join(' | ');
 }
 
+/**
+ * Телефон приводим к виду без ведущего плюса: «+7 900 …» → «8 900 …».
+ * Со знака + таблица начинает считать ячейку формулой и рисует #ERROR!.
+ * Иностранный номер просто теряет плюс: «+380 …» → «380 …».
+ */
+function normalizePhone(value) {
+  var s = text(value, 50);
+  if (s.charAt(0) !== '+') return s;
+
+  s = s.slice(1).replace(/^\s+/, '');
+  return s.charAt(0) === '7' ? '8' + s.slice(1) : s;
+}
+
 function text(value, limit) {
   var s = String(value == null ? '' : value).trim();
   return limit && s.length > limit ? s.slice(0, limit) + '…' : s;
@@ -117,6 +163,8 @@ function getSheet() {
       .setFontWeight('bold')
       .setBackground('#ede8ff');
     sheet.setFrozenRows(1);
+    // Со второй строки и ниже — текстовый формат, чтобы телефоны не стали формулами.
+    sheet.getRange(2, 2, sheet.getMaxRows() - 1, HEADERS.length - 1).setNumberFormat('@');
     sheet.setColumnWidth(1, 140); // дата
     sheet.setColumnWidth(2, 140); // имя
     sheet.setColumnWidth(3, 160); // телефон
