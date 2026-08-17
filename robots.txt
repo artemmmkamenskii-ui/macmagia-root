@@ -5,5 +5,12 @@ Allow: /
 Disallow: /docs/
 Disallow: /deploy/
 
+# Рекламные и служебные метки: каждая делает поисковику копию адреса.
+# Список собран разбором access.log за сутки 2026-08-17 — в логах реально
+# приходят ysclid (Директ), _rsc (внутренние переходы Next.js), url/w/q
+# (оптимизатор картинок). Проверено по Search Console: адресов с "?" в
+# трафике 0, живого тут не режем.
+Clean-param: ysclid&yclid&utm_source&utm_medium&utm_campaign&utm_content&utm_term&gclid&srsltid&shem&_rsc&from&roistat
+
 Sitemap: https://macmagia.ru/sitemap.xml
 Host: https://macmagia.ru
