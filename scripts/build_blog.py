@@ -668,6 +668,20 @@ HEADER_HTML = """<header class="header">
     </div>
 </header>"""
 
+# Блок подписки в конце каждой статьи. Ставится после карточки автора,
+# перед похожими статьями: человек дочитал — самое время предложить продолжение.
+SUBSCRIBE_HTML = """<aside class="article__subscribe">
+                <div class="article__subscribe-body">
+                    <div class="article__subscribe-title">Больше материалов — в нашем боте</div>
+                    <p class="article__subscribe-text">Короткие практики, разборы и анонсы новых статей. Выберите, где вам удобнее читать.</p>
+                </div>
+                <div class="article__subscribe-links">
+                    <a class="article__subscribe-btn article__subscribe-btn--tg" href="https://t.me/MacMagia_bot" target="_blank" rel="noopener">Telegram</a>
+                    <a class="article__subscribe-btn article__subscribe-btn--max" href="https://max.ru/id732808256904_bot" target="_blank" rel="noopener">MAX</a>
+                </div>
+            </aside>"""
+
+
 FOOTER_HTML = """<footer class="footer" id="footer">
     <div class="container footer__inner">
         <div class="footer__col">
@@ -908,6 +922,8 @@ def render_article(md_path, all_meta):
             {products_html}
 
             {author_card}
+
+            {SUBSCRIBE_HTML}
 
             {related_html}
 

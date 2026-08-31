@@ -2327,3 +2327,61 @@ img { max-width: 100%; display: block; }
 @media (max-width: 720px) {
     .blog-card--featured .blog-card__cover--img { aspect-ratio: 16/9; height: auto; }
 }
+
+/* ---------- Подписка на бота в конце статьи ---------- */
+.article__subscribe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    padding: 28px 32px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--violet-50), #fff 70%);
+    border: 1.5px solid var(--violet-100);
+    box-shadow: var(--shadow-sm);
+}
+.article__subscribe-body { flex: 1 1 320px; }
+.article__subscribe-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+}
+.article__subscribe-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-60);
+    margin: 0;
+}
+.article__subscribe-links { display: flex; gap: 10px; flex-wrap: wrap; }
+.article__subscribe-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 26px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.article__subscribe-btn--tg {
+    background: linear-gradient(135deg, var(--violet-600), var(--violet-500));
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(124, 58, 237, .28);
+}
+.article__subscribe-btn--tg:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(124, 58, 237, .36); }
+.article__subscribe-btn--max {
+    background: #fff;
+    color: var(--violet-700);
+    border: 1.5px solid var(--violet-200);
+}
+.article__subscribe-btn--max:hover { background: var(--violet-50); transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+    .article__subscribe { padding: 22px 20px; margin: 32px 0; }
+    .article__subscribe-links { width: 100%; }
+    .article__subscribe-btn { flex: 1 1 auto; }
+}
