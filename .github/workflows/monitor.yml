@@ -1,0 +1,114 @@
+name: Мониторинг сайта
+
+# Ловит две разные беды, которые выглядят по-разному:
+#
+#   1. Сайт лёг — упала ВМ, nginx или процессы PM2.
+#   2. Домен снова ушёл под проксирование Cloudflare. Тогда сайт формально
+#      отвечает 200 (и обычные мониторинги молчат), но у российских
+#      провайдеров не открывается — так было 2026-08-17, см. deploy/RECOVERY.md.
+#
+# Плюс следит за сроком сертификата и за тем, что форма на /free-session/
+# по-прежнему знает адрес приёма заявок и он отвечает.
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: site-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    env:
+      SITE: https://macmagia.ru
+      ORIGIN_IP: 111.88.154.110
+      TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+    steps:
+      - name: Проверки
+        run: |
+          set -uo pipefail
+          : > alert.txt
+
+          problem() { echo "• $1" >> alert.txt; echo "ПРОБЛЕМА: $1"; }
+          ok()      { echo "ок: $1"; }
+
+          # --- 1. Куда указывает домен -------------------------------------
+          ips=$(dig +short macmagia.ru A | tr '\n' ' ' | xargs)
+          if echo "$ips" | grep -q "$ORIGIN_IP"; then
+            ok "DNS отдаёт сервер ($ips)"
+          else
+            problem "DNS отдаёт не сервер, а $ips. Похоже, у записей macmagia.ru и www в Cloudflare снова включили Proxied — из России сайт при этом не открывается. Лечение: Cloudflare -> DNS -> Records -> Proxy status -> DNS only."
+          fi
+
+          # --- 2. Кто отвечает на запрос ------------------------------------
+          server=$(curl -sS -m 25 -I "$SITE/" | tr -d '\r' | awk 'tolower($1)=="server:"{print $2}')
+          if echo "$server" | grep -qi cloudflare; then
+            problem "Запросы обслуживает Cloudflare (server: $server), а не nginx сервера. Для российских посетителей сайт недоступен."
+          else
+            ok "отвечает $server"
+          fi
+
+          # --- 3. Живы ли разделы -------------------------------------------
+          for path in / /free-session/ /blog/ /blog/testy/ /praktik /mac /artterapy /coach /ai /online /cards/; do
+            code=$(curl -sS -m 30 -o /dev/null -w '%{http_code}' "$SITE$path" || echo 000)
+            case "$code" in
+              200|301|302|308) ok "$path -> $code" ;;
+              000)             problem "$path не ответил за 30 секунд" ;;
+              *)               problem "$path отдаёт HTTP $code" ;;
+            esac
+          done
+
+          # --- 4. Сертификат --------------------------------------------------
+          enddate=$(echo | openssl s_client -connect macmagia.ru:443 -servername macmagia.ru 2>/dev/null \
+                    | openssl x509 -noout -enddate 2>/dev/null | cut -d= -f2)
+          if [ -n "$enddate" ]; then
+            left=$(( ( $(date -d "$enddate" +%s) - $(date +%s) ) / 86400 ))
+            if [ "$left" -lt 14 ]; then
+              problem "Сертификат истекает через $left дн. ($enddate) — проверить автопродление certbot."
+            else
+              ok "сертификат ещё $left дн."
+            fi
+          else
+            problem "Не удалось прочитать сертификат — HTTPS может быть сломан."
+          fi
+
+          # --- 5. Приём заявок с /free-session/ --------------------------------
+          endpoint=$(curl -sS -m 30 "$SITE/free-session/" \
+                     | grep -o 'https://script.google.com/macros/s/[A-Za-z0-9_-]*/exec' | head -1)
+          if [ -z "$endpoint" ]; then
+            problem "На /free-session/ пропал адрес приёма заявок — форма перестала сохранять заявки в таблицу."
+          elif curl -sSL -m 40 "$endpoint" | grep -q '"ok":true'; then
+            ok "приём заявок отвечает"
+          else
+            problem "Приём заявок не отвечает: заявки со страницы /free-session/ могут не доходить до таблицы."
+          fi
+
+          # --- Итог -------------------------------------------------------------
+          if [ -s alert.txt ]; then
+            echo "----------------------------------------"
+            echo "Найдены проблемы, отправляю уведомление."
+            exit 1
+          fi
+          echo "Всё в порядке."
+
+      - name: Уведомление в Telegram
+        if: failure() && env.TG_TOKEN != ''
+        run: |
+          {
+            echo "macmagia.ru — проблема"
+            echo ""
+            cat alert.txt 2>/dev/null || echo "• проверка упала до формирования списка, смотреть лог"
+            echo ""
+            echo "Лог: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "Что делать: deploy/RECOVERY.md"
+          } > message.txt
+
+          curl -sS -X POST "https://api.telegram.org/bot$TG_TOKEN/sendMessage" \
+            -d chat_id="$TG_CHAT" \
+            --data-urlencode text@message.txt > /dev/null && echo "уведомление отправлено"
