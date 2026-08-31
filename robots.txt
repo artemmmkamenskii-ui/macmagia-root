@@ -5,6 +5,11 @@ Allow: /
 Disallow: /docs/
 Disallow: /deploy/
 
+# Вход и регистрация платформы: поиску там делать нечего, а Вебмастер считает
+# их дублями — 5 страниц с одинаковым title «Мир МАК — платформа метафорических карт».
+Disallow: /online/login
+Disallow: /online/register
+
 # Рекламные и служебные метки: каждая делает поисковику копию адреса.
 # Список собран разбором access.log за сутки 2026-08-17 — в логах реально
 # приходят ysclid (Директ), _rsc (внутренние переходы Next.js), url/w/q
@@ -12,7 +17,7 @@ Disallow: /deploy/
 # трафике 0, живого тут не режем.
 # blok — метка тематической рассылки на /free-session/ (?blok=dengi и т.п.):
 # страница одна и та же, меняются только заголовок и лид.
-Clean-param: ysclid&yclid&utm_source&utm_medium&utm_campaign&utm_content&utm_term&gclid&srsltid&shem&_rsc&from&roistat&blok
+Clean-param: ysclid&yclid&utm_source&utm_medium&utm_campaign&utm_content&utm_term&gclid&srsltid&shem&_rsc&from&roistat&blok&role
 
 Sitemap: https://macmagia.ru/sitemap.xml
 Host: https://macmagia.ru
