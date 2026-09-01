@@ -39,7 +39,7 @@ import re
 import sys
 from collections import defaultdict
 
-SRC = "docs/seo/raw/wordstat-2026-08-31/СВОДКА-целевая.csv"
+SRC = "docs/seo/raw/wordstat-2026-08-31/СВОДКА-целевая.csv"   # --src переопределяет
 ARTICLES = "docs/seo/articles"
 OUT = "docs/seo/temy-sgruppirovannye.md"
 
@@ -59,6 +59,7 @@ BLOCKS = {
     "07": ("Выгорание и работа", "/coach"),
     "08": ("Для психологов", "/praktik"),
     "09": ("Практики и тесты", "/online"),
+    "10": ("Медитации и практики", "/online"),
 }
 
 SEED_BLOCK = {
@@ -94,6 +95,8 @@ SEED_BLOCK = {
         образование-психолога работа-психологом психотерапия семейная-психотерапия
         когнитивная-психотерапия методы-психотерапии""",
     "09": """тест-на-депрессию тест-на-тревожность саморегуляция""",
+    "10": """медитация медитировать осознанность релаксация аффирмация
+        дыхательная дыхательные-практики""",
 }
 BLOCK_OF = {s.replace("-", " "): nn
             for nn, ss in SEED_BLOCK.items() for s in ss.split()}
@@ -219,6 +222,11 @@ DROP = re.compile(
     r"социализац|компетенц|учреждени|садик|детском саду|"
     # эстрада и медиаперсоны
     r"валери|пьеха|киркоров|дорофеев|шоу.?бизнес|"
+    # вторая волна: лечебная гимнастика, гуру и файлы вместо тем
+    r"стрельников|щетинин|бутейко|цигун|йог[аиу]|лфк|логопед|урологи|"
+    r"диспенз|вальяк|синельник|хей|правдина|блаво|"
+    r"слушать|скачать|музык|звуки|минусовк|аудио|плейлист|торрент|"
+    r"свеч[аиу]|благовони|поющие чаши|"
     r"(депресси|невроз|тревожн|психоз|шизофрен)\w*\s+у\s+(подростк|детей|ребен|ребён)",
     re.I,
 )
@@ -353,10 +361,12 @@ def main() -> None:
     floor = int(args[0]) if args else 300
     csv_out = next((a.split("=", 1)[1] for a in sys.argv[1:]
                     if a.startswith("--csv=")), None)
+    src = next((a.split("=", 1)[1] for a in sys.argv[1:]
+                if a.startswith("--src=")), SRC)
 
     groups = defaultdict(list)
     seen_q, kept, skipped = set(), 0, defaultdict(int)
-    for r in csv.DictReader(open(SRC, encoding="utf-8")):
+    for r in csv.DictReader(open(src, encoding="utf-8")):
         q, n = r["phrase"].strip().lower(), int(r["frequency"])
         seed = r["seed"].strip().replace("-", " ")
         if n < floor or q in seen_q:

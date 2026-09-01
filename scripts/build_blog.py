@@ -180,7 +180,7 @@ FORBIDDEN_RE = re.compile(r"\b(?:" + "|".join(FORBIDDEN_PATTERNS) + r")\b",
                           re.IGNORECASE | re.UNICODE)
 
 
-SECTIONS = {"testy": "Тесты", "slovar": "Словарь"}   # frontmatter `section:` → подпапка в /blog/
+SECTIONS = {"testy": "Тесты", "slovar": "Словарь", "sny": "Сны"}   # frontmatter `section:` → подпапка в /blog/
 
 
 def styles_version():
@@ -982,15 +982,81 @@ FAQ_TESTS = [
 # Готовые темы отсюда убирать вручную, иначе в «Скоро» висит уже сделанное.
 SOON_TESTS = []   # все запланированные тесты сделаны
 
+FAQ_SNY = [
+    ("Чем это отличается от сонника?",
+     "Сонник выдаёт готовый ответ: «змея — к предательству». Но у образа нет "
+     "универсального значения: одна и та же змея у женщины, которая боится "
+     "собственной злости, и у той, кто боится мужа, — про разное. Мы разбираем "
+     "сон так, как это делают в аналитической психологии: не переводим по "
+     "словарю, а разворачиваем вопросами, на которые отвечаете вы сами."),
+    ("Сон может что-то означать для будущего?",
+     "Сон отражает то, что уже происходит в психике, а не то, что случится. "
+     "Совпадения запоминаются, несовпадения забываются — так устроена память. "
+     "Полезнее спросить не «что это сулит», а «что во мне сейчас про это»."),
+    ("Почему снятся кошмары?",
+     "Чаще всего кошмар — способ психики переработать сильное напряжение, "
+     "которое днём некуда было деть. Разовые кошмары бывают у здоровых людей. "
+     "Если один и тот же страшный сон повторяется месяцами и вы боитесь "
+     "засыпать — это повод обратиться к специалисту."),
+    ("Что делать, чтобы запоминать сны?",
+     "Записывать сразу после пробуждения, не вставая: сон уходит за минуты. "
+     "Помогает писать в настоящем времени и отмечать не только сюжет, но и "
+     "чувство — оно обычно и есть главное."),
+]
 
-def render_test_card(m, wide=False):
+# Хаб раздела: тесты и сны используют один шаблон и одни стили, разница —
+# в текстах. Держим её здесь, чтобы не плодить копии вёрстки.
+HUB_META = {
+    "testy": {
+        "slug": "testy",
+        "crumb": "Тесты",
+        "title": "Психологические тесты онлайн — бесплатно и без регистрации | МакМагия",
+        "description": "Бесплатные психологические тесты онлайн без регистрации: тип "
+                       "привязанности и другие. Результат считается по нескольким шкалам, "
+                       "разбор пишет психолог.",
+        "og_title": "Психологические тесты онлайн — бесплатно и без регистрации",
+        "og_description": "Тесты, где результат считается по нескольким шкалам, а разбор "
+                          "пишет психолог. Бесплатно, без регистрации.",
+        "h1": "Психологические тесты",
+        "lead": "Результат считается по нескольким независимым шкалам, а не назначается по "
+                "одному ответу. Разбор каждого типа пишет психолог. Бесплатно, без "
+                "регистрации и без сбора почты.",
+        "list_name": "Психологические тесты",
+        "card_cta": "Пройти тест →",
+        "faq": FAQ_TESTS,
+        "soon": SOON_TESTS,
+    },
+    "sny": {
+        "slug": "sny",
+        "crumb": "Сны",
+        "title": "Разбор снов по Юнгу — что на самом деле значат ваши сны | МакМагия",
+        "description": "Разбор снов по Юнгу: почему сонник не отвечает на ваш вопрос и что "
+                       "образ из сна говорит о вас. Символы, повторяющиеся сны, кошмары — "
+                       "разбирает психолог.",
+        "og_title": "Разбор снов по Юнгу — что на самом деле значат ваши сны",
+        "og_description": "Не таблица значений, а способ понять свой сон: что психика "
+                          "показывает образом и какие вопросы себе задать.",
+        "h1": "Разбор снов по Юнгу",
+        "lead": "Сон — не сообщение извне и не обещание будущего, а работа психики: он "
+                "показывает то, что днём осталось незамеченным. Здесь мы разбираем образы "
+                "так, как это делают в аналитической психологии, — вопросами, а не "
+                "таблицей значений.",
+        "list_name": "Разбор снов по Юнгу",
+        "card_cta": "Разобрать сон →",
+        "faq": FAQ_SNY,
+        "soon": [],
+    },
+}
+
+
+def render_test_card(m, wide=False, cta="Пройти тест →"):
     mins = m.get("__minutes")
     qs = m.get("__questions")
     meta_bits = []
     if qs:
         meta_bits.append(f"{qs} вопросов")
     if mins:
-        meta_bits.append(f"{mins} мин")
+        meta_bits.append(f"{mins} мин" if qs else f"{mins} мин чтения")
     meta = " · ".join(meta_bits)
     title = str(m["title"]).split(":")[0]
     return (
@@ -1003,26 +1069,28 @@ def render_test_card(m, wide=False):
         f'<span class="test-card__time">{meta}</span></div>\n'
         f'    <h2 class="test-card__title">{html_escape(title)}</h2>\n'
         f'    <p class="test-card__text">{html_escape(str(m["description"]))}</p>\n'
-        f'    <span class="test-card__go">Пройти тест →</span>\n'
+        f'    <span class="test-card__go">{html_escape(cta)}</span>\n'
         f'  </div>\n'
         f'</a>'
     )
 
 
-def render_tests_hub(items):
+def render_tests_hub(items, cfg=None):
+    cfg = cfg or HUB_META["testy"]
     ordered = sorted(items, key=lambda m: str(m["publishedAt"]), reverse=True)
     # пока тестов мало, одинокая карточка в трёхколоночной сетке смотрится сиротливо —
     # показываем широкой, а сетку включаем начиная с трёх
     wide = len(ordered) < 3
-    cards = "\n".join(render_test_card(m, wide=wide) for m in ordered)
+    cards = "\n".join(render_test_card(m, wide=wide, cta=cfg["card_cta"])
+                       for m in ordered)
     soon_block = ""
-    if SOON_TESTS:
-        soon = "".join(f"<li>{html_escape(s)}</li>" for s in SOON_TESTS)
+    if cfg["soon"]:
+        soon = "".join(f"<li>{html_escape(s)}</li>" for s in cfg["soon"])
         soon_block = ('<div class="tests-soon"><div class="tests-soon__label">Скоро</div>'
                       f'<ul class="tests-soon__list">{soon}</ul></div>')
     faq = "".join(
         f'<details class="tests-faq__item"><summary>{html_escape(q)}</summary>'
-        f'<p>{html_escape(a)}</p></details>' for q, a in FAQ_TESTS
+        f'<p>{html_escape(a)}</p></details>' for q, a in cfg["faq"]
     )
     og_image = (f"{SITE_URL}/blog/covers/{ordered[0]['slug']}.jpg"
                 if ordered else f"{SITE_URL}/about.jpg")
@@ -1038,11 +1106,11 @@ def render_tests_hub(items):
              "itemListElement": [
                  {"@type": "ListItem", "position": 1, "name": "Главная", "item": f"{SITE_URL}/"},
                  {"@type": "ListItem", "position": 2, "name": "Блог", "item": f"{SITE_URL}/blog/"},
-                 {"@type": "ListItem", "position": 3, "name": "Тесты",
-                  "item": f"{SITE_URL}/blog/testy/"},
+                 {"@type": "ListItem", "position": 3, "name": cfg["crumb"],
+                  "item": f"{SITE_URL}/blog/{cfg['slug']}/"},
              ]},
             {"@type": "ItemList",
-             "name": "Психологические тесты",
+             "name": cfg["list_name"],
              "itemListElement": [
                  {"@type": "ListItem", "position": i, "url": article_url(m),
                   "name": str(m["title"]).split(":")[0]}
@@ -1056,18 +1124,18 @@ def render_tests_hub(items):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Психологические тесты онлайн — бесплатно и без регистрации | МакМагия</title>
-    <meta name="description" content="Бесплатные психологические тесты онлайн без регистрации: тип привязанности и другие. Результат считается по нескольким шкалам, разбор пишет психолог.">
-    <link rel="canonical" href="{SITE_URL}/blog/testy/">
+    <title>{cfg["title"]}</title>
+    <meta name="description" content="{cfg["description"]}">
+    <link rel="canonical" href="{SITE_URL}/blog/{cfg["slug"]}/">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#7c3aed">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="МакМагия">
-    <meta property="og:url" content="{SITE_URL}/blog/testy/">
-    <meta property="og:title" content="Психологические тесты онлайн — бесплатно и без регистрации">
-    <meta property="og:description" content="Тесты, где результат считается по нескольким шкалам, а разбор пишет психолог. Бесплатно, без регистрации.">
+    <meta property="og:url" content="{SITE_URL}/blog/{cfg["slug"]}/">
+    <meta property="og:title" content="{cfg["og_title"]}">
+    <meta property="og:description" content="{cfg["og_description"]}">
     <meta property="og:image" content="{og_image}">
     <meta property="og:locale" content="ru_RU">
     <meta name="twitter:card" content="summary_large_image">
@@ -1091,10 +1159,10 @@ def render_tests_hub(items):
                 <span class="breadcrumb__sep">›</span>
                 <a href="/blog/">Блог</a>
                 <span class="breadcrumb__sep">›</span>
-                <span class="breadcrumb__current">Тесты</span>
+                <span class="breadcrumb__current">{cfg["crumb"]}</span>
             </nav>
-            <h1 class="tests-hero__title">Психологические тесты</h1>
-            <p class="tests-hero__lead">Результат считается по нескольким независимым шкалам, а не назначается по одному ответу. Разбор каждого типа пишет психолог. Бесплатно, без регистрации и без сбора почты.</p>
+            <h1 class="tests-hero__title">{cfg["h1"]}</h1>
+            <p class="tests-hero__lead">{cfg["lead"]}</p>
         </div>
     </section>
 
@@ -1820,6 +1888,10 @@ def collect_meta(md_path):
             n = len(spec["questions"])
             fm["__questions"] = n
             fm["__minutes"] = max(2, round(n * 13 / 60))
+    # В разделе снов нет ни вопросов, ни таймера теста — на карточке показываем
+    # время чтения, иначе строка меты пустая и карточка выглядит недоделанной.
+    elif fm.get("section") == "sny":
+        fm["__minutes"] = reading_time_min(raw)
     return fm
 
 
@@ -1949,7 +2021,8 @@ def main():
             continue
         out = BLOG_DIR / sec
         out.mkdir(parents=True, exist_ok=True)
-        renderer = render_slovar_hub if sec == "slovar" else render_tests_hub
+        renderer = (render_slovar_hub if sec == "slovar"
+                    else lambda it, c=HUB_META[sec]: render_tests_hub(it, c))
         (out / "index.html").write_text(inject_metrika(renderer(items)), encoding="utf-8")
         print(f"  built blog/{sec}/index.html ({len(items)})")
 
