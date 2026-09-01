@@ -27,3 +27,4 @@ node_modules/
 *service-account*.json
 *credentials*.json
 gsc*.json
+.wordstat-profile/
