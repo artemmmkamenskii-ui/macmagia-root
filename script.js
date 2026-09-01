@@ -39,3 +39,13 @@ if (progressFill) {
     }, { passive: true });
     window.addEventListener('resize', update);
 }
+
+// Клики по кнопкам ботов -> цели в Метрике
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.article__subscribe-btn');
+    if (!btn) return;
+    const goal = btn.classList.contains('article__subscribe-btn--tg') ? 'bot_tg'
+        : btn.classList.contains('article__subscribe-btn--max') ? 'bot_max'
+        : null;
+    if (goal && window.ym) ym(109562142, 'reachGoal', goal, { page: location.pathname });
+});
