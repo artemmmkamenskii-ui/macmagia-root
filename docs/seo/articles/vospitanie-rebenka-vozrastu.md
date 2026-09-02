@@ -111,7 +111,7 @@ relatedProducts: [artterapy]
 
 - подробный разбор каждого возраста по порядку — в статье [«Этапы воспитания ребёнка»](/blog/etapy-vospitaniya-rebenka.html);
 - какую задачу решает психика в каждом периоде — в материале [«Этапы развития и воспитания ребёнка»](/blog/etapy-razvitiya-i-vospitaniya-rebenka.html);
-- отдельно про 3–7 лет — [«Воспитание ребёнка дошкольного возраста в семье»](/blog/vospitaniya-rebenka-doshkolnogo-vozrasta-v-seme.html);
+- отдельно про 3–7 лет — «Воспитание ребёнка дошкольного возраста в семье»;
 - про самый бурный период — [«Переходный возраст у детей»](/blog/perehodnyy-vozrast-u-detey.html);
 - если вы часто выходите из себя — [«Срываюсь на ребёнке»](/blog/sryvayus-na-rebenke.html).
 
