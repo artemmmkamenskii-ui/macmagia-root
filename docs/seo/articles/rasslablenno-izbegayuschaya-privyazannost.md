@@ -138,7 +138,7 @@ relatedProducts: [artterapy]
 
 - **Как ранний опыт формирует стиль близости** — [«Теория привязанности»](/blog/teoriya-privyazannosti.html).
 - **Тот же тип изнутри мужской истории** — [«Избегающий тип привязанности у мужчин»](/blog/izbegayuschiy-tip-privyazannosti-u-muzhchin.html).
-- **Проверить свой стиль** — [«Тест на тип привязанности»](/blog/test-tip-privyazannosti.html).
+- **Проверить свой стиль** — [«Тест на тип привязанности»](/blog/testy/test-tip-privyazannosti.html).
 
 ## Частые вопросы
 

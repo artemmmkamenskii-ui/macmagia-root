@@ -103,7 +103,7 @@ relatedProducts: [artterapy]
 - почему память вообще так держит человека и что с этим делают в арт-терапии — [«Как забыть человека»](/blog/kak-zabyt-cheloveka.html);
 - что происходит с нами в первые недели и месяцы — [«После расставания»](/blog/posle-rasstavaniya.html);
 - если мысли не про «забыть», а про «вернуться» — [«Вернуться к бывшему»](/blog/otnosheniya-s-byvshim-muzhchinoy.html);
-- если он снится и это сбивает — [«Снится бывший»](/blog/snitsya-byvshiy.html);
+- если он снится и это сбивает — [«Снится бывший»](/blog/sny/snitsya-byvshiy.html);
 - если прошёл год, а всё ещё больно — [«Год после расставания»](/blog/god-posle-rasstavaniya.html).
 
 ---
