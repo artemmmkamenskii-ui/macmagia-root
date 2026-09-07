@@ -2,8 +2,8 @@
 slug: novaya-zhizn-s-ponedelnika
 title: "Новая жизнь с понедельника: почему это не работает"
 description: "Начинаю новую жизнь с понедельника — и к среде всё разваливается. Разбираем механику срывов: замах не по силам, штраф за пропуск и как возвращаться без него."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 category: "Цели и развитие"
 emoji: 📆

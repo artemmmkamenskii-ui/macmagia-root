@@ -2,8 +2,8 @@
 slug: rebenok-ostalsya-s-otcom
 title: "Ребёнок остался с отцом после развода: как быть матери"
 description: "Ребёнок остался с отцом после развода: как жить со стыдом и чужим осуждением, что делать с ярлыком «мать-кукушка» и как остаться матерью на расстоянии."
-publishedAt: 2026-09-19
-updatedAt: 2026-09-19
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🕊️

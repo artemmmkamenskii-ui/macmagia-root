@@ -2,8 +2,8 @@
 slug: vozrastnye-krizisy-u-rebenka
 title: "Возрастные кризисы у ребёнка: 1, 3 и 7 лет — что делать"
 description: "Кризис года, трёх и семи лет у ребёнка: что в эти периоды происходит с ним, как это выглядит для матери и почему кризис означает развитие, а не испорченный характер."
-publishedAt: 2026-09-19
-updatedAt: 2026-09-19
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🌗

@@ -2,8 +2,8 @@
 slug: psihologiya-obscheniya
 title: "Психология общения: как говорить, чтобы вас услышали"
 description: "Психология общения на практике: почему собеседник защищается, как звучит живое я-высказывание, чем спор о фактах отличается от спора о чувствах."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 💬

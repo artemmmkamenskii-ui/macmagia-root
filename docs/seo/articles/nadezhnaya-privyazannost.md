@@ -2,8 +2,8 @@
 slug: nadezhnaya-privyazannost
 title: "Надёжная привязанность: как выглядит и можно ли к ней прийти"
 description: "Надёжная привязанность: как надёжный тип выглядит в обычных отношениях, откуда берётся в детстве и как сформировать надёжную привязанность уже во взрослом возрасте."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🪢

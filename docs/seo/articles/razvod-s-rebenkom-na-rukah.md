@@ -2,8 +2,8 @@
 slug: razvod-s-rebenkom-na-rukah
 title: "Развод с ребёнком на руках: как маме пережить и не сломаться"
 description: "Как пережить развод с ребёнком на руках: где брать силы, когда горевать некогда, что делать со страхом за деньги, одиночеством вечеров и виной за свои слёзы."
-publishedAt: 2026-09-19
-updatedAt: 2026-09-19
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🌾

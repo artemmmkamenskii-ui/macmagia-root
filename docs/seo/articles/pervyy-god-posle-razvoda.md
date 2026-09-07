@@ -2,8 +2,8 @@
 slug: pervyy-god-posle-razvoda
 title: "Первый год после развода: как собрать жизнь заново"
 description: "Жизнь после развода по месяцам: что происходит в первые недели, к трём месяцам, к полугоду и к годовщине, как справляться с бытом, деньгами и пустыми вечерами."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🌿

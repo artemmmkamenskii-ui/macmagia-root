@@ -2,8 +2,8 @@
 slug: razvod-posle-20-let-braka
 title: "Развод после двадцати лет брака: как начать жизнь заново"
 description: "Развод после 20 лет брака: почему теряется не только муж, но и версия себя, что делать с общей историей, взрослыми детьми и страхом, что начинать уже поздно."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🪞

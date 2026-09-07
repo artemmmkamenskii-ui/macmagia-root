@@ -2,8 +2,8 @@
 slug: chernaya-i-belaya-zavist
 title: "Чёрная и белая зависть: что делать, когда завидуешь"
 description: "Чёрная и белая зависть: чем они различаются на самом деле, откуда берётся чувство зависти, почему в нём столько злости и почему завидуют подругам, а не звёздам."
-publishedAt: 2026-09-18
-updatedAt: 2026-09-18
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🍏

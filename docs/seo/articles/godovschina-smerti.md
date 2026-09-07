@@ -2,8 +2,8 @@
 slug: godovschina-smerti
 title: "Годовщина смерти: почему накрывает и как прожить этот день"
 description: "Годовщина смерти мамы, мужа, отца: почему тело помнит дату и накрывает за недели, как прожить этот день и что делать, если у родни свой сценарий."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 📅

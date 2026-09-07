@@ -2,8 +2,8 @@
 slug: chuvstvo-viny-pered-rebenkom
 title: "Чувство вины перед ребёнком: как перестать себя казнить"
 description: "Чувство вины перед ребёнком: за что винятся матери, чем полезная вина отличается от вины-жвачки, что делать с виной после развода и как правильно извиниться."
-publishedAt: 2026-09-19
-updatedAt: 2026-09-19
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🕯️

@@ -2,8 +2,8 @@
 slug: razvod-roditeley-glazami-rebenka
 title: "Развод родителей: как ребёнок это переживает и что помогает"
 description: "Развод родителей глазами ребёнка: откуда берётся вина «это из-за меня», как реагируют дошкольник, школьник и подросток, как сказать о разводе и чего не делать."
-publishedAt: 2026-09-19
-updatedAt: 2026-09-19
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🧩

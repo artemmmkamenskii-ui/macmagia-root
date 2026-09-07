@@ -2,8 +2,8 @@
 slug: muzh-podal-na-razvod
 title: "Муж подал на развод: как пережить решение, которого не ждала"
 description: "Муж подал на развод: почему накрывает шоком, что делать с желанием его вернуть, как пережить первые недели и не потерять себя в уговорах и обещаниях."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🌪️

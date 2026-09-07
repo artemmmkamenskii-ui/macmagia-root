@@ -2,8 +2,8 @@
 slug: revnivyy-muzhchina
 title: "Ревнивый мужчина: как жить рядом с постоянной ревностью"
 description: "Ревнивый мужчина: где заканчивается обычная ревность и начинается контроль, как распознать проверки и запреты и что делать, если жить рядом стало тесно."
-publishedAt: 2026-09-20
-updatedAt: 2026-09-20
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🔒

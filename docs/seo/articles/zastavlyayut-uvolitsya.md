@@ -2,8 +2,8 @@
 slug: zastavlyayut-uvolitsya
 title: "Вынуждают уволиться: как не сломаться, когда выживают с работы"
 description: "Заставляют уволиться: как выглядит давление, почему требуют «напиши сам», что это делает с самооценкой и как не поверить, что вы действительно плохой работник."
-publishedAt: 2026-09-18
-updatedAt: 2026-09-18
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🧱

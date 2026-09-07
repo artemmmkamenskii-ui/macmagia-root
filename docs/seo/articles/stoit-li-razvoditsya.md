@@ -2,8 +2,8 @@
 slug: stoit-li-razvoditsya
 title: "Стоит ли разводиться: как понять, что брак закончился"
 description: "Подавать ли на развод: чем кризис в браке отличается от его конца, какие вопросы задать себе честно и что на самом деле стоит за словами «терплю ради детей»."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🧭

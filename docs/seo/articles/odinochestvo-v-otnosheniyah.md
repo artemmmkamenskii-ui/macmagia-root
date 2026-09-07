@@ -2,8 +2,8 @@
 slug: odinochestvo-v-otnosheniyah
 title: "Одиночество вдвоём: почему рядом с близким бывает так пусто"
 description: "Одиночество в отношениях: почему рядом с партнёром бывает пусто, как быт вытесняет разговор и что делать, если некому рассказать о важном человеку в двух метрах."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🛋️

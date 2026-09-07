@@ -2,8 +2,8 @@
 slug: razgovor-o-sereznyh-otnosheniyah
 title: "Серьёзные отношения: как поговорить о будущем с мужчиной"
 description: "Разговор о серьёзных отношениях: конкретные формулировки, которые не звучат ультиматумом, разбор страха «спугну» и что на самом деле означает уклончивый ответ."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🗝️

@@ -2,8 +2,8 @@
 slug: kak-otkazat-nachalniku
 title: "Как отказать начальнику: сказать «нет» и не потерять работу"
 description: "Как отказать начальнику: почему «нет» на работе даётся тяжелее всего, готовые формулировки отказа по силе и чем оборачивается репутация той, кто всегда выручит."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 emoji: 🛑
 coverGradient: 4

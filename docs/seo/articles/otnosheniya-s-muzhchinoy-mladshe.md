@@ -2,8 +2,8 @@
 slug: otnosheniya-s-muzhchinoy-mladshe
 title: "Отношения с мужчиной младше: чего боятся и что в них работает"
 description: "Отношения с мужчиной младше на 10 лет: страх «наиграется и уйдёт», сравнение себя с молодыми, взгляды окружения и вопрос детей — что здесь решается, а что нет."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🌗

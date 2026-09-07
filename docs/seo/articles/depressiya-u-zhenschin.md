@@ -2,8 +2,8 @@
 slug: depressiya-u-zhenschin
 title: "Депрессия у женщин: почему её принимают за усталость"
 description: "Депрессия у женщин годами живёт под именем усталости, гормонов и трудного характера. Почему женщина не доходит до помощи и где проходит граница, за которой нужен специалист."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🌾

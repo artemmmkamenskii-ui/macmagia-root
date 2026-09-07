@@ -2,8 +2,8 @@
 slug: izbegayuschiy-posle-rasstavaniya
 title: "Как избегающий переживает расставание: почему уходит легко"
 description: "Избегающий после расставания: почему он уходит легко и быстро, что происходит с его чувствами на самом деле и почему реакция догоняет его спустя месяцы."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🚶

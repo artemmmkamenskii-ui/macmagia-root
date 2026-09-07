@@ -2,8 +2,8 @@
 slug: muzh-hochet-razvoda
 title: "Муж хочет развода, а я нет: как пережить чужое решение"
 description: "Муж требует развод, но тянет и ничего не делает: почему неопределённость выматывает сильнее разрыва, что стоит за «дай мне время» и когда пора перестать ждать."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: ⏳

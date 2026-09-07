@@ -2,8 +2,8 @@
 slug: kak-nachat-novuyu-zhizn
 title: "Как начать новую жизнь, когда сил на перемены почти нет"
 description: "Как начать новую жизнь, если сил почти не осталось: откуда берётся желание стереть всё, почему чистого листа не бывает и какой шаг вы правда потянете."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 category: "Цели и развитие"
 emoji: 🌅

@@ -2,8 +2,8 @@
 slug: stoit-li-uvolnyatsya
 title: "Стоит ли увольняться с работы: как принять решение спокойно"
 description: "Стоит ли увольняться с работы: по каким признакам видно, что дело в месте, а не в вашем состоянии, что проверить до решения и когда «уйду и разберусь» — это бегство."
-publishedAt: 2026-09-18
-updatedAt: 2026-09-18
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Цели и развитие"
 emoji: ⚖️

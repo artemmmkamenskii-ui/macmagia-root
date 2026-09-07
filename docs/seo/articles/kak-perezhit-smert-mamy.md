@@ -2,8 +2,8 @@
 slug: kak-perezhit-smert-mamy
 title: "Как пережить смерть мамы: горе, которое меняет опору"
 description: "Как пережить смерть мамы: почему уходит базовая опора, что делать с виной «мало звонила» и почему горе по сложной матери бывает тяжелее. Опора на ближайшие дни."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🕊️

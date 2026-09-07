@@ -2,8 +2,8 @@
 slug: muzhchina-posle-razvoda
 title: "Как мужчина переживает развод: что происходит внутри"
 description: "Мужчина после развода: почему он выглядел спокойным, а через полгода посыпался, зачем сразу нашёл другую и почему перестал звонить детям. Объяснение без оправданий."
-publishedAt: 2026-09-19
-updatedAt: 2026-09-19
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🌫️

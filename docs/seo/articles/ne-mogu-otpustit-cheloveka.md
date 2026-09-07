@@ -2,8 +2,8 @@
 slug: ne-mogu-otpustit-cheloveka
 title: "Не могу отпустить человека: почему держит и что делать"
 description: "Не могу отпустить человека — умершего, ушедшего или прошлую жизнь. Почему психика держит: незавершённость, страх забыть, вина. Что с этим делать на практике."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🪡

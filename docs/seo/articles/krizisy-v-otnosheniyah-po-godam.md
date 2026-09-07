@@ -2,8 +2,8 @@
 slug: krizisy-v-otnosheniyah-po-godam
 title: "Кризисы в отношениях по годам: 1, 3, 7 и что с ними делать"
 description: "Кризисы в отношениях по годам: что именно перестраивается на первом году, в три года, в семь и в тринадцать лет — и почему в каждой точке нужна своя работа пары."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 📐

@@ -2,8 +2,8 @@
 slug: zavyshennaya-samoocenka
 title: "Завышенная самооценка: что на самом деле за ней прячется"
 description: "Завышенная самооценка: чем она отличается от устойчиво высокой, по каким признакам видна, какая хрупкость за ней стоит, чем опасна и как быть, если такой человек рядом."
-publishedAt: 2026-09-18
-updatedAt: 2026-09-18
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 🫧

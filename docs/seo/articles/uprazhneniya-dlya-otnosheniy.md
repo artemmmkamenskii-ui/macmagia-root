@@ -2,8 +2,8 @@
 slug: uprazhneniya-dlya-otnosheniy
 title: "Упражнения для отношений: практики, которые возвращают контакт"
 description: "Упражнения для отношений, которые возвращают контакт: разговор без решения задач, практика замечать хорошее, работа с картами и разбор ссоры на холодную голову."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🫂

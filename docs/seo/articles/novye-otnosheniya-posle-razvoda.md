@@ -2,8 +2,8 @@
 slug: novye-otnosheniya-posle-razvoda
 title: "Новые отношения после развода: когда снова можно доверять"
 description: "Новые отношения после развода: как отличить желание близости от желания заглушить, что делать со страхом повторить, со сравнением с бывшим и когда знакомить с детьми."
-publishedAt: 2026-09-19
-updatedAt: 2026-09-19
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🌱

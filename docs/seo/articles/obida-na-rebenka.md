@@ -2,8 +2,8 @@
 slug: obida-na-rebenka
 title: "Обида на ребёнка: почему мама злится и стыдится этого"
 description: "Обида на ребёнка: почему мать обижается на маленького и на взрослого, откуда берётся ожидание благодарности и как справиться, не сваливая это на детей."
-publishedAt: 2026-09-19
-updatedAt: 2026-09-19
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🫥

@@ -2,8 +2,8 @@
 slug: psihologiya-cveta
 title: "Психология цвета: что говорит о нас любимый оттенок"
 description: "Психология цвета без готовых таблиц: что цвет значит в культуре, что он показывает в рисунке и почему у каждой женщины своя история с оттенком."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 category: "Арт-терапия"
 emoji: 🎨

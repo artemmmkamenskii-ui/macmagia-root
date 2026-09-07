@@ -2,8 +2,8 @@
 slug: kak-spravitsya-s-zavistyu
 title: "Как справиться с завистью: что делать с этим чувством"
 description: "Сильная зависть к чужому успеху: что делать со стыдом за неё, как разобрать зависть к беременной подруге, к квартире сестры и к повышению коллеги. Упражнения психолога."
-publishedAt: 2026-09-18
-updatedAt: 2026-09-18
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 🌱

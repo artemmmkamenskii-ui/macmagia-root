@@ -2,8 +2,8 @@
 slug: knigi-po-psihologii-dlya-sebya
 title: "Книги по психологии: что почитать женщине для себя"
 description: "Книги по психологии, которые я советую женщинам на консультациях: с чего начать, что читать про отношения, травму и смысл — и чего от книги ждать не стоит."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 📚
