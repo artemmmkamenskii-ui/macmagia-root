@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import collections
 import glob
+import pathlib
 import re
 import sys
 
@@ -63,11 +64,37 @@ def body(text: str) -> str:
     return re.sub(r"^---\n.*?\n---\n", "", text, flags=re.S)
 
 
+# Эзо-фильтр берём из самой сборки, а не переписываем список: разойдутся —
+# и приёмка будет пропускать то, на чём падает деплой. Именно так дважды
+# уезжало слово «предсказание» внутри совершенно нормальной фразы.
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+try:
+    from build_blog import check_eso
+except Exception:  # сборка требует зависимостей, которых может не быть
+    check_eso = None
+
+
+def eso_whitelist(text: str) -> list:
+    """Разрешённые для конкретной статьи термины.
+
+    front() читает только однострочные поля, а esoWhitelist — список на
+    следующих строках, и из него получалась пустая строка: статьи про МАК
+    против Таро выглядели нарушителями.
+    """
+    m = re.search(r"^esoWhitelist:\n((?:\s+-\s+.*\n)+)", text, re.M)
+    return re.findall(r"-\s+\"?([^\"\n]+?)\"?\s*$", m.group(1), re.M) if m else []
+
+
 def check(path: str) -> list:
     text = open(path, encoding="utf-8").read()
     fm, md = front(text), body(text)
     slug = path.rsplit("/", 1)[-1][:-3]
     out = []
+
+    if check_eso is not None:
+        hits = check_eso(text, whitelist=eso_whitelist(text))
+        if hits:
+            out.append("эзотерика (упадёт сборка): " + ", ".join(sorted(set(hits))[:5]))
 
     for k in ("slug", "title", "description", "publishedAt", "primaryKeyword"):
         if not fm.get(k):
