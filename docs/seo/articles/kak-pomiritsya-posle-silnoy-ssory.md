@@ -2,8 +2,8 @@
 slug: kak-pomiritsya-posle-silnoy-ssory
 title: "Как помириться после сильной ссоры, когда виноваты оба"
 description: "Как помириться после сильной ссоры: сколько держать паузу, кто делает первый шаг, чем извинение по существу отличается от «прости, если что»."
-publishedAt: 2026-09-20
-updatedAt: 2026-09-20
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🕊

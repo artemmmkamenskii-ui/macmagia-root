@@ -2,8 +2,8 @@
 slug: podruga-otdalilas
 title: "Подруга отдалилась: почему дружба остывает и что с этим делать"
 description: "Подруга отдалилась без ссоры: почему люди отдаляются друг от друга, как задать прямой вопрос вместо догадок и что делать, если отдалиться хотите вы сами."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🍂

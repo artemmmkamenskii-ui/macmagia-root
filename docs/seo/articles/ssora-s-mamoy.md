@@ -2,8 +2,8 @@
 slug: ssora-s-mamoy
 title: "Сильная ссора с мамой: как пережить и вернуться к разговору"
 description: "Ссора с мамой: почему во время неё взрослая женщина чувствует себя восьмилетней, как вернуть себе свой возраст и как вернуться к разговору без выкупа."
-publishedAt: 2026-09-20
-updatedAt: 2026-09-20
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🧶

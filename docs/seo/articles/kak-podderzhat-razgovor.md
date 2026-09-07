@@ -2,8 +2,8 @@
 slug: kak-podderzhat-razgovor
 title: "Как поддержать разговор, когда не знаешь, о чём говорить"
 description: "Как поддержать разговор и не бояться неловкой паузы: почему слушать — это действие, какие вопросы разворачивают собеседника и как красиво выйти из беседы."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🗯

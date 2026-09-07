@@ -2,8 +2,8 @@
 slug: test-na-abyuzera
 title: "Тест на абьюзера: как назвать то, что с вами происходит"
 description: "Тест на абьюзера: 20 утверждений о контроле, обесценивании, изоляции и страхе. Без диагнозов партнёру — с разбором каждого результата и планом действий."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🔎

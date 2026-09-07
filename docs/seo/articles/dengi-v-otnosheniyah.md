@@ -2,8 +2,8 @@
 slug: dengi-v-otnosheniyah
 title: "Деньги в отношениях: чей вклад, чьи траты и почему это ранит"
 description: "Деньги в отношениях редко про суммы: чей труд считается вкладом, кто отчитывается за траты, что делают с близостью три уклада общего бюджета в семье."
-publishedAt: 2026-09-20
-updatedAt: 2026-09-20
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 💳

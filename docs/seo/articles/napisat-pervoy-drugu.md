@@ -2,8 +2,8 @@
 slug: napisat-pervoy-drugu
 title: "Хочу написать первой, но боюсь: как вернуть общение с другом"
 description: "Страшно написать первой после долгого молчания: почему пауза растёт сама, как возобновить общение с другом и что делать, если ответили холодно или не ответили."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 📩

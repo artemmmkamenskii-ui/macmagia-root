@@ -2,8 +2,8 @@
 slug: trevozhnost-pri-beremennosti
 title: "Тревожность при беременности: почему накрывает и что помогает"
 description: "Тревожность при беременности: страх за ребёнка и за роды, вина за то, что не сияешь от счастья, чужие истории и советы — почему накрывает и что помогает выдержать."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🤍

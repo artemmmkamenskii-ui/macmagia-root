@@ -2,8 +2,8 @@
 slug: kak-nachat-razgovor
 title: "Как начать разговор, когда не знаешь, что сказать человеку"
 description: "Как начать разговор с человеком, с незнакомым или в переписке после долгой паузы: с чего начинают на самом деле и что делать со страхом показаться навязчивой."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 💬

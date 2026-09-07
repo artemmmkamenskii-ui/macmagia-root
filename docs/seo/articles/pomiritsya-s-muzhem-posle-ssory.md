@@ -2,8 +2,8 @@
 slug: pomiritsya-s-muzhem-posle-ssory
 title: "Как помириться после ссоры с мужем и кто пишет первым"
 description: "Как помириться с мужем после ссоры: что происходит в часы молчания, почему он не пишет, как написать первой без унижения и когда молчание становится наказанием."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-20
+updatedAt: 2026-09-20
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 📵

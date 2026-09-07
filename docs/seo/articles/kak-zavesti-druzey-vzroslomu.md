@@ -2,8 +2,8 @@
 slug: kak-zavesti-druzey-vzroslomu
 title: "Как завести друзей во взрослом возрасте, если круг опустел"
 description: "Как завести друзей взрослому человеку: почему после тридцати это труднее, где реально знакомятся и что превращает приятное знакомство в настоящую дружбу."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🌱

@@ -2,8 +2,8 @@
 slug: impulsivnye-pokupki
 title: "Импульсивные покупки: почему мы тратим, когда внутри плохо"
 description: "Импульсивные покупки как быстрое обезболивание: что покупка чинит на двадцать минут, что происходит между «увидела» и «купила» и какие приёмы работают на чувстве."
-publishedAt: 2026-09-20
-updatedAt: 2026-09-20
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🛍️

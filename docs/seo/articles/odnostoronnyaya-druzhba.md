@@ -2,8 +2,8 @@
 slug: odnostoronnyaya-druzhba
 title: "Односторонняя дружба: когда пишете и звоните всегда вы"
 description: "Односторонняя дружба: что показывает эксперимент «перестать писать первой», чем занятый друг отличается от человека, которому вы удобны, и как говорить об этом прямо."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: ⚖️

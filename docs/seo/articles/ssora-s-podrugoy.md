@@ -2,8 +2,8 @@
 slug: ssora-s-podrugoy
 title: "Ссора с подругой: как помириться и стоит ли мириться вообще"
 description: "Ссора с подругой: из-за чего ругаются взрослые подруги, почему обида в дружбе живёт дольше и как честно решить, стоит ли эта дружба первого шага."
-publishedAt: 2026-09-20
-updatedAt: 2026-09-20
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 👭

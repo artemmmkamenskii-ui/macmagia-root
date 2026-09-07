@@ -2,8 +2,8 @@
 slug: stydno-pered-chelovekom
 title: "Стыдно перед человеком: как перестать прятаться от него"
 description: "Стыдно перед человеком — перед мамой, подругой, бывшей: почему избегание усиливает стыд, что написать после года молчания и где извиняться, а где просто прийти."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 📮

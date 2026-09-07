@@ -2,8 +2,8 @@
 slug: postoyannye-ssory-s-muzhem
 title: "Постоянные ссоры с мужем: почему по кругу и как выйти"
 description: "Постоянные ссоры с мужем идут по одному сценарию: три темы, одинаковые роли, тот же финал. Как разобрать свой круг и где его можно разорвать в одиночку."
-publishedAt: 2026-09-20
-updatedAt: 2026-09-20
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🔁

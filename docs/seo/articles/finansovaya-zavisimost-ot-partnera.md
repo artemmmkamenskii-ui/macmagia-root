@@ -2,8 +2,8 @@
 slug: finansovaya-zavisimost-ot-partnera
 title: "Финансовая зависимость от партнёра: каково просить на себя"
 description: "Финансовая зависимость от мужа изнутри: почему просить унизительно, откуда берётся отчёт за каждую мелочь и где проходит граница между общим бытом и контролем."
-publishedAt: 2026-09-20
-updatedAt: 2026-09-20
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🔑

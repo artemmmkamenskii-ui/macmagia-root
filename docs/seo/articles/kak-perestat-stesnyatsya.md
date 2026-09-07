@@ -2,8 +2,8 @@
 slug: kak-perestat-stesnyatsya
 title: "Как перестать стесняться: что делать с застенчивостью"
 description: "Как перестать стесняться людей: откуда берётся застенчивость, почему совет «просто расслабься» не работает и что реально делает её меньше в повседневной жизни."
-publishedAt: 2026-09-21
-updatedAt: 2026-09-21
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🙈
