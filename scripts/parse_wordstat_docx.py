@@ -35,7 +35,7 @@ def main() -> None:
     rows, skipped = [], 0
     for path in sorted(glob.glob(f"{src}/*.docx")):
         seed = os.path.basename(path)[:-5].strip().lower()
-        n = 0
+        n, prev = 0, 10**9  # первая строка файла — самая частотная, ей сравнивать не с чем
         for line in paragraphs(path):
             m = ROW.match(line)
             if not m:
@@ -49,11 +49,15 @@ def main() -> None:
                 skipped += 1
                 continue
             # «развод в 20264203» — это «развод в 2026» и частота 4203:
-            # год из запроса прилип к числу. Узнаём по префиксу-году и по
-            # тому, что осталось ещё хотя бы три цифры частоты.
+            # год из запроса прилип к числу. Диапазону лет доверять нельзя —
+            # в выгрузке полно фильмов («зависть богов 2000»), а взять все
+            # годы подряд опасно: настоящая частота в миллион выглядит так же.
+            # Опираемся на то, что Вордстат отдаёт список по убыванию: если
+            # число больше предыдущего, строка разобрана неверно.
             d = str(freq)
-            if len(d) >= 7 and 2018 <= int(d[:4]) <= 2029:
+            if freq > prev and len(d) >= 6 and 1950 <= int(d[:4]) <= 2029 and int(d[4:]) <= prev:
                 phrase, freq = f"{phrase} {d[:4]}".strip(), int(d[4:])
+            prev = freq
             rows.append({"phrase": phrase, "frequency": freq, "seed": seed})
             n += 1
         print(f"  {seed}: {n}")
