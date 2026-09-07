@@ -21,6 +21,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    env:
+      TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -113,3 +117,24 @@ jobs:
             [ "$code" = "200" ] || fail=1
           done
           [ "$fail" = "0" ] || exit 1
+
+      # Публикация встаёт молча: сборка падает, статьи с наступившей датой
+      # остаются лежать в репозитории, и узнать об этом неоткуда. Так уже
+      # вышло 5–6 сентября — двое суток простоя и 71 статья мимо сайта.
+      - name: Уведомление в Telegram, если деплой упал
+        if: failure() && env.TG_TOKEN != ''
+        run: |
+          {
+            echo "macmagia.ru — деплой упал, публикация встала"
+            echo ""
+            echo "Статьи с наступившей датой на сайт не уехали."
+            echo "Чаще всего причина — битая внутренняя ссылка:"
+            echo "сборка проверяет, что цель существует, и падает целиком."
+            echo ""
+            echo "Лог: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "Проверить локально: python3 scripts/build_blog.py"
+          } > deploy-alert.txt
+
+          curl -sS -X POST "https://api.telegram.org/bot$TG_TOKEN/sendMessage" \
+            -d chat_id="$TG_CHAT" \
+            --data-urlencode text@deploy-alert.txt > /dev/null && echo "уведомление отправлено"
