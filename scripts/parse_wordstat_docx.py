@@ -42,12 +42,19 @@ def main() -> None:
                 skipped += 1
                 continue
             phrase = m.group(1).strip().lower()
+            freq = int(m.group(2))
             # «медитация 5 минут300»: хвост цифр — частота, но если фраза
             # кончается числом по смыслу («топ 10»), отделять нечего.
             if not phrase or phrase[-1].isdigit() and len(m.group(2)) < 3:
                 skipped += 1
                 continue
-            rows.append({"phrase": phrase, "frequency": int(m.group(2)), "seed": seed})
+            # «развод в 20264203» — это «развод в 2026» и частота 4203:
+            # год из запроса прилип к числу. Узнаём по префиксу-году и по
+            # тому, что осталось ещё хотя бы три цифры частоты.
+            d = str(freq)
+            if len(d) >= 7 and 2018 <= int(d[:4]) <= 2029:
+                phrase, freq = f"{phrase} {d[:4]}".strip(), int(d[4:])
+            rows.append({"phrase": phrase, "frequency": freq, "seed": seed})
             n += 1
         print(f"  {seed}: {n}")
 
