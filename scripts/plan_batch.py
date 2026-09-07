@@ -92,13 +92,18 @@ def last_date() -> datetime.date:
 
 
 def make_slug(theme: str, used: set) -> str:
+    """Слаг для новой статьи — или None, если такая статья уже написана.
+
+    Раньше при занятом слаге просто приписывался суффикс: «-2». Тема
+    при этом оставалась той же, и в план уходил дубль уже написанной
+    статьи — так набралось 46 штук из 407. Занятый слаг означает, что
+    тему закрыли, а не что нужен второй адрес.
+    """
     base = transliterate_for_slug(theme)[:60].strip("-")
-    slug, i = base, 2
-    while slug in used:
-        slug = f"{base}-{i}"
-        i += 1
-    used.add(slug)
-    return slug
+    if base in used:
+        return None
+    used.add(base)
+    return base
 
 
 def main() -> None:
@@ -137,11 +142,20 @@ def main() -> None:
         w = csv.writer(fh)
         w.writerow(["дата", "slug", "тема", "частота", "блок", "cta",
                     "тип_вопроса", "ключи"])
-        for i, r in enumerate(picked):
+        i = 0
+        skipped = 0
+        for r in picked:
+            slug = make_slug(r["тема"], used)
+            if slug is None:          # статья с таким адресом уже есть
+                skipped += 1
+                continue
             day = start + datetime.timedelta(days=i // PER_DAY)
-            w.writerow([day.isoformat(), make_slug(r["тема"], used), r["тема"],
+            i += 1
+            w.writerow([day.isoformat(), slug, r["тема"],
                         r["частота"], r["название_блока"], r["cta"],
                         r["тип_вопроса"], r["ключи"]])
+        if skipped:
+            print(f"пропущено как уже написанное: {skipped}")
 
     days = (len(picked) + PER_DAY - 1) // PER_DAY
     last = start + datetime.timedelta(days=days - 1)
