@@ -2,8 +2,8 @@
 slug: utrennie-affirmacii
 title: "Утренние аффирмации: как настроить день"
 description: "Утренние аффирмации работают, когда встроены в режим и правдоподобны. Как выбрать аффирмации на утро под своё состояние и сделать утреннюю аффирмацию благодарности честной."
-publishedAt: 2026-09-15
-updatedAt: 2026-09-15
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: ☕

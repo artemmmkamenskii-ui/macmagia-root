@@ -2,8 +2,8 @@
 slug: psihologiya-muzhchiny-i-zhenschiny
 title: "Психология мужчины и женщины: почему мы чувствуем иначе"
 description: "Психология мужчины и женщины без книг про разные планеты: что в различиях правда про пол, что про воспитание и почему она говорит о чувстве, а он о решении."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🗣️

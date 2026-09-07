@@ -2,8 +2,8 @@
 slug: zabota-o-sebe-dlya-zhenshchiny
 title: "Забота о себе: почему на неё не остаётся ни сил, ни права"
 description: "Забота о себе для женщины: почему на себя нет времени, откуда берётся вина, чем забота отличается от покупок и какие её формы помещаются в реальный день."
-publishedAt: 2026-09-18
-updatedAt: 2026-09-18
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 🫖

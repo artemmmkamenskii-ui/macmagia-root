@@ -2,8 +2,8 @@
 slug: affirmacii-na-zdorove
 title: "Аффирмации на здоровье: где здесь психология"
 description: "Аффирмации на здоровье и самочувствие без обещаний: почему словами не лечат, на что настрой действительно влияет и как формулировать фразы, не отрицая реальность."
-publishedAt: 2026-09-15
-updatedAt: 2026-09-15
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🌡️

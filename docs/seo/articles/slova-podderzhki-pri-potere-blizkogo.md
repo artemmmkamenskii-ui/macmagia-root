@@ -2,8 +2,8 @@
 slug: slova-podderzhki-pri-potere-blizkogo
 title: "Что сказать человеку, потерявшему близкого"
 description: "Слова поддержки при потере близкого: что сказать человеку, у которого умер близкий, каких фраз избегать и как быть рядом через месяц, когда все разошлись."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🤍

@@ -2,8 +2,8 @@
 slug: kak-sostavit-affirmacii
 title: "Как составить аффирмации, которые работают на вас"
 description: "Как составить аффирмации под себя: шкала правдоподобия, форма фразы, разбор ошибок и аффирмация примеры «было — стало». Правильные аффирмации своими словами, а не из подборки."
-publishedAt: 2026-09-15
-updatedAt: 2026-09-15
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: ✍️

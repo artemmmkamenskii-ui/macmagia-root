@@ -15,7 +15,13 @@ import argparse, datetime as dt, pathlib, re, sys
 
 ART = pathlib.Path("docs/seo/articles")
 DATE = re.compile(r"^(publishedAt|updatedAt): *(\d{4}-\d{2}-\d{2})", re.M)
-LINK = re.compile(r"\]\(/blog/(?:[a-z]+/)?([a-z0-9-]+)/?\)")
+LINK = re.compile(r"\]\(/blog/(?:[a-z]+/)?([a-z0-9-]+)\.html")
+
+
+def article_slug(text):
+    """Адрес строится из слага во frontmatter, а не из имени файла."""
+    m = re.search(r"^slug: *[\"']?([a-z0-9-]+)", text, re.M)
+    return m.group(1) if m else None
 
 
 def read(p):
@@ -46,12 +52,32 @@ def main():
     tail = sorted([v for v in arts.values() if v[2] >= start], key=lambda v: (v[2], v[0].stem))
     print(f"в хвосте с {start}: {len(tail)} статей → по {a.per_day} в день")
 
+    # Раскладываем подряд, сохраняя текущий порядок очереди.
     plan, day, n = {}, start, 0
-    for p, t, d in tail:
+    for pth, txt, d in tail:
         if n == a.per_day:
             day, n = day + dt.timedelta(days=1), 0
-        plan[p.stem] = day
+        plan[pth.stem] = day
         n += 1
+
+    # Статьи одной партии ссылаются друг на друга, и разрез по дням даёт
+    # ссылку вперёд на своего же соседа — сборка на такой падает. Чиним не
+    # группировкой (она слепляет полкорпуса в один ком через цепочку
+    # A→B→C), а подтягиванием цели на день источника. День при этом может
+    # выйти на пару статей больше нормы — это дешевле, чем яма и горб.
+    slug_of = {pth.stem: article_slug(txt) for pth, txt, _ in tail}
+    by_slug = {s: st for st, s in slug_of.items() if s}
+    texts = {pth.stem: txt for pth, txt, _ in tail}
+    for _ in range(20):
+        fixed = 0
+        for stem, d in list(plan.items()):
+            for tgt in set(LINK.findall(texts[stem])):
+                st = by_slug.get(tgt)
+                if st and plan.get(st, start) > d:
+                    plan[st] = d
+                    fixed += 1
+        if not fixed:
+            break
 
     moved = [(s, arts[s][2], d) for s, d in plan.items() if arts[s][2] != d]
     for s, was, now in sorted(moved, key=lambda x: x[2]):

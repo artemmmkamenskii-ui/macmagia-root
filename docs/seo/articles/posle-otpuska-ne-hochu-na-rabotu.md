@@ -2,8 +2,8 @@
 slug: posle-otpuska-ne-hochu-na-rabotu
 title: "После отпуска не хочу на работу: о чём это чувство"
 description: "После отпуска не хочу на работу: когда это обычная адаптация на несколько дней, а когда отпуск снял анестезию и показал, что работа не подходит. Как их различить."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🧳

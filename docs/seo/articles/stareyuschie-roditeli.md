@@ -2,8 +2,8 @@
 slug: stareyuschie-roditeli
 title: "Стареющие родители: как быть рядом и не выгореть самой"
 description: "Пожилые родители: почему меняется характер, откуда берётся раздражение и стыд за него, как делить нагрузку между детьми и разрешить себе жить свою жизнь."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🍂

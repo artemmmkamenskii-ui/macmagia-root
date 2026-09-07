@@ -2,8 +2,8 @@
 slug: kak-uvolitsya-bez-chuvstva-viny
 title: "Как уволиться без чувства вины и сказать об этом начальнику"
 description: "Как правильно уволиться и сказать начальнику: как построить разговор, что отвечать на уговоры и обиду, откуда берётся чувство вины «я их подвожу» и почему за неё держат."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Цели и развитие"
 emoji: 🤝

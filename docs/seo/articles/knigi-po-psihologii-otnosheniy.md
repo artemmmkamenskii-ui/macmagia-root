@@ -2,8 +2,8 @@
 slug: knigi-po-psihologii-otnosheniy
 title: "Книги по психологии отношений: что почитать и чему верить"
 description: "Книги по психологии отношений, которые я советую на консультациях: Джонсон, Готтман, Левин и Хеллер, Фромм — кому какая подойдёт и чему верить не стоит."
-publishedAt: 2026-09-15
-updatedAt: 2026-09-15
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 📖

@@ -2,8 +2,8 @@
 slug: vygoranie-ili-depressiya
 title: "Выгорание или депрессия: чем одно отличается от другого"
 description: "Выгорание или депрессия: выгорание привязано к контексту и отступает в отпуске, депрессия едет с вами. Как заметить разницу и когда пора идти к специалисту."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-19
+updatedAt: 2026-09-19
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🪫

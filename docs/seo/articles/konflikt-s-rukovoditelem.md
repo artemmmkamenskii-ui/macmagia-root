@@ -2,8 +2,8 @@
 slug: konflikt-s-rukovoditelem
 title: "Конфликт с руководителем: как выдержать и остаться собой"
 description: "Конфликт с начальником: что делать, если накричал при всех и придирается, как вести себя в разговоре и после и где кончается тяжёлый характер и начинается травля."
-publishedAt: 2026-09-18
-updatedAt: 2026-09-18
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 emoji: ⚡
 coverGradient: 3

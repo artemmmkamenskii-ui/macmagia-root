@@ -2,8 +2,8 @@
 slug: affirmaciya-dnya
 title: "Аффирмация дня: практика на каждый день"
 description: "Аффирмация дня — как выбрать фразу на сегодня под своё состояние, где её держать, чтобы попадалась на глаза, и что делать, когда практика надоела и перестала отзываться."
-publishedAt: 2026-09-15
-updatedAt: 2026-09-15
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 📌

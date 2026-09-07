@@ -2,8 +2,8 @@
 slug: granicy-s-roditelyami
 title: "Границы с родителями: как выстроить и не поссориться"
 description: "Границы с родителями: как выстроить границы с мамой, какими словами обозначать правила, что делать при откате и как выдержать обвинение в чёрствости."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🚪

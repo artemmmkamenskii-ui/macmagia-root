@@ -2,8 +2,8 @@
 slug: skazkoterapiya-dlya-detey
 title: "Сказкотерапия: как через сказку говорить с ребёнком о трудном"
 description: "Сказкотерапия для детей: как сочинить терапевтическую сказку под конкретный страх ребёнка, почему герой не должен быть им самим и как правильно её заканчивать."
-publishedAt: 2026-09-15
-updatedAt: 2026-09-15
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 📖

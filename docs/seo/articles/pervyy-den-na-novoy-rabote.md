@@ -2,8 +2,8 @@
 slug: pervyy-den-na-novoy-rabote
 title: "Первый день на новой работе: как справиться с тревогой"
 description: "Первый день на новой работе: почему накануне не спится, что делать со страхом показаться глупой и с чувством самозванки в первую неделю и когда тревога проходит."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Цели и развитие"
 emoji: 🕗

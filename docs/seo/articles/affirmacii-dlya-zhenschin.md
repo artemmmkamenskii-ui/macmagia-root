@@ -2,8 +2,8 @@
 slug: affirmacii-dlya-zhenschin
 title: "Аффирмации для женщин: о чём они на самом деле"
 description: "Аффирмации для женщин обычно про сияние и любовь к себе. Разбираем, какие женские аффирмации работают: право хотеть, право злиться и разрешение занимать место."
-publishedAt: 2026-09-15
-updatedAt: 2026-09-15
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🌾

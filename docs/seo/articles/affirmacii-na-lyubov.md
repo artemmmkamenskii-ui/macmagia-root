@@ -2,8 +2,8 @@
 slug: affirmacii-na-lyubov
 title: "Аффирмации на любовь: как менять отношение к себе"
 description: "Аффирмации на любовь к себе и на отношения без обещаний: на что фразы влияют, а на что нет, как их формулировать честно и где самоподдержка превращается в самоуговор."
-publishedAt: 2026-09-15
-updatedAt: 2026-09-15
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🫀

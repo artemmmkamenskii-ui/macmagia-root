@@ -2,8 +2,8 @@
 slug: affirmacii-na-uspeh
 title: "Аффирмации на успех и уверенность в себе"
 description: "Аффирмации на успех и уверенность в себе с точки зрения психологии: почему громкие формулировки дают обратный эффект и как собрать фразы, в которые вы правда верите."
-publishedAt: 2026-09-15
-updatedAt: 2026-09-15
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🪜

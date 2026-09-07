@@ -2,8 +2,8 @@
 slug: affirmacii-prostymi-slovami
 title: "Аффирмации простыми словами: работают ли они на самом деле"
 description: "Аффирмация это простыми словами короткое утверждение о себе. В чём сила аффирмаций, почему позитивные фразы иногда делают хуже и какие слова действительно поддерживают."
-publishedAt: 2026-09-15
-updatedAt: 2026-09-15
+publishedAt: 2026-09-17
+updatedAt: 2026-09-17
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 💬

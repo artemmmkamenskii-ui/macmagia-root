@@ -2,8 +2,8 @@
 slug: krizis-srednego-vozrasta-u-muzha
 title: "Кризис среднего возраста у мужа: как пройти это вместе"
 description: "Кризис среднего возраста у мужа: почему он отдалился и всё обесценивает, что с ним происходит на самом деле, где вам поддержать его и где не раствориться."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🌪️

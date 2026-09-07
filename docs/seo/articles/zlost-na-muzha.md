@@ -2,8 +2,8 @@
 slug: zlost-na-muzha
 title: "Злость на мужа: почему копится раздражение к близкому"
 description: "Злость на мужа: откуда берётся раздражение к близкому человеку, почему её стыдно признавать, куда она уходит и как говорить о ней без обвинений."
-publishedAt: 2026-09-18
-updatedAt: 2026-09-18
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🌡️

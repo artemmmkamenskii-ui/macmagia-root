@@ -2,8 +2,8 @@
 slug: kak-perezhit-smert-otca
 title: "Как пережить смерть отца: прожить утрату и не застрять"
 description: "Как пережить смерть отца: почему эта утрата часто остаётся невыговоренной, что делать с «не успела поговорить» и как выдержать роль старшей в семье."
-publishedAt: 2026-09-16
-updatedAt: 2026-09-16
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🌾

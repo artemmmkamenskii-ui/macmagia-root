@@ -2,8 +2,8 @@
 slug: pochemu-propadayut-chuvstva
 title: "Почему пропадают чувства к мужчине и что с этим делать"
 description: "Почему пропадают чувства к мужу или парню: смена стадии отношений, копившиеся обиды, собственное истощение — и как отличить «прошли чувства» от «я выгорела»."
-publishedAt: 2026-09-18
-updatedAt: 2026-09-18
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🌗

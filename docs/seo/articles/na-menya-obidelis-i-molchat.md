@@ -2,8 +2,8 @@
 slug: na-menya-obidelis-i-molchat
 title: "Когда на вас обиделись и молчат: что делать с этой виной"
 description: "Мама обиделась и не разговаривает, свекровь молчит, подруга исчезла: чем настоящая обида отличается от управления через неё и как заговорить первой без вины."
-publishedAt: 2026-09-18
-updatedAt: 2026-09-18
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🤐

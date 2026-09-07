@@ -2,8 +2,8 @@
 slug: ne-prinyali-v-kollektive
 title: "Не приняли в новом коллективе: как выдержать и что делать"
 description: "Не приняли в новом коллективе: почему первые недели среди чужих так тяжелы, сколько длится притирка, где она переходит в выдавливание и как не начать заискивать."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🪑

@@ -2,8 +2,8 @@
 slug: pochemu-stanovyatsya-abyuzerami
 title: "Почему становятся абьюзерами: откуда берётся жестокость"
 description: "Почему становятся абьюзерами: усвоенная в детстве модель, непереносимая уязвимость и выученная безнаказанность. И почему понять — не значит остаться и вылечить."
-publishedAt: 2026-09-19
-updatedAt: 2026-09-19
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🧩

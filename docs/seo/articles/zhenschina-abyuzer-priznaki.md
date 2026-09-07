@@ -2,8 +2,8 @@
 slug: zhenschina-abyuzer-priznaki
 title: "Женщина-абьюзер: признаки, которые страшно узнать в себе"
 description: "Женщина-абьюзер: признаки психологического насилия в отношениях и в семье, чем срыв отличается от системы, что делать, если узнали себя, и как быть рядом с такой."
-publishedAt: 2026-09-19
-updatedAt: 2026-09-19
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🪞

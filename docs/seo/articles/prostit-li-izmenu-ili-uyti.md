@@ -2,8 +2,8 @@
 slug: prostit-li-izmenu-ili-uyti
 title: "Простить измену или уйти: как принять решение и не жалеть"
 description: "Прощать ли измену или уходить: на что смотреть перед решением, как живут простившие измену, что восстанавливается в паре, а что не возвращается никогда."
-publishedAt: 2026-09-18
-updatedAt: 2026-09-18
+publishedAt: 2026-09-16
+updatedAt: 2026-09-16
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: ⚖️

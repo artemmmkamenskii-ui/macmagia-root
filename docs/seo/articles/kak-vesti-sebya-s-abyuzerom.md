@@ -2,8 +2,8 @@
 slug: kak-vesti-sebya-s-abyuzerom
 title: "Как вести себя с абьюзером, если уйти прямо сейчас нельзя"
 description: "Как вести себя с абьюзером и что ему говорить, пока уйти невозможно: снизить ущерб в момент вспышки, документировать, сохранить связи и деньги, увидеть границу опасности."
-publishedAt: 2026-09-19
-updatedAt: 2026-09-19
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🧭

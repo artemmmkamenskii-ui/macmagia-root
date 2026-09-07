@@ -2,8 +2,8 @@
 slug: samootsenka-muzhchiny-v-otnosheniyah
 title: "Самооценка мужчины в отношениях: как она влияет на пару"
 description: "Самооценка мужчины в отношениях: как низкая самооценка партнёра проявляется в паре, где проходит граница между поддержкой и обслуживанием и что здесь в вашей зоне."
-publishedAt: 2026-09-15
-updatedAt: 2026-09-15
+publishedAt: 2026-09-18
+updatedAt: 2026-09-18
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: ⚖️

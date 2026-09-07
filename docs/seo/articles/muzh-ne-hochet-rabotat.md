@@ -2,8 +2,8 @@
 slug: muzh-ne-hochet-rabotat
 title: "Муж не хочет работать: что делать жене и как не тянуть всё"
 description: "Муж не хочет работать: как отличить временный простой от выгорания, депрессивного состояния и устоявшейся позиции, что делать жене и куда девается уважение."
-publishedAt: 2026-09-17
-updatedAt: 2026-09-17
+publishedAt: 2026-09-15
+updatedAt: 2026-09-15
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🛋️
