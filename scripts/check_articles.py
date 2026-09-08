@@ -91,6 +91,14 @@ def check(path: str) -> list:
     slug = path.rsplit("/", 1)[-1][:-3]
     out = []
 
+    # Обложка рисуется отдельным скриптом и в автосборку не входит: без неё
+    # статья идёт без картинки, а og:image падает на общее фото автора —
+    # в Google Discover с таким не попасть. Так накопилось 515 статей без обложек.
+    # Обложка лежит под слагом из frontmatter, а не под именем файла:
+    # slovar-abyuz.md → blog/covers/abyuz.jpg.
+    if not (pathlib.Path("blog/covers") / f"{fm.get('slug') or slug}.jpg").exists():
+        out.append("нет обложки — запустите scripts/gen_covers.py")
+
     if check_eso is not None:
         hits = check_eso(text, whitelist=eso_whitelist(text))
         if hits:
