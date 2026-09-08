@@ -939,6 +939,7 @@ def render_article(md_path, all_meta):
 
 {FOOTER_HTML}
 
+<script src="/slow-hint.js" defer></script>
 <script src="/script.js"></script>
 <script src="/blog/quiz.js"></script>
 </body>
@@ -1182,6 +1183,7 @@ def render_tests_hub(items, cfg=None):
 
 {FOOTER_HTML}
 
+<script src="/slow-hint.js" defer></script>
 <script src="/script.js"></script>
 </body>
 </html>
@@ -1334,6 +1336,7 @@ def render_slovar_hub(items):
 
 {FOOTER_HTML}
 
+<script src="/slow-hint.js" defer></script>
 <script src="/script.js"></script>
 </body>
 </html>
@@ -1489,6 +1492,7 @@ def render_hub(metas, *, crumb="Блог", tag="Блог МакМагии",
 
 {FOOTER_HTML}
 
+<script src="/slow-hint.js" defer></script>
 <script src="/script.js"></script>
 </body>
 </html>
