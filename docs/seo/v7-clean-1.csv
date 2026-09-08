@@ -1,0 +1,103 @@
+годна,заголовок,slug,категория,cta,частота,ключи,причина_отказа
+нет,,nlp-4,,,252152,,"Книжно-курсовой куст НЛП (Мужицкая, Пелехатый, Боденхамер): продажа обучения, не тема блога"
+нет,,psihologiya-zhenschin,,,45124,,"Слишком общий зонт «психология женщин». Живое из хвоста вынесено отдельной темой otnosheniya-mezhdu-zhenschinami; остальное закрыто psihologiya-muzhchiny-i-zhenschiny, samootsenka-zhenschiny, zabota-o-sebe-dlya-zhenshchiny"
+нет,,psihologiya-muzhchina-i-zhenschina-posle,,,4096,,"Обрубок «психология мужчина и женщина после». Хвост разобран: «женщина старше мужчины» — дубль otnosheniya-s-muzhchinoy-mladshe (это её ключ), «женатый мужчина» — otnosheniya-s-zhenatym-muzhchinoy; «дружба мужчины и женщины» вынесена отдельной темой"
+нет,,socialnaya-psihologiya-otvety,,,4015,,Вузовское: экзаменационные ответы по социальной психологии
+нет,,tehnika-nlp,,,3756,,"Курс «НЛП-практик», продажа обучения"
+нет,,pochemu-zhenschina-psihologiya,,,3242,,Склейка лемматизатора + однополое влечение; профиль блога другой
+нет,,psihologiya-socialnoy-gruppy,,,2646,,Вузовское: малые и большие социальные группы
+нет,,psihologiya-vliyaniya-fb,,,2223,,"Книга Чалдини «Психология влияния», поиск файла fb2"
+нет,,chaldini-psihologiya-vliyaniya-fb,,,2167,,"Книга Чалдини, поиск бесплатной версии"
+нет,,psihologiya-vliyaniya-robert-fb,,,2136,,"Книга Чалдини, поиск бесплатной версии"
+нет,,socialnoy-pedagogicheskoy-psihologii,,,1922,,"Вузовское: кафедры, история и структура социальной психологии"
+нет,,socialnaya-psihologiya-klassov,,,1201,,"Обществознание, 10 класс"
+нет,,socialnoe-vzaimodeystvie-psihologiya,,,1128,,Вузовское: социальное взаимодействие как предмет
+нет,,nlp-eto-prostymi-slovami,,,1021,,"НЛП не профиль блога: интент — техники влияния и курсы, аудитория чужая"
+нет,,psihologiya-obscheniya-otvety,,,986,,"Вузовское и СПО: лекции, программы, экзаменационные ответы; живая часть закрыта psihologiya-obscheniya"
+нет,,psihologiya-manipulyacii-chelovekom,,,975,,Книги «тёмная психология»; тема закрыта manipulyacii-v-otnosheniyah и gazlajting
+нет,,kniga-psihologiya-lzhi,,,918,,Книга Пола Экмана и сериал «Обмани меня»
+нет,,urovni-socialnyh-psihologii,,,876,,Вузовское: этапы и виды социальной психологии
+нет,,m-andreeva-socialnaya-psihologiya,,,834,,Учебник Г. М. Андреевой
+нет,,kognitivnaya-psihologiya-lichnosti,,,808,,Вузовское направление психологии
+нет,,socialnaya-psihologiya-razvitiya-lichnosti,,,788,,Вузовское
+нет,,socialnaya-psihologiya-obschestvoznanie,,,783,,"Обществознание, школьная программа"
+нет,,socialnaya-psihologiya-izuchaet-lyudey,,,743,,Вузовское определение предмета науки
+нет,,nlp-chitat,,,678,,Поиск книг по НЛП
+нет,,tayna-psihologiya,,,673,,Обрубок «тайна психология» + книги про психологию обмана
+нет,,psihologiya-zhenschin-chitat,,,668,,Поиск книг
+нет,,polnyy-kurs-nlp,,,652,,Курс Боба Боденхамера
+нет,,chitat-psihologiya-muzhchin,,,633,,Поиск книг
+нет,,knigi-po-psihologii-dlya-samorazvitiya-dlya-zhenschin,,,632,,Подборка книг; закрыто knigi-po-psihologii-dlya-sebya и knigi-po-psihologii-otnosheniy
+нет,,nlp-holl,,,606,,"Автор Майкл Холл, книги по НЛП"
+нет,,socialnaya-psihologiya-obscheniya-voprosy,,,565,,Вузовское
+нет,,praktika-socialnoy-psihologii,,,551,,Учебник и практикум
+нет,,chitat-knigu-psihologiya-vliyaniya,,,550,,Книга Чалдини
+нет,,obschenie-studentov-psihologiya,,,521,,Лекции по психологии общения для СПО
+нет,,nlp-igry,,,400,,"Книга «НЛП-игры, в которых побеждают женщины»"
+нет,,luchshie-knigi-po-nlp,,,348,,Подборка книг по НЛП
+нет,,nlp-bob,,,314,,Автор Боб Боденхамер
+нет,,psihologiya-etika-delovogo-obscheniya,,,308,,Учебник по этике делового общения
+нет,,izmena-razvod-bez-prosti,,,299,,"Романы про измену (Манарова, «Развод. Я не прощаю измен»)"
+нет,,nuzhno-li-proschat-izmenu,,,299,,Дубль prostit-li-izmenu-ili-uyti («прощать ли измену» — её главный ключ)
+нет,,nu-zaviduy-zaviduy,,,299,,"Песни, мемы, цитаты; зависть закрыта kak-perestat-zavidovat, chuzhaya-zavist, chernaya-i-belaya-zavist, slovar-zavist"
+нет,,obidelis-uchitel,,,299,,"Мусорный хвост: мемы, песни, орфография слова «обидеться»"
+нет,,zagadka-ee-tolkayut-ona-ne-obizhaetsya,,,299,,"Загадки, песни, орфография; «как перестать обижаться» — ключ kak-otpustit-obidu"
+нет,,obida-11-bukv,,,299,,"Кроссворды, литература, фразеологизмы"
+нет,,kniga-revnost-chitat,,,298,,"Книги, сериалы, комиксы; ревность закрыта пятью статьями (prichiny-revnosti, priznaki-revnosti, revnivyy-muzhchina, kak-spravitsya-s-revnostyu, test-revnost)"
+нет,,otnosheniya-roditeley-i-vospitateley,,,297,,Педагогическая нормативка и школьная литература; взрослая часть закрыта granicy-s-roditelyami и psihologiya-roditelskih-otnosheniy
+нет,,mama-prosti-molodosti,,,297,,"Песни «Прости, мама»"
+нет,,mam-tebe-pishu-prosti,,,297,,Песни (Бутырка); «токсичная мать у взрослой дочери» — дубль toksichnye-roditeli (её ключ «токсичная мать»)
+нет,,abyuzer-yasno,,,297,,"Мемы, игровой сленг, орфография; куст абьюза закрыт семью статьями, включая выход и развод — abyuzivnye-otnosheniya, kak-vesti-sebya-s-abyuzerom, slovar-abyuz"
+нет,,psihologiya-lzhi-chitat,,,295,,Книга Экмана
+нет,,otnoshenie-roditeley-i-detey-analiz,,,295,,Юридическая и педагогическая нормативка (права и ответственность родителей)
+нет,,mihail-krug-prosti-menya-mama,,,295,,Песни
+нет,,seks-obidelsya-devushka,,,294,,Порнозапросы
+нет,,vybrali-ne-tot-marshrut,,,294,,Склейка лемматизатора; дубль vybirayu-ne-teh и vybrala-ne-togo
+нет,,na-zavist-i-gordost-dvoryan,,,293,,Строка из литературного произведения
+нет,,zavist-li-taynaya,,,293,,"Сочинения ОГЭ, литература, сорта томатов «Всем на зависть»"
+да,Он постоянно обижается: как быть рядом с обидчивым мужчиной,obidchivyy-muzhchina,Отношения,/coach,1124,мужчина постоянно обижается · парень постоянно обижается · почему мужья обижаются · мужчина обиделся не отвечает · мужчина обиделся и игнорирует · мужчина говорит что обиделся · человек часто обижается · человек любит обижаться · как назвать человека который обижается · обижается без причины · как не обижаться на мужа · обидчивый человек,
+нет,,vzroslye-deti-obidy,,,293,,"Дубль kak-otpustit-obidu («копится обида», «непрожитая обида» — её ключи)"
+нет,,sasha-pogorelcev-ne-derzhi-obidu-tekst,,,293,,Песня Саши Погорельцева
+нет,,seks-otnosheniya-mama-syna,,,293,,Порнозапросы и инцест
+нет,,mat-syn-muzh-otnosheniya,,,292,,"Порнозапросы и инцест; чистая часть («мать против отношений», «жена сына и мать») закрыта ssory-so-svekrovyu — там отдельный раздел про работу с мужем"
+нет,,pochemu-muzhya-obizhatsya,,,291,,Вошло в тему obidchivyy-muzhchina
+нет,,dementev-ne-obizhaytes,,,290,,Стихи Андрея Дементьева
+нет,,kak-perezhit-predatelstvo-blizkogo-cheloveka,,,290,,"Дубль kak-perezhit-izmenu: «пережить предательство» — её ключ, три из четырёх фраз строки про измену"
+нет,,kak-perestat-zavidovat-i-sravnivat-sebya,,,287,,Дубль kak-perestat-zavidovat и kak-perestat-sravnivat-sebya
+нет,,izmena-esli-lyubish-prosti,,,286,,Романы про измену; решение закрыто prostit-li-izmenu-ili-uyti
+нет,,vzroslye-otnosheniya-s-mamoy,,,285,,"Дубль psihologiya-roditelskih-otnosheniy, toksichnye-roditeli, separatsiya-ot-materi; порнохвост"
+нет,,zhena-orka-zaviduyte,,,282,,Книжная серия «Жена орка»
+нет,,psihologicheskoe-nasilie-nad-rebenkom,,,281,,"Клиника и насилие над детьми + юридическая часть; взрослое закрыто slovar-abyuz, abyuzivnye-otnosheniya, psihologicheskaya-travma"
+нет,,kak-nazvat-cheloveka-kotoryy-obizhaetsya,,,280,,Вошло в тему obidchivyy-muzhchina
+нет,,serdce-obiditsya,,,280,,Обрывки фраз без интента
+нет,,obid-molchanie,,,279,,"Склейка лемматизатора: орфографические упражнения («обид_вший», «помет_шь обид_шься»)"
+нет,,bozhe-kak-zaviduyu-po-nocham,,,278,,Песня
+нет,,esli-byvshaya-obidelas-chto-delat,,,278,,Дубль na-menya-obidelis-i-molchat
+нет,,izlozhenie-chelovek-chuvstvuet-sebya-odinokim,,,275,,Школьное изложение; дубль chuvstvo-odinochestva и odinochestvo-v-otnosheniyah
+нет,,kto-takoy-abyuzer-kratko,,,275,,Дубль slovar-abyuz («абьюз это простыми словами»)
+нет,,irina-sheyk-perezhila-predatelstvo,,,274,,Новости про Ирину Шейк
+нет,,pro-otnosheniya-syna-i-materi,,,273,,"Порнозапросы, литература, школьное; свекровь закрыта ssory-so-svekrovyu"
+нет,,a-ty-prosti-mama-ya-huligan,,,273,,Песня
+нет,,kak-prostit-izmenu-muzha-sovet,,,272,,Дубль prostit-li-izmenu-ili-uyti
+нет,,pro-abyuzerov-muzhchin,,,272,,Мелодрамы и книги про абьюзеров; куст закрыт priznaki-otnosheniya-s-abyuzerom-muzhchinoy
+нет,,kak-zabyt-lico-cheloveka,,,272,,Дубль kak-zabyt-cheloveka; «переживает ли мужчина расставание» — дубль otnoshenie-muzhchin-posle-rasstavaniya
+нет,,nikomu-nikogda-ne-zaviduy,,,271,,Цитаты и школьные тексты
+нет,,abyuzivnye-otnosheniya-devushka,,,270,,Дубль abyuzivnye-otnosheniya и zhenschina-abyuzer-priznaki
+нет,,chem-opasna-zavist-otvet,,,269,,Сочинение ОГЭ 13.3
+нет,,obida-shukshin-geroi,,,266,,Рассказ В. М. Шукшина «Обида»
+нет,,pochemu-byvshaya-zaviduet,,,265,,Дубль chuzhaya-zavist
+нет,,muzhchina-obidelsya-ne-otvechaet,,,260,,Вошло в тему obidchivyy-muzhchina; разовое молчание после ссоры закрыто pomiritsya-s-muzhem-posle-ssory
+нет,,prosti-gospod-za-slezy-materi,,,259,,Песни и молитвы
+нет,,otnosheniya-mezhdu-shkoloy-i-roditelyami,,,253,,Педагогическая нормативка: школа и родители
+нет,,vliyanie-rebenka-na-otnosheniya-roditeley,,,252,,Вузовская схема «родитель — ребёнок»
+нет,,drakony-ne-proschayut-izmeny-chitat,,,251,,Романы про измену
+нет,,mogut-li-koshki-obizhatsya,,,251,,Про животных
+нет,,ne-pridesh-obizhus,,,251,,Обрывки разговорных фраз
+нет,,doch-abyuzer-chto-delat,,,250,,Клиника у подростков + дубль kak-vesti-sebya-s-abyuzerom
+нет,,zaviduet-luchshaya-podruga,,,248,,Дубль chuzhaya-zavist («завидуют что делать» — её ключ)
+нет,,izmena-ya-ne-proschu-kira,,,245,,Роман «Измена. Я не прощу»
+нет,,stoit-proschat-izmenu-zheny,,,243,,"Мужской интент (муж решает, прощать ли жену) — не читательница блога; решение закрыто prostit-li-izmenu-ili-uyti"
+нет,,proschennyy-roditelyami-rebenok,,,238,,"Склейка; «дети токсичных родителей», «токсичные фразы родителей» — дубль toksichnye-roditeli"
+нет,,segodnya-budet-admin-abyuz-v-gag,,,224,,"Игровой сленг (админ-абьюз в Grow a Garden), омоним"
+да,"Отношения между женщинами: близость, сравнение и оценка",otnosheniya-mezhdu-zhenschinami,Отношения,/praktik,10085,психология отношений между женщинами · психология между женщинами · отношения между женщинами · дружба между женщинами психология · дружба женщин психология · психология женщин · психология поведения женщин · другая женщина психология · женская конкуренция · сравнение с другими женщинами · женщина с точки зрения психологии · отношения женщин между собой,
+да,Дружба между мужчиной и женщиной: бывает ли и что ей мешает,druzhba-mezhdu-muzhchinoy-i-zhenschinoy,Отношения,/cards,390,дружба между мужчиной и женщиной психология · дружба мужчины и женщины психология · бывает ли дружба между мужчиной и женщиной · может ли быть дружба между мужчиной и женщиной · дружба с мужчиной · друг противоположного пола · дружба переросла в отношения · влюбилась в друга · дружба или отношения · мужская дружба с женщиной,
