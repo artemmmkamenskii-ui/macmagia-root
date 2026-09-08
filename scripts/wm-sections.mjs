@@ -14,7 +14,10 @@ const PROFILE = process.env.WM_PROFILE;
 const OUT = process.env.WM_OUT;
 mkdirSync(OUT, { recursive: true });
 
+// Chromium из playwright падает на свежей macOS («crash info version 7»),
+// поэтому берём системный Chrome, если он есть.
 const ctx = await chromium.launchPersistentContext(PROFILE, {
+  channel: process.env.WM_CHANNEL || undefined,
   headless: false,
   viewport: { width: 1500, height: 950 },
   locale: 'ru-RU',

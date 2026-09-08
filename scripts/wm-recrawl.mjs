@@ -14,7 +14,9 @@ import { readFileSync } from 'fs';
 const PROFILE = process.env.WM_PROFILE;
 const urls = readFileSync(process.env.WM_URLS, 'utf-8').split('\n').map(s => s.trim()).filter(Boolean);
 
+// Chromium из playwright падает на свежей macOS, поэтому системный Chrome.
 const ctx = await chromium.launchPersistentContext(PROFILE, {
+  channel: process.env.WM_CHANNEL || undefined,
   headless: false, viewport: { width: 1400, height: 900 }, locale: 'ru-RU',
   args: ['--disable-blink-features=AutomationControlled'],
 });
