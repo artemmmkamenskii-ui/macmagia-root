@@ -2,8 +2,8 @@
 slug: ne-obschayus-s-sestroy
 title: "Не общаюсь с сестрой: почему родные перестают разговаривать"
 description: "Не общаюсь с сестрой: почему взрослые братья и сёстры перестают разговаривать, что делать с обидой и давлением родни и стоит ли восстанавливать связь."
-publishedAt: 2026-09-24
-updatedAt: 2026-09-24
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🧊

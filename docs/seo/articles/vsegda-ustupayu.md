@@ -2,8 +2,8 @@
 slug: vsegda-ustupayu
 title: "Всегда уступаю: как перестать молчать и говорить о своём"
 description: "Всегда уступаю: откуда берётся привычка уступать, чем оборачивается накопленная обида и как тактично сказать о несогласии, если вы не умеете отстаивать себя."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-22
+updatedAt: 2026-09-22
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🤐

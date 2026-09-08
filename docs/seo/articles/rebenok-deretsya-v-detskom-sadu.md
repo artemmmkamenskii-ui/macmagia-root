@@ -2,8 +2,8 @@
 slug: rebenok-deretsya-v-detskom-sadu
 title: "Ребёнок дерётся в саду и кусается: почему и что делать"
 description: "Ребёнок дерётся в детском саду и кусается: почему это происходит до трёх лет и после, что делать дома, как говорить с воспитателем и куда девать материнский стыд."
-publishedAt: 2026-09-24
-updatedAt: 2026-09-24
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🧸

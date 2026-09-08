@@ -2,8 +2,8 @@
 slug: chto-skazat-cheloveku-kotoromu-ploho
 title: "Что сказать человеку, которому плохо: слова, которые помогают"
 description: "Что сказать, если человеку плохо: почему советы и «зато» не работают, какие слова поддержки помогают, что делать, если он плачет, и что говорить, когда сказать нечего."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-22
+updatedAt: 2026-09-22
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🫂

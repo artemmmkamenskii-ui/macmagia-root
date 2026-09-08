@@ -2,8 +2,8 @@
 slug: muzh-chto-to-skryvaet
 title: "Муж что-то скрывает: как понять, что происходит, и что делать"
 description: "Муж что-то скрывает и стал закрытым: что бывает за молчанием кроме другой женщины, как спросить прямо и что делать со своей тревогой, пока правды нет."
-publishedAt: 2026-09-23
-updatedAt: 2026-09-23
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🚪

@@ -2,8 +2,8 @@
 slug: a-chto-skazhut-lyudi
 title: "«А что скажут люди»: как решиться, когда боишься осуждения"
 description: "А что скажут люди: как решиться на развод, увольнение или неудобный выбор, если держит страх осуждения, и чей голос на самом деле звучит за словом «люди»."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🗣️

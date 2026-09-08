@@ -2,8 +2,8 @@
 slug: zavisimost-ot-telefona
 title: "Зависимость от телефона: почему рука сама тянется к экрану"
 description: "Зависимость от телефона: почему сила воли и блокировщики не держатся дольше недели, что на самом деле закрывает экран и чем заменить его в моменты, когда тянет."
-publishedAt: 2026-09-24
-updatedAt: 2026-09-24
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 📲

@@ -2,8 +2,8 @@
 slug: ne-mogu-doveryat
 title: "Не могу доверять: как возвращается доверие после обмана"
 description: "Не могу доверять никому после обмана: почему один человек лишает веры во всех, чем осторожность отличается от тотального недоверия и как выбираться из него."
-publishedAt: 2026-09-23
-updatedAt: 2026-09-23
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🧊

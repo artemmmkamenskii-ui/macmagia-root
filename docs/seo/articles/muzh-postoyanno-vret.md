@@ -2,8 +2,8 @@
 slug: muzh-postoyanno-vret
 title: "Муж постоянно врёт по мелочам: почему и что с этим делать"
 description: "Муж врёт по мелочам там, где правда безобидна: откуда берётся эта привычка, что она делает с отношениями и как говорить о ней без допросов и обвинений."
-publishedAt: 2026-09-23
-updatedAt: 2026-09-23
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🧩

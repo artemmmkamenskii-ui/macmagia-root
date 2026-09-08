@@ -2,8 +2,8 @@
 slug: muzh-postoyanno-v-telefone
 title: "Муж всё время в телефоне: почему это ранит и что делать"
 description: "Муж в телефоне каждый вечер: почему это ощущается как отсутствие рядом, что чаще всего стоит за экраном и как говорить о своей потребности без упрёков и контроля."
-publishedAt: 2026-09-24
-updatedAt: 2026-09-24
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 💬

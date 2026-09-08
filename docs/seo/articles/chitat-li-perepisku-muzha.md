@@ -2,8 +2,8 @@
 slug: chitat-li-perepisku-muzha
 title: "Читать ли переписку мужа: что стоит за желанием проверить"
 description: "Читать ли переписку мужа: почему хочется проверить телефон, почему чистая переписка не снимает тревогу и что делать с найденным и с ненайденным."
-publishedAt: 2026-09-23
-updatedAt: 2026-09-23
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 📱

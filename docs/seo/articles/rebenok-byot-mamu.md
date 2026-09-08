@@ -2,8 +2,8 @@
 slug: rebenok-byot-mamu
 title: "Ребёнок бьёт маму: почему он дерётся с родителями"
 description: "Ребёнок бьёт маму: почему он дерётся с родителями в два года и позже, как остановить удар в моменте, что делать со стыдом матери и когда пора к специалисту."
-publishedAt: 2026-09-24
-updatedAt: 2026-09-24
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: ✋

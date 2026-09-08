@@ -2,8 +2,8 @@
 slug: vru-muzhu-po-melocham
 title: "Вру мужу по мелочам: почему я скрываю и как перестать"
 description: "Вру мужу по мелочам — про траты, встречи, покупки: откуда берётся эта привычка, что за ней прячется на самом деле и как выбираться из неё без самобичевания."
-publishedAt: 2026-09-23
-updatedAt: 2026-09-23
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🤫

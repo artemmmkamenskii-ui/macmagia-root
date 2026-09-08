@@ -2,8 +2,8 @@
 slug: toska-po-domu-posle-pereezda
 title: "Тоска по дому после переезда: почему тянет вернуться"
 description: "Тоска по дому после переезда: почему тяжело в новом городе, сколько длится адаптация, что помогает и как понять, что дело не в привыкании, а в самом решении."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-22
+updatedAt: 2026-09-22
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🧳

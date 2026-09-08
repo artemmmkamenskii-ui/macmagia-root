@@ -2,8 +2,8 @@
 slug: rebenok-sidit-v-telefone
 title: "Ребёнок сидит в телефоне: сколько можно и как договориться"
 description: "Ребёнок сидит в телефоне часами: почему отбирание не работает, что экран закрывает на самом деле и как выстроить общие для всей семьи правила без ежедневных войн."
-publishedAt: 2026-09-24
-updatedAt: 2026-09-24
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🎮

@@ -2,8 +2,8 @@
 slug: deti-derutsya-mezhdu-soboy
 title: "Дети дерутся между собой: как гасить драки братьев и сестёр"
 description: "Дети дерутся между собой: почему братья и сёстры постоянно дерутся, что усиливает драки, когда вмешиваться, а когда дать разобраться, и что работает вдолгую."
-publishedAt: 2026-09-24
-updatedAt: 2026-09-24
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🥊

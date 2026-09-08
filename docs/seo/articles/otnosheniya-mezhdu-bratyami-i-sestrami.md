@@ -2,8 +2,8 @@
 slug: otnosheniya-mezhdu-bratyami-i-sestrami
 title: "Отношения между братьями и сёстрами: конкуренция и любовь"
 description: "Отношения между братьями и сёстрами: почему ревность между детьми нормальна, что делают роли старшего и младшего, чем опасен любимчик в семье и как не назначать роли."
-publishedAt: 2026-09-24
-updatedAt: 2026-09-24
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🪢

@@ -2,8 +2,8 @@
 slug: kak-vernut-doverie
 title: "Как вернуть доверие после лжи: что делать тому, кто соврал"
 description: "Как вернуть доверие в отношениях, если соврали вы: почему извинения недостаточно, зачем нужна временная прозрачность и сколько времени занимает восстановление."
-publishedAt: 2026-09-23
-updatedAt: 2026-09-23
+publishedAt: 2026-09-21
+updatedAt: 2026-09-21
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🧱

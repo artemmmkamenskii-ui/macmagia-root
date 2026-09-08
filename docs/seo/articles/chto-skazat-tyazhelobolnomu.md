@@ -2,8 +2,8 @@
 slug: chto-skazat-tyazhelobolnomu
 title: "Что сказать близкому, который тяжело болен"
 description: "Что сказать больному человеку и его родным: какие фразы ранят, что помогает вместо «всё будет хорошо», как быть рядом и почему молчание тоже поддержка."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-22
+updatedAt: 2026-09-22
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🕊️
