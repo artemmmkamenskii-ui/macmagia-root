@@ -1993,6 +1993,14 @@ def main():
     # перелинковке словаря легко сослаться на страницу, которая ещё не написана
     # или названа иначе, — и получить 404, который никто не заметит.
     # Продуктовые адреса (/cards, /artterapy) отдаёт другое приложение, их не трогаем.
+    # Хабы (/blog/, /blog/testy/ и прочие разделы) этот же скрипт создаёт
+    # ниже, после проверки. Пока собранные страницы лежали в репозитории,
+    # файлы были на месте и проверка проходила; когда их перестали
+    # коммитить, сборка стала падать на собственных будущих страницах.
+    hubs = {"/blog/"} | {f"/blog/{s}/" for s in SECTIONS} | {
+        f"/blog/{cfg['slug']}/" for cfg in HUB_META.values() if cfg.get("slug")
+    }
+
     broken = {}
     for meta in metas:
         page = ROOT / article_path(meta)
@@ -2000,6 +2008,8 @@ def main():
             continue
         html = page.read_text(encoding="utf-8")
         for href in set(re.findall(r'href="/(blog/[^"#?]*)"', html)):
+            if "/" + href in hubs:
+                continue
             target = ROOT / (href + "index.html" if href.endswith("/") else href)
             if not target.exists():
                 broken.setdefault(article_path(meta), set()).add("/" + href)
