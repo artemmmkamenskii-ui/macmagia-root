@@ -718,6 +718,8 @@ FOOTER_HTML = """<footer class="footer" id="footer">
             <a href="/ai">Создание колоды с AI</a>
             <a href="/artterapy">Арт-терапия</a>
             <a href="/mac">МАК-карты</a>
+            <a href="/praktik">Обучение МАК</a>
+            <a href="/coach">Курс коучинга</a>
             <a href="/blog/">Блог</a>
             <a href="/blog/testy/">Тесты</a>
         </div>
