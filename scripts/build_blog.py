@@ -710,6 +710,7 @@ FOOTER_HTML = """<footer class="footer" id="footer">
         <div class="footer__col">
             <div class="footer__title">Продукты</div>
             <a href="https://provizorai.ru/" target="_blank" rel="noopener">AI платформа</a>
+            <a href="/online">Карты онлайн</a>
             <a href="/cards">Электронные колоды</a>
             <a href="https://www.wildberries.ru/seller/63444" target="_blank" rel="noopener">Колоды на Wildberries</a>
         </div>
