@@ -67,31 +67,31 @@
   </url>
   <url>
     <loc>https://macmagia.ru/blog/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://macmagia.ru/blog/emocii/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://macmagia.ru/blog/testy/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://macmagia.ru/blog/slovar/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://macmagia.ru/blog/sny/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -234,6 +234,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/boyus-poteryat-blizkih.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/boyus-za-rebenka.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/bulling-chto-eto-takoe-prostymi-slovami.html</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -260,6 +272,12 @@
   <url>
     <loc>https://macmagia.ru/blog/byvshego-parnya-posle-rasstavaniya.html</loc>
     <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/byvshiy-muzh-ne-pomogaet-dengami.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -668,6 +686,12 @@
   <url>
     <loc>https://macmagia.ru/blog/godovschina-smerti.html</loc>
     <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/granicy-s-podrostkom.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1094,6 +1118,12 @@
   <url>
     <loc>https://macmagia.ru/blog/kak-rabotat-s-mak.html</loc>
     <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/kak-razgovarivat-s-podrostkom.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1560,6 +1590,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/muzh-ne-pomogaet-po-domu.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/muzh-ne-pozdravil-s-dnem-rozhdeniya.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -1674,6 +1710,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/ne-hochu-podvodit-itogi-goda.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/ne-hochu-pomogat-muzhu.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/ne-hochu-rabotat.html</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -1700,6 +1748,12 @@
   <url>
     <loc>https://macmagia.ru/blog/ne-obschayus-s-sestroy.html</loc>
     <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/ne-ponravilsya-podarok.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1746,6 +1800,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/net-sil-ubiratsya.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/nevroz-u-vzroslyh.html</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -1778,6 +1838,12 @@
   <url>
     <loc>https://macmagia.ru/blog/novye-otnosheniya-posle-razvoda.html</loc>
     <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/novyy-god-v-odinochestve.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2094,8 +2160,38 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/podrostok-ne-hochet-uchitsya.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/podrostok-ne-hochet-v-shkolu.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/podrostok-nichego-ne-hochet.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/podrostok-ogryzaetsya.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/podrostok-prostymi-slovami.html</loc>
     <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/podrostok-zakrylsya-v-komnate.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2520,6 +2616,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/raspredelenie-obyazannostey-v-seme.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/rasscheplenie-v-psihologii.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -2654,6 +2756,12 @@
   <url>
     <loc>https://macmagia.ru/blog/roditelskoe-vygoranie.html</loc>
     <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/rodnya-muzha-ne-pomogaet.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3294,6 +3402,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/son-podrostka.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/sozavisimost.html</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -3338,6 +3452,12 @@
   <url>
     <loc>https://macmagia.ru/blog/ssorimsya-pri-rebenke.html</loc>
     <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/ssory-s-podrostkom.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3666,6 +3786,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://macmagia.ru/blog/uhazhivayu-za-bolnoy-mamoy.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/uhod-za-roditelyami-muzha.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://macmagia.ru/blog/uprazhneniya-dlya-detey.html</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -3698,6 +3830,12 @@
   <url>
     <loc>https://macmagia.ru/blog/usloviya-vospitaniya-rebenka-v-seme.html</loc>
     <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://macmagia.ru/blog/ustala-ot-byta.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

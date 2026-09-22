@@ -48,7 +48,9 @@ const blocks = readdirSync(DIR)
   .sort()
   .filter((f) => !only.length || only.includes(f.slice(0, 2)));
 
+// Chromium из playwright падает на свежей macOS — берём системный Chrome.
 const ctx = await chromium.launchPersistentContext(PROFILE, {
+  channel: process.env.WS_CHANNEL || undefined,
   headless: false,
   viewport: { width: 1500, height: 1000 },
   locale: 'ru-RU',
