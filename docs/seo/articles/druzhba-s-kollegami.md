@@ -2,8 +2,8 @@
 slug: druzhba-s-kollegami
 title: "Дружба с коллегами: где проходит граница на работе"
 description: "Дружба с коллегами: что не стоит рассказывать подруге по работе, как пережить повышение одной из вас и что остаётся от общения с бывшими коллегами."
-publishedAt: 2026-10-03
-updatedAt: 2026-10-03
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🤝

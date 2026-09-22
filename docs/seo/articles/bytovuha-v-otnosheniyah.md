@@ -2,8 +2,8 @@
 slug: bytovuha-v-otnosheniyah
 title: "Бытовуха в отношениях: когда быт съедает чувства в паре"
 description: "Бытовуха в отношениях: что это такое, почему быт съедает чувства, что меняется после рождения ребёнка и что возвращает близость, когда пара погрязла в делах."
-publishedAt: 2026-10-06
-updatedAt: 2026-10-06
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🍽️

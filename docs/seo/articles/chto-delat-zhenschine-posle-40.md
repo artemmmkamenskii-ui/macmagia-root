@@ -2,8 +2,8 @@
 slug: chto-delat-zhenschine-posle-40
 title: "Что делать женщине после 40, когда кажется, что поздно"
 description: "Что делать женщине после 40: откуда берётся давление «в этом возрасте уже положено», почему кажется, что все решения приняты, и что на самом деле ещё меняется."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 🧭

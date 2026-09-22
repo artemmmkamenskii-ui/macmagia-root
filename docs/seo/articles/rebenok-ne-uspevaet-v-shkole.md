@@ -2,8 +2,8 @@
 slug: rebenok-ne-uspevaet-v-shkole
 title: "Ребёнок не успевает в школе: когда учёба даётся тяжело"
 description: "Ребёнок не успевает в школе: чем «не может» отличается от «не хочет», где чаще всего ломается учёба у младшего школьника и как помочь, не превращая дом в филиал класса."
-publishedAt: 2026-09-27
-updatedAt: 2026-09-27
+publishedAt: 2026-09-26
+updatedAt: 2026-09-26
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 📚

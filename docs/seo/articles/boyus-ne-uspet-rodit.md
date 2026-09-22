@@ -2,8 +2,8 @@
 slug: boyus-ne-uspet-rodit
 title: "Боюсь не успеть родить: как жить с тревогой о времени"
 description: "Не успеваю родить: откуда берётся давление сроков, что тревога делает с решениями и отношениями и как отделить своё желание от страха опоздать."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🕊️

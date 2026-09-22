@@ -2,8 +2,8 @@
 slug: nichego-ne-dobilas
 title: "Ничего не добилась: как жить с этим чувством в 30 и 40"
 description: "Боюсь ничего не добиться: откуда берётся ощущение, что вы ничего не добились к 30 или 35, почему свои результаты не засчитываются и что с этим делать."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 🪞

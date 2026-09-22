@@ -2,8 +2,8 @@
 slug: molodost-ushla
 title: "Молодость ушла: как жить с ощущением, что лучшее позади"
 description: "Молодость ушла, и кажется, что главное уже случилось: откуда берётся ощущение спада, почему сравнение с собой прежней нечестное и что с этим делать."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 📷

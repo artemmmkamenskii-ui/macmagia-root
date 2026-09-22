@@ -2,8 +2,8 @@
 slug: psihologicheskiy-vozrast
 title: "Психологический возраст: на сколько лет вы себя ощущаете"
 description: "Психологический возраст женщины: почему внутри бывает двадцать пять при сорока в паспорте и наоборот, отчего зависит самоощущение и как определить свой."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: ⏳

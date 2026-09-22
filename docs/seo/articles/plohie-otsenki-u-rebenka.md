@@ -2,8 +2,8 @@
 slug: plohie-otsenki-u-rebenka
 title: "Плохие оценки у ребёнка: как перестать стыдиться двоек"
 description: "Плохие оценки у ребёнка: почему двойка так больно бьёт по матери, что на самом деле измеряет отметка, как реагировать в первый вечер и что делать со школьным стыдом."
-publishedAt: 2026-09-27
-updatedAt: 2026-09-27
+publishedAt: 2026-09-26
+updatedAt: 2026-09-26
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: ✏️

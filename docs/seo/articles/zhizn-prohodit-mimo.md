@@ -2,8 +2,8 @@
 slug: zhizn-prohodit-mimo
 title: "Жизнь проходит мимо: откуда это чувство и что с ним делать"
 description: "Жизнь будто проходит мимо: почему появляется ощущение, что настоящее происходит где-то рядом, при чём тут работа и чужие ленты и что возвращает участие."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 🚃

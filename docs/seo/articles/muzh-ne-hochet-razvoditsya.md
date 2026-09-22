@@ -2,8 +2,8 @@
 slug: muzh-ne-hochet-razvoditsya
 title: "Муж не хочет разводиться: что делать, если он не отпускает"
 description: "Муж не хочет разводиться и не отпускает: чем вас удерживают — вина, обещания измениться, дети и деньги, — и как принять решение, когда согласия не будет."
-publishedAt: 2026-10-04
-updatedAt: 2026-10-04
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🔐

@@ -2,8 +2,8 @@
 slug: pochemu-lyudi-spletnichayut
 title: "Почему люди сплетничают и что стоит за этим на самом деле"
 description: "Почему люди сплетничают: зачем сплетни нужны группе, какие бывают виды сплетен, где проходит граница между сплетней и клеветой и отчего тянет обсуждать самой."
-publishedAt: 2026-10-03
-updatedAt: 2026-10-03
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 💬

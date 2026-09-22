@@ -2,8 +2,8 @@
 slug: kontrol-rebenka-v-shkole
 title: "Контроль ребёнка в школе: когда забота становится слежкой"
 description: "Контроль ребёнка в школе: почему электронный дневник не успокаивает, чем проверки по десять раз в день вредят ребёнку и как вернуть себе спокойствие без слежки."
-publishedAt: 2026-09-27
-updatedAt: 2026-09-27
+publishedAt: 2026-09-26
+updatedAt: 2026-09-26
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 📱

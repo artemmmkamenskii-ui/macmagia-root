@@ -2,8 +2,8 @@
 slug: rebenok-ne-ubiraetsya-v-komnate
 title: "Ребёнок не убирается в комнате: что делать родителям"
 description: "Ребёнок не убирается в комнате: почему команда «убери» не работает, что он реально может в каждом возрасте и как договориться, чтобы порядок держался."
-publishedAt: 2026-10-06
-updatedAt: 2026-10-06
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🧸

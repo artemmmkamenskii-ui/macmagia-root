@@ -2,8 +2,8 @@
 slug: kak-perezhit-predatelstvo
 title: "Предательство близких: как пережить и жить дальше"
 description: "Предательство близких переживается тяжелее обиды: почему рушится картина прошлого, что происходит в первые недели, обязательно ли прощать и что помогает."
-publishedAt: 2026-10-05
-updatedAt: 2026-10-05
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🕯️

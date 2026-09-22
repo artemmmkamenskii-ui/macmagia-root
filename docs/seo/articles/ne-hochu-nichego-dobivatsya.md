@@ -2,8 +2,8 @@
 slug: ne-hochu-nichego-dobivatsya
 title: "Не хочу ничего добиваться: усталость от гонки за успехом"
 description: "Не хочу ничего добиваться: как отличить выгорание от честного отказа от чужих целей, почему за это стыдно и что делать, если желание что-то менять пропало."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🌾

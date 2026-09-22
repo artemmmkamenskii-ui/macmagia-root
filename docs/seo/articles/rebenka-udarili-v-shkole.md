@@ -2,8 +2,8 @@
 slug: rebenka-udarili-v-shkole
 title: "Ребёнка ударили в школе: как реагировать и не навредить"
 description: "Ребёнка ударили в школе: что делать в первый вечер, чем единичная драка отличается от травли, как разговаривать со школой и стоит ли учить давать сдачи."
-publishedAt: 2026-09-27
-updatedAt: 2026-09-27
+publishedAt: 2026-09-26
+updatedAt: 2026-09-26
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🩹

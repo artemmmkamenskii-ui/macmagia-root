@@ -2,8 +2,8 @@
 slug: ne-lyublyu-pozdravlyat-s-dnem-rozhdeniya
 title: "Не люблю поздравлять с днём рождения: откуда раздражение"
 description: "Не люблю поздравлять с днём рождения: почему бесят дежурные слова, сборы на подарки в чатах и детские праздники по обязанности — и как из этого выйти."
-publishedAt: 2026-10-05
-updatedAt: 2026-10-05
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🎈

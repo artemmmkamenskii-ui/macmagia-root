@@ -2,8 +2,8 @@
 slug: predatelstvo-bez-izmeny
 title: "Предательство без измены: когда партнёр предал иначе"
 description: "Предательство без измены: не вступился при родне, вынес наружу личное, исчез в трудный момент. Почему это ранит как измена и что с этим делать в паре."
-publishedAt: 2026-10-05
-updatedAt: 2026-10-05
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🥀

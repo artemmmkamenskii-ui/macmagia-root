@@ -2,8 +2,8 @@
 slug: propalo-libido-u-zhenschiny
 title: "Пропало либидо у женщины: что за этим стоит в психике"
 description: "Снижение либидо у женщины, когда дело не в партнёре: усталость, тревога, послеродовой период и отношения с телом — что выключает влечение и как оно возвращается."
-publishedAt: 2026-10-04
-updatedAt: 2026-10-04
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🌑

@@ -2,8 +2,8 @@
 slug: ne-mogu-vybrosit-veshchi
 title: "Не могу выбросить вещи: почему жалко и как расстаться"
 description: "Не могу выбросить вещи: почему держат память, деньги и «вдруг пригодится», как идёт расхламление вещей и с чего начать, когда сил почти не осталось."
-publishedAt: 2026-10-06
-updatedAt: 2026-10-06
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 📦

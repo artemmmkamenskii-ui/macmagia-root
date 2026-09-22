@@ -2,8 +2,8 @@
 slug: rebenok-poshel-v-pervyy-klass
 title: "Ребёнок пошёл в первый класс: тревога, о которой молчат"
 description: "Первый день ребёнка в школе: почему матери так тревожно, как идёт адаптация в первом классе, сколько она длится и что помогает пережить сентябрь вам обоим."
-publishedAt: 2026-09-27
-updatedAt: 2026-09-27
+publishedAt: 2026-09-26
+updatedAt: 2026-09-26
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🔔

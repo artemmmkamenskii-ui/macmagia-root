@@ -2,8 +2,8 @@
 slug: balzakovskiy-vozrast
 title: "Бальзаковский возраст: сколько это лет и почему задевает"
 description: "Бальзаковский возраст это сколько лет на самом деле: у Бальзака героине было тридцать, а сегодня так говорят про сорок с лишним — и почему это задевает."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 📖

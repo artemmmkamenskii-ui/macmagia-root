@@ -2,8 +2,8 @@
 slug: ostalas-bez-deneg-posle-razvoda
 title: "Осталась без денег после развода: с чего начать"
 description: "Осталась без мужа и без денег: как пережить обвал уровня жизни после развода, что делать в первые недели, когда страх парализует, и у кого просить помощи."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🕯️

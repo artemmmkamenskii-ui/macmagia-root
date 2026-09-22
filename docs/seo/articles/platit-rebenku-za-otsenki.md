@@ -2,8 +2,8 @@
 slug: platit-rebenku-za-otsenki
 title: "Платить ребёнку за оценки: почему деньги гасят интерес"
 description: "Платить ребёнку за оценки: почему плата работает первые недели и перестаёт, что происходит с интересом к учёбе и как выйти из этой системы, если она уже введена."
-publishedAt: 2026-09-27
-updatedAt: 2026-09-27
+publishedAt: 2026-09-26
+updatedAt: 2026-09-26
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 💸

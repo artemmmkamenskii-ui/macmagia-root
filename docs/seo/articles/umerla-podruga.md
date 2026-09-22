@@ -2,8 +2,8 @@
 slug: umerla-podruga
 title: "Умерла подруга: как пережить горе, которое не признают"
 description: "Умерла подруга: почему это горе называют непризнанным, как быть рядом с её семьёй и на похоронах и что делать с перепиской, телефоном и общими чатами."
-publishedAt: 2026-10-03
-updatedAt: 2026-10-03
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🕯️

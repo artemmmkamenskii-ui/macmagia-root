@@ -2,8 +2,8 @@
 slug: lichnye-itogi-goda
 title: "Личные итоги года: вопросы вместо списка достижений"
 description: "Как подвести итоги года жизни без списка достижений: подготовка, пять блоков вопросов к себе, дневник итогов и переход к планам на следующий год."
-publishedAt: 2026-10-05
-updatedAt: 2026-10-05
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Цели и развитие"
 emoji: 🗓️

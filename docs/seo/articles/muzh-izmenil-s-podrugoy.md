@@ -2,8 +2,8 @@
 slug: muzh-izmenil-s-podrugoy
 title: "Муж изменил с подругой: как пережить двойное предательство"
 description: "Муж изменил с подругой: почему рушатся сразу брак и дружба, почему окружение замечает только измену и откуда берётся злость на неё, которая сильнее злости на него."
-publishedAt: 2026-10-03
-updatedAt: 2026-10-03
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 💔

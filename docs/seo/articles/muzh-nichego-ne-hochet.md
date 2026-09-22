@@ -2,8 +2,8 @@
 slug: muzh-nichego-ne-hochet
 title: "Муж ничего не хочет: апатия близкого и жизнь рядом с ней"
 description: "Муж ничего не хочет: что стоит за «мне ничего не надо», почему попытки расшевелить не работают и где проходит граница между поддержкой и жизнью за двоих."
-publishedAt: 2026-10-04
-updatedAt: 2026-10-04
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🛋️

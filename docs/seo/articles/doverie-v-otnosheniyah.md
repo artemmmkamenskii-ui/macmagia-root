@@ -2,8 +2,8 @@
 slug: doverie-v-otnosheniyah
 title: "Доверие в отношениях: из чего складывается и как рушится"
 description: "Доверие в отношениях: из чего оно состоит, чем отличается от контроля, почему рушится без всякой измены и отчего восстановить его труднее, чем построить."
-publishedAt: 2026-10-05
-updatedAt: 2026-10-05
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🤝

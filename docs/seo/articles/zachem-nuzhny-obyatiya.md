@@ -2,8 +2,8 @@
 slug: zachem-nuzhny-obyatiya
 title: "Зачем нужны объятия: сколько их нужно человеку в день"
 description: "Сила объятий и честный ответ на вопрос, сколько их нужно в день: откуда взялась цифра, что такое тактильный голод и что делать, если обниматься не с кем."
-publishedAt: 2026-10-04
-updatedAt: 2026-10-04
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🤗

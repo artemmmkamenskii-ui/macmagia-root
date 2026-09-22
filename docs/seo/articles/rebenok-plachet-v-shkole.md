@@ -2,8 +2,8 @@
 slug: rebenok-plachet-v-shkole
 title: "Ребёнок плачет в школе: как помочь чувствительному ребёнку"
 description: "Ребёнок плачет в школе: что стоит за слезами, почему «не реви» делает хуже, как помочь чувствительному ребёнку справляться и о чём говорить с учителем."
-publishedAt: 2026-09-27
-updatedAt: 2026-09-27
+publishedAt: 2026-09-26
+updatedAt: 2026-09-26
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 💧

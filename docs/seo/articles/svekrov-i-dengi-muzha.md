@@ -2,8 +2,8 @@
 slug: svekrov-i-dengi-muzha
 title: "Свекровь и деньги мужа: когда он содержит свою родню"
 description: "Свекровь и деньги мужа: где помощь родителям норма, а где семья живёт хуже ради них, почему вы узнаёте о суммах последней и как говорить об этом с мужем."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 💶

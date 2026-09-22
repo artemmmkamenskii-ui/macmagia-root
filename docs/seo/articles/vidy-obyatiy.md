@@ -2,8 +2,8 @@
 slug: vidy-obyatiy
 title: "Виды объятий: что они говорят об отношениях на самом деле"
 description: "Язык объятий без трактовок по позам: какие бывают объятия, что стоит за объятиями со спины и за плечи и на что смотреть вместо позы, чтобы понять отношения."
-publishedAt: 2026-10-04
-updatedAt: 2026-10-04
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 💞

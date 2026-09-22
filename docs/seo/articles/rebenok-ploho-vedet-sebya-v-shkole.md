@@ -2,8 +2,8 @@
 slug: rebenok-ploho-vedet-sebya-v-shkole
 title: "Ребёнок плохо ведёт себя в школе: что делать матери"
 description: "Ребёнок плохо ведёт себя в школе: почему он срывается именно там, что стоит за агрессией и шумом, как говорить с учителем и что делать, если вызывают каждую неделю."
-publishedAt: 2026-09-27
-updatedAt: 2026-09-27
+publishedAt: 2026-09-26
+updatedAt: 2026-09-26
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🌪️

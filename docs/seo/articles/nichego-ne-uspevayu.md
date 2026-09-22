@@ -2,8 +2,8 @@
 slug: nichego-ne-uspevayu
 title: "Ничего не успеваю: почему так выходит и что делать"
 description: "Ничего не успеваю: куда девается день, почему список дел не заканчивается, при чём тут невидимая работа и переключения и что реально разгружает сутки."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: ⏰

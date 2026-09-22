@@ -2,8 +2,8 @@
 slug: lozh-vo-blago
 title: "Ложь во благо: бывает ли враньё, которое не разрушает"
 description: "Ложь во благо: как отличить её от удобной лжи, разбор четырёх настоящих случаев и три вопроса, которые помогают решить, говорить правду или промолчать."
-publishedAt: 2026-10-05
-updatedAt: 2026-10-05
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: ⚖️

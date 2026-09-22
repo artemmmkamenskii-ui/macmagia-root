@@ -2,8 +2,8 @@
 slug: pozdno-li-nachinat
 title: "Поздно ли начинать заново: как перестать бояться опоздать"
 description: "Поздно ли начать заново в 25, 30 или 40 лет: откуда берётся внутренний срок, что на самом деле меняется с возрастом и с чего начать, если страшно опоздать."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 🕰️

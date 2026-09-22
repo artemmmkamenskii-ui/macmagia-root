@@ -2,8 +2,8 @@
 slug: muzh-soderzhit-byvshuyu-semyu
 title: "Муж содержит бывшую семью: как не копить обиду"
 description: "Муж содержит бывшую семью: куда девать обиду, в которой стыдно признаться, чем алименты отличаются от просьб бывшей и как не сделать ребёнка статьёй расходов."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🧾

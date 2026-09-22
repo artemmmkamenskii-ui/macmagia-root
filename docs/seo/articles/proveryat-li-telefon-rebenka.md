@@ -2,8 +2,8 @@
 slug: proveryat-li-telefon-rebenka
 title: "Проверять ли телефон ребёнка: где проходит граница"
 description: "Родители проверяют телефон ребёнка из тревоги, а не из недоверия. Где проходит граница, когда смотреть оправданно и что делать подростку, которого читают."
-publishedAt: 2026-10-05
-updatedAt: 2026-10-05
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 📵

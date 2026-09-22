@@ -2,8 +2,8 @@
 slug: muzh-ne-hochet-detey
 title: "Муж не хочет детей: как быть, если вы хотите ребёнка"
 description: "Муж не хотел ребенка и не хочет сейчас: чем «не хочу вообще» отличается от «не хочу второго», почему компромисс здесь невозможен и как принимать решение."
-publishedAt: 2026-10-04
-updatedAt: 2026-10-04
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🕰️

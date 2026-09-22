@@ -2,8 +2,8 @@
 slug: zahlamlenie-kvartiry
 title: "Захламление квартиры: почему человек копит вещи годами"
 description: "Захламление квартиры: как называется это состояние, чем оно отличается от беспорядка, почему вещи копятся годами и в какой момент нужна помощь специалиста."
-publishedAt: 2026-10-06
-updatedAt: 2026-10-06
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🏚️

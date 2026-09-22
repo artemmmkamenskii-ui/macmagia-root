@@ -2,8 +2,8 @@
 slug: rebenok-progulivaet-shkolu
 title: "Ребёнок прогуливает школу: что делать, когда это вскрылось"
 description: "Ребёнок пропускает школу и вы узнали об этом случайно: почему дети уходят с уроков, что говорить в первый вечер, как вести себя со школой и когда нужен специалист."
-publishedAt: 2026-09-27
-updatedAt: 2026-09-27
+publishedAt: 2026-09-26
+updatedAt: 2026-09-26
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🚪

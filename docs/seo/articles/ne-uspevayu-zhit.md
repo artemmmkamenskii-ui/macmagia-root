@@ -2,8 +2,8 @@
 slug: ne-uspevayu-zhit
 title: "Не успеваю жить: как выйти из вечной гонки со временем"
 description: "Не успеваю за временем: почему год пролетает незаметно, откуда берётся гонка за миром, изменениями и молодыми и что возвращает ощущение прожитой жизни."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 🌊

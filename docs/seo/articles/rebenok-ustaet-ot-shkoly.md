@@ -2,8 +2,8 @@
 slug: rebenok-ustaet-ot-shkoly
 title: "Ребёнок устаёт от школы: как заметить перегрузку вовремя"
 description: "Ребёнок устаёт в школе: как выглядит перегрузка у младшего школьника, почему он часто болеет и срывается дома, что убрать из расписания и как восстановить режим."
-publishedAt: 2026-09-27
-updatedAt: 2026-09-27
+publishedAt: 2026-09-26
+updatedAt: 2026-09-26
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🛌

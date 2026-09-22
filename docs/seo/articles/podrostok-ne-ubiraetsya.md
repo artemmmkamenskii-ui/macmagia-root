@@ -2,8 +2,8 @@
 slug: podrostok-ne-ubiraetsya
 title: "Подросток не убирается: бардак в комнате подростка"
 description: "Подросток не убирается в комнате: почему беспорядок у него про территорию и границы, когда это протест, когда сигнал состояния и о чём стоит договариваться."
-publishedAt: 2026-10-06
-updatedAt: 2026-10-06
+publishedAt: 2026-09-28
+updatedAt: 2026-09-28
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🚪

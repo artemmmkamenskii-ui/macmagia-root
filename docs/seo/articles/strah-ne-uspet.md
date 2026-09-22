@@ -2,8 +2,8 @@
 slug: strah-ne-uspet
 title: "Страх не успеть: что делать, когда время уходит"
 description: "Время уходит — что делать с этим чувством: откуда берётся страх не успеть, почему тревога не называет срок и как жить с ощущением упущенного времени."
-publishedAt: 2026-10-02
-updatedAt: 2026-10-02
+publishedAt: 2026-09-27
+updatedAt: 2026-09-27
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: ⌛
