@@ -2,8 +2,8 @@
 slug: menya-postoyanno-kritikuyut
 title: "Меня постоянно критикуют: как отвечать и не рассыпаться"
 description: "Меня постоянно критикуют: почему муж, мама или свекровь придираются, что за этим стоит и как реагировать на критику — три уровня ответа от мягкого до прямого."
-publishedAt: 2026-09-26
-updatedAt: 2026-09-26
+publishedAt: 2026-09-24
+updatedAt: 2026-09-24
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🗯️

@@ -2,8 +2,8 @@
 slug: kak-perestat-dumat-o-ede
 title: "Как перестать думать о еде, если мысли о ней не уходят"
 description: "Как перестать думать о еде, если мысли о ней занимают весь день: почему запрет делает их громче, чем голод физический отличается от эмоционального и что помогает."
-publishedAt: 2026-09-26
-updatedAt: 2026-09-26
+publishedAt: 2026-09-24
+updatedAt: 2026-09-24
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🍎

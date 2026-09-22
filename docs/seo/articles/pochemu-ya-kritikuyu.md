@@ -2,8 +2,8 @@
 slug: pochemu-ya-kritikuyu
 title: "Почему я всех критикую: откуда берётся придирчивость"
 description: "Почему я всех критикую и как перестать: откуда берётся придирчивость, при чём тут перфекционизм и тревога и как ловить себя до того, как замечание сказано вслух."
-publishedAt: 2026-09-26
-updatedAt: 2026-09-26
+publishedAt: 2026-09-24
+updatedAt: 2026-09-24
 authorSlug: ekaterina-kamenskaya
 category: "Самопознание"
 emoji: 🔍

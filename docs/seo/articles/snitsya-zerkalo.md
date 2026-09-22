@@ -2,8 +2,8 @@
 slug: snitsya-zerkalo
 title: "Снится зеркало: что значит смотреть на себя во сне"
 description: "Снится зеркало: разбор по Юнгу вместо сонника. Что значит не узнавать своё отражение во сне, видеть разбитое зеркало или пустоту вместо себя — и о чём это говорит."
-publishedAt: 2026-09-26
-updatedAt: 2026-09-26
+publishedAt: 2026-09-24
+updatedAt: 2026-09-24
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🪞

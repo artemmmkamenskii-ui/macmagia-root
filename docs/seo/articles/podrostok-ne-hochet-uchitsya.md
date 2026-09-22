@@ -2,8 +2,8 @@
 slug: podrostok-ne-hochet-uchitsya
 title: "Подросток не хочет учиться: что стоит за этим отказом"
 description: "Подросток не хочет учиться: потеря смысла, страх провала, конфликт с учителем, перегруз. Как отличить лень от истощения и что делать матери вместо контроля."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-23
+updatedAt: 2026-09-23
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 📉

@@ -2,8 +2,8 @@
 slug: podrostok-nichego-ne-hochet
 title: "Подросток ничего не хочет: лень это или что-то большее"
 description: "Подросток ничего не хочет, лежит целыми днями и ни к чему не стремится. Где это накопление сил и норма возраста, а где сигнал, и как различить одно от другого."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-23
+updatedAt: 2026-09-23
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🛏️

@@ -2,8 +2,8 @@
 slug: ne-ponravilsya-podarok
 title: "Не понравился подарок: как не обидеть и не обидеться"
 description: "Не понравился подарок — и вместо радости внутри обида: почему подарок ранит сильнее, чем стоит, что сказать сразу и потом и как быть, если не оценили ваш."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-23
+updatedAt: 2026-09-23
 authorSlug: ekaterina-kamenskaya
 category: "Отношения"
 emoji: 🎁

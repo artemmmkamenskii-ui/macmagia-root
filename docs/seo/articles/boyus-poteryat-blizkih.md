@@ -2,8 +2,8 @@
 slug: boyus-poteryat-blizkih
 title: "Боюсь потерять близких: как жить, когда страшно за всех"
 description: "Боюсь потерять близких: откуда берётся страх за маму и мужа, почему голова проигрывает катастрофы и что помогает вернуться в сегодняшний день без бесконечных проверок."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-23
+updatedAt: 2026-09-23
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: 🫂

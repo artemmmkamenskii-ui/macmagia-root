@@ -2,8 +2,8 @@
 slug: podrostok-ne-hochet-v-shkolu
 title: "Подросток не хочет ходить в школу: что за этим стоит"
 description: "Подросток не хочет ходить в школу и прогуливает: травля, конфликт с учителем, тревога, стыд перед классом. Как выяснять причину вместо того, чтобы заставлять."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-23
+updatedAt: 2026-09-23
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🎒

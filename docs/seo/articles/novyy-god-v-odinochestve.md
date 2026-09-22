@@ -2,8 +2,8 @@
 slug: novyy-god-v-odinochestve
 title: "Новый год в одиночестве: как прожить праздник без надрыва"
 description: "Новый год в одиночестве давит сильнее других дат: почему так выходит после развода, потери или переезда и как прожить эту ночь без надрыва и показного веселья."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-23
+updatedAt: 2026-09-23
 authorSlug: ekaterina-kamenskaya
 category: "Психология"
 emoji: ❄️

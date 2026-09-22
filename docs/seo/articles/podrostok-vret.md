@@ -2,8 +2,8 @@
 slug: podrostok-vret
 title: "Подросток врёт: почему он это делает и что отвечать"
 description: "Подросток врет родителям по мелочам и по-крупному. Что стоит за ложью — страх, стыд, защита своей территории — и как реагировать, чтобы не потерять доверие."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-24
+updatedAt: 2026-09-24
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🎭

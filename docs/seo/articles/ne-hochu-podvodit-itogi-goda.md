@@ -2,8 +2,8 @@
 slug: ne-hochu-podvodit-itogi-goda
 title: "Не хочу подводить итоги года: если год вышел тяжёлым"
 description: "Не хочу подводить итоги года — потому что год вышел тяжёлым и список достижений пуст. Что считать результатом, если вы просто выстояли, и право не подводить итоги."
-publishedAt: 2026-09-25
-updatedAt: 2026-09-25
+publishedAt: 2026-09-23
+updatedAt: 2026-09-23
 authorSlug: ekaterina-kamenskaya
 category: "Цели и развитие"
 emoji: 📓

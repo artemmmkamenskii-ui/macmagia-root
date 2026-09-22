@@ -2,8 +2,8 @@
 slug: podrostok-ne-hochet-zhit
 title: "Подросток говорит, что не хочет жить: что делать матери"
 description: "Подросток сказал, что не хочет жить. Что делать в ближайший час, что говорить и чего не говорить, к кому идти. Телефон доверия 8-800-2000-122, круглосуточно."
-publishedAt: 2026-09-26
-updatedAt: 2026-09-26
+publishedAt: 2026-09-24
+updatedAt: 2026-09-24
 authorSlug: ekaterina-kamenskaya
 category: "Детская психология"
 emoji: 🤍
