@@ -33,6 +33,9 @@ NEED = {
 }
 WORDS = (1300, 1800)
 WORDS_SLOVAR = (600, 900)
+# Пиллар держит целый кластер и обязан быть длиннее обычной статьи:
+# помечается в frontmatter строкой `pillar: true`.
+WORDS_PILLAR = (1600, 2600)
 
 # Лид не должен начинаться с однобуквенного предлога: CSS-буквица склеит
 # «С утра» в «Сутра».
@@ -121,7 +124,12 @@ def check(path: str) -> list:
         out.append(f"description {len(d)} знаков, нужно 140–180")
 
     n = len(md.split())
-    lo, hi = WORDS_SLOVAR if slug.startswith("slovar-") else WORDS
+    if slug.startswith("slovar-"):
+        lo, hi = WORDS_SLOVAR
+    elif str(fm.get("pillar", "")).strip().lower() in ("true", "да", "yes"):
+        lo, hi = WORDS_PILLAR
+    else:
+        lo, hi = WORDS
     if not lo <= n <= hi:
         out.append(f"объём {n} слов, нужно {lo}–{hi}")
 
