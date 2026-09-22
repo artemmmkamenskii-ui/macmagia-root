@@ -36,6 +36,8 @@ WORDS_SLOVAR = (600, 900)
 # Пиллар держит целый кластер и обязан быть длиннее обычной статьи:
 # помечается в frontmatter строкой `pillar: true`.
 WORDS_PILLAR = (1600, 2600)
+# Тест — это вопросы и расшифровки результатов, связного текста в нём мало.
+WORDS_TEST = (900, 1800)
 
 # Лид не должен начинаться с однобуквенного предлога: CSS-буквица склеит
 # «С утра» в «Сутра».
@@ -123,9 +125,15 @@ def check(path: str) -> list:
     if d and not 100 <= len(d) <= 200:
         out.append(f"description {len(d)} знаков, нужно 140–180")
 
+    # Тесты — интерактивный формат со своей вёрсткой: у них нет ни лида
+    # с врезкой, ни итогового блока, вместо них вопросы и результаты.
+    is_test = str(fm.get("section", "")).strip() == "testy"
+
     n = len(md.split())
     if slug.startswith("slovar-"):
         lo, hi = WORDS_SLOVAR
+    elif is_test:
+        lo, hi = WORDS_TEST
     elif str(fm.get("pillar", "")).strip().lower() in ("true", "да", "yes"):
         lo, hi = WORDS_PILLAR
     else:
@@ -133,7 +141,7 @@ def check(path: str) -> list:
     if not lo <= n <= hi:
         out.append(f"объём {n} слов, нужно {lo}–{hi}")
 
-    if not slug.startswith("slovar-"):
+    if not slug.startswith("slovar-") and not is_test:
         for mark, why in NEED.items():
             if mark not in md:
                 out.append(why)
