@@ -38,3 +38,4 @@ gsc*.json
 # sitemap.xml, а не создаёт с нуля, и на чистом клоне без него падает.
 blog/*.html
 blog/*/*.html
+recrawl.png
