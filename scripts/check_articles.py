@@ -146,6 +146,17 @@ def check(path: str) -> list:
     return out
 
 
+def duplicate_primary(paths):
+    """Один primaryKeyword на две статьи — это две страницы, которые дерутся
+    за один запрос. Приёмка проверяла дубли title и description, а ключ —
+    нет, и так разошлись «постоянно хочется плакать» 14 и 29 сентября."""
+    seen = collections.defaultdict(list)
+    for p in paths:
+        m = re.search(r"^primaryKeyword: *(.+)$", open(p, encoding="utf-8").read(1500), re.M)
+        if m:
+            seen[m.group(1).strip().strip('"').lower()].append(p.rsplit("/", 1)[-1][:-3])
+    return {k: v for k, v in seen.items() if len(v) > 1}
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("slugs", nargs="*")
@@ -191,6 +202,11 @@ def main() -> None:
         if len(slugs) > 1:
             print(f"\nлиды начинаются одинаково у {len(slugs)}: {', '.join(slugs[:6])}")
 
+    dups = duplicate_primary(glob.glob("docs/seo/articles/*.md"))
+    if dups:
+        print("\nодин primaryKeyword на несколько статей:")
+        for k, v in dups.items():
+            print(f"   «{k}» → {', '.join(v)}")
     print(f"\nпроверено {len(paths)}, с замечаниями {len(problems)}")
     sys.exit(1 if problems else 0)
 
