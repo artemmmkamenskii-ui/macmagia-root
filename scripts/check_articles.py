@@ -131,6 +131,20 @@ def check(path: str) -> list:
     # с врезкой, ни итогового блока, вместо них вопросы и результаты.
     is_test = str(fm.get("section", "")).strip() == "testy"
 
+    # Английские слова в заголовках — следы черновика. Так на сайт уехали
+    # «Раскраски-мандалы: works или нет» и «Главный caveat: про защиты».
+    for h in re.findall(r"^#{2,3} .+$", md, re.M):
+        # Якоря для оглавления латинские по устройству: {#hranitelnica},
+        # <a name="faq"></a>. Их вырезаем, они не видны читателю.
+        h = re.sub(r'\{#[^}]*\}|<a name="[^"]*"></a>', "", h)
+        # «S — Specific, конкретная» в разборе SMART — расшифровка аббревиатуры.
+        if re.match(r"^#{2,3} [A-Z] [—-]", h):
+            continue
+        lat = re.findall(r"\b[A-Za-z]{4,}\b", h)
+        lat = [w for w in lat if w.upper() != w]  # MBTI, SMART, MAK — аббревиатуры
+        if lat:
+            out.append(f"латиница в заголовке: {', '.join(lat)} — «{h.strip('# ')[:50]}»")
+
     n = len(md.split())
     if slug.startswith("slovar-"):
         lo, hi = WORDS_SLOVAR
@@ -143,9 +157,13 @@ def check(path: str) -> list:
     if not lo <= n <= hi:
         out.append(f"объём {n} слов, нужно {lo}–{hi}")
 
+    # Заголовки иногда несут HTML-якорь для оглавления:
+    # `## <a name="faq"></a>Частые вопросы про МАК`. Подстроки «## Частые
+    # вопросы» в таком нет, и проверка давала ложный сигнал.
+    md_flat = re.sub(r'<a name="[^"]*"></a>', "", md)
     if not slug.startswith("slovar-") and not is_test:
         for mark, why in NEED.items():
-            if mark not in md:
+            if mark not in md_flat:
                 out.append(why)
 
     lead = next((p for p in md.split("\n\n") if p.strip()
