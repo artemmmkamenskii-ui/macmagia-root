@@ -39,3 +39,4 @@ gsc*.json
 blog/*.html
 blog/*/*.html
 recrawl.png
+__pycache__/

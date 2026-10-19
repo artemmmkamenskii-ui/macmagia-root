@@ -77,8 +77,9 @@ def body(text: str) -> str:
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 try:
     from build_blog import check_eso
-except Exception:  # сборка требует зависимостей, которых может не быть
+except Exception as _e:  # сборка требует зависимостей, которых может не быть
     check_eso = None
+    _ESO_WHY = str(_e)
 
 
 def eso_whitelist(text: str) -> list:
@@ -144,6 +145,11 @@ def check(path: str) -> list:
         lat = [w for w in lat if w.upper() != w]  # MBTI, SMART, MAK — аббревиатуры
         if lat:
             out.append(f"латиница в заголовке: {', '.join(lat)} — «{h.strip('# ')[:50]}»")
+
+    # Латинский хвост, приклеенный к русскому слову, — остаток правки.
+    # Так на сайт уехало «Ровный отказ без объяснений сильнееedge».
+    for m in re.finditer(r"[а-яёА-ЯЁ][A-Za-z]{2,}", md):
+        out.append(f"склейка с латиницей: «{m.group(0)}»")
 
     n = len(md.split())
     if slug.startswith("slovar-"):
@@ -243,8 +249,12 @@ def main() -> None:
         print("\nодин primaryKeyword на несколько статей:")
         for k, v in dups.items():
             print(f"   «{k}» → {', '.join(v)}")
+    if check_eso is None:
+        print("\n!!! ЭЗО-ФИЛЬТР НЕ РАБОТАЛ:", _ESO_WHY)
+        print("    «с замечаниями 0» ничего не значит — сборка всё равно может упасть.")
+        print("    Лечится: pip3 install -r scripts/requirements.txt")
     print(f"\nпроверено {len(paths)}, с замечаниями {len(problems)}")
-    sys.exit(1 if problems else 0)
+    sys.exit(1 if problems or check_eso is None else 0)
 
 
 if __name__ == "__main__":
