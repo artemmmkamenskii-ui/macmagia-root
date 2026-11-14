@@ -40,3 +40,4 @@ blog/*.html
 blog/*/*.html
 recrawl.png
 __pycache__/
+recrawl-sent.log

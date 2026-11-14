@@ -101,7 +101,7 @@ def bar(n, top, width=22):
     return "▇" * max(1, round(width * n / top)) if n and top else ""
 
 
-def report_pages(s, site, days):
+def report_pages(s, site, days, near=None):
     today = datetime.date.today()
     # GSC отдаёт данные с задержкой в 2-3 дня, поэтому окно сдвинуто назад
     end = today - datetime.timedelta(days=3)
@@ -148,9 +148,22 @@ def report_pages(s, site, days):
     if close:
         print(f"\n  Рядом с первой страницей — сюда стоит вложиться "
               f"({len(close)}):")
-        for r in sorted(close, key=lambda r: r["position"])[:15]:
+        # Сколько строк показать: по умолчанию 15, --near all — весь список.
+        limit = None if near == "all" else 15
+        # С --near all печатаем и запросы: заголовок переписывают под них,
+        # а не под собственные представления о теме страницы.
+        pq = {}
+        if near == "all":
+            for r in query(s, site, start.isoformat(), end.isoformat(),
+                           ["page", "query"]):
+                pq.setdefault(r["keys"][0], []).append(
+                    (r["keys"][1], r["impressions"], r["position"]))
+        for r in sorted(close, key=lambda r: r["position"])[:limit]:
             print(f"    поз. {r['position']:>4.1f}  показов {r['impressions']:>5.0f}"
                   f"  {short(r['keys'][0])}")
+            for q, qi, qp in sorted(pq.get(r["keys"][0], []),
+                                    key=lambda x: -x[1])[:4]:
+                print(f"          «{q}» — показов {qi:.0f}, поз. {qp:.1f}")
 
 
 def report_queries(s, site, days):
@@ -211,13 +224,15 @@ def main():
     ap.add_argument("--queries", action="store_true", help="ещё и разбивка по запросам")
     ap.add_argument("--inspect", type=int, metavar="N",
                     help="проверить статус индексации N адресов из карты сайта")
+    ap.add_argument("--near", metavar="all",
+                    help="показать весь список страниц у границы первой страницы")
     args = ap.parse_args()
 
     s = session(args.key)
     site = pick_site(s)
     print(f"\n  Ресурс: {site}")
 
-    report_pages(s, site, args.days)
+    report_pages(s, site, args.days, args.near)
     if args.queries:
         report_queries(s, site, args.days)
     if args.inspect:
